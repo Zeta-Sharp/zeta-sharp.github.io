@@ -5,7 +5,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 50px;
+        padding: 20px;
     }
     .icon {
         width: 50px;

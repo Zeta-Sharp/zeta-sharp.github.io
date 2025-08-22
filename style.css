@@ -41,7 +41,7 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-    .x-button {
+    .github-button {
         background-image: url('./Sources/github-mark-white.svg');
     }
 }

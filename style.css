@@ -18,6 +18,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    background-color: transparent;
     background-image: url('./Sources/logo-black.png');
 }
 

@@ -1,12 +1,12 @@
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
 }
 @media (prefers-color-scheme: dark)
 {
     body {
-        background-color: #fff;
-        color: #000;
+        background-color: #000;
+        color: #fff;
     }
 }
 

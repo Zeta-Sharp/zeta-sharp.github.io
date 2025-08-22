@@ -10,3 +10,19 @@ body {
     }
 }
 
+.x-button {
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    background-image: url('./Sources/logo-black.png');
+}
+
+@media (prefers-color-scheme: dark) {
+    .x-button {
+        background-image: url('./Sources/logo-white.png');
+    }
+}

@@ -2,13 +2,21 @@
 <html>
 <head>
     <title>Self Introduction</title>
-    <style>title {color: #fff}</style>
+    <style>
+        @media (prefers-color-scheme: dark)
+        {
+            body {background-color: #fff;}
+            h1 {color: #000;}
+            p {color: #000;}
+            
+        }
+        body {background-color: #000;}
+        h1 {color: #fff;}
+        p {color: #fff;}
+    </style>
 </head>
 <body>
     <h1>Hello, World!</h1>
     <p>This is my first web page!</p>
-    <p style="color: #f00">This is a red text.</p>
-    <p style="color: #0f0">This is a green text.</p>
-    <p style="color: #00f">This is a blue text.</p>
 </body>
 </html>

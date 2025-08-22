@@ -22,12 +22,6 @@ body {
     background-image: url('./Sources/logo-black.png');
 }
 
-@media (prefers-color-scheme: dark) {
-    .x-button {
-        background-image: url('./Sources/logo-white.png');
-    }
-}
-
 .github-button {
     height: 50px;
     width: 50px;
@@ -41,6 +35,9 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
+    .x-button {
+        background-image: url('./Sources/logo-white.png');
+    }
     .github-button {
         background-image: url('./Sources/github-mark-white.svg');
     }

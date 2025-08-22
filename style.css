@@ -23,6 +23,6 @@ body {
 
 @media (prefers-color-scheme: dark) {
     .x-button {
-        background-image: url('./Sources/logo-white.png');
+        filter : invert(100%);
     }
 }

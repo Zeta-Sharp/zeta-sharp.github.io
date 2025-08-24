@@ -1,4 +1,4 @@
-let isJapanese = navigator.language.startsWith('ja');
+var isJapanese = navigator.language.startsWith('ja');
 let texts
 const languageButton = document.querySelector('.language-button');
 
@@ -24,6 +24,7 @@ languageButton.addEventListener('click', () => {
 });
 
 function updateLanguage() {
+    if (!texts) return;
     const lang = isJapanese ? 'ja' : 'en';
     languageButton.textContent = texts['languageButton'][lang];
     greetingElement.textContent = texts['greeting'][lang];
@@ -43,3 +44,5 @@ xButton.addEventListener('click', () => {
 githubButton.addEventListener('click', () => {
     location.href = 'https://github.com/Zeta-Sharp';
 });
+
+loadLanguageFile();

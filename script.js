@@ -25,12 +25,12 @@ languageButton.addEventListener('click', () => {
 
 function updateLanguage() {
     const lang = isJapanese ? 'ja' : 'en';
-    languageButton.textContent = texts[lang]['languageButton'];
-    greetingElement.textContent = texts[lang]['greeting'];
-    profileParagraphs[0].textContent = texts[lang]['profileParagraph1'];
-    profileParagraphs[1].textContent = texts[lang]['profileParagraph2'];
-    projectsDiscription1.childNodes[1].nodeValue = texts[lang]['projectsDescription1'];
-    projectsDiscription2.childNodes[1].nodeValue = texts[lang]['projectsDescription2'];
+    languageButton.textContent = texts['languageButton'][lang];
+    greetingElement.textContent = texts['greeting'][lang];
+    profileParagraphs[0].textContent = texts['profileParagraph1'][lang];
+    profileParagraphs[1].textContent = texts['profileParagraph2'][lang];
+    projectsDiscription1.childNodes[1].nodeValue = texts['projectsDescription1'][lang];
+    projectsDiscription2.childNodes[1].nodeValue = texts['projectsDescription2'][lang];
 }
 
 const xButton = document.querySelector('.x-button');

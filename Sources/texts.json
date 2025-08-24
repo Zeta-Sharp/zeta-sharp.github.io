@@ -1,0 +1,20 @@
+{
+    "languageButton": {
+        "en": "日本語に切り替え", "ja": "Switch to English"
+        },
+    "greeting": {
+        "en": "Hi, I'm Ζ#.", "ja": "こんにちは、Ζ#です。"
+        },
+    "profileParagraph1": {
+        "en": "I'm a hobbyist engineer, and stationery lover.", "ja": "趣味でエンジニアをやっている文房具好きです。"
+        },
+    "profileParagraph2": {
+        "en": "I mainly write Python, and sometimes make games with Unity.", "ja": "主にPythonでツールを作成し、たまにUnityでゲームを作っています。"
+        },
+    "projectsDescription1":{
+        "en": " - a project aimed to better Python project management.", "ja": " - Python製のプロジェクト管理をより良くすることを目指したプロジェクトです。"
+        },
+    "projectsDescription2":{
+        "en": " - a Unity project of a simple board game.", "ja": " - シンプルなボードゲームのUnityプロジェクトです。"
+        }
+}

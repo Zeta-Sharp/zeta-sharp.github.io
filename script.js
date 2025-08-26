@@ -1,3 +1,4 @@
+const htmlTag = document.querySelector('html');
 let isJapanese = navigator.language.startsWith('ja');
 let texts
 const languageButton = document.querySelector('.language-button');
@@ -29,6 +30,7 @@ languageButton.addEventListener('click', () => {
 function updateLanguage() {
     if (!texts) return;
     const lang = isJapanese ? 'ja' : 'en';
+    htmlTag.setAttribute('lang', lang);
     languageButton.textContent = texts['languageButton'][lang];
     greetingElement.textContent = texts['greeting'][lang];
     for (let i = 0; i < profileParagraphs.length; i++) {

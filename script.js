@@ -41,10 +41,10 @@ function updateLanguage() {
         skilltreeParagraphs_unity_csharp[i].textContent = texts['skilltreeparagraphs_unity'][lang][i];
     }
     for (let i=0; i < skilltreeParagraphs_html_css_javascript.length; i++){
-        skilltreeParagraphs_html_css_javascript[i].textContent = texts['skilltreeparagraphs_html-css-javascript'][lang][i];
+        skilltreeParagraphs_html_css_javascript[i].textContent = texts['skilltreeparagraphs_html_css_javascript'][lang][i];
     }
     for (let i=0; i < skilltreeParagraphs_git_github.length; i++){
-        skilltreeParagraphs_git_github[i].textContent = texts['skilltreeparagraphs_git-github'][lang][i];
+        skilltreeParagraphs_git_github[i].textContent = texts['skilltreeparagraphs_git_github'][lang][i];
     }
     projectsDiscriptions[0].childNodes[1].nodeValue = texts['projectsDescription_pyproma'][lang];
     projectsDiscriptions[1].childNodes[1].nodeValue = texts['projectsDescription_multiplyplus'][lang];

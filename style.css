@@ -9,13 +9,12 @@ body {
         .language-button {
             margin-left: auto;
             height: 50px;
-            width: 50px;
+            width: 500px;
             border: none;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
-            background-color: transparent;
         }
     }
     .icon {

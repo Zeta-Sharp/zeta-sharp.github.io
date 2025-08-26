@@ -34,7 +34,6 @@ body {
     .tools-box {
         display: flex;
         overflow-x: auto;
-        flex-wrap: wrap;
         overscroll-behavior-x: contain;
         padding: 10px;
         gap: 20px;

@@ -19,7 +19,7 @@ const skilltreeParagraphs_python = document.querySelectorAll('.python p');
 const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.unity-csharp p');
 const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.html-css-javascript p');
 const skilltreeParagraphs_git_github = document.querySelectorAll('.git-github p');
-const projectsDiscriptions = document.querySelectorAll('.projects li:nth-child()');
+const projectsDiscriptions = document.querySelectorAll('.projects li');
 
 languageButton.addEventListener('click', () => {
     isJapanese = !isJapanese;

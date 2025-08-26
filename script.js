@@ -15,8 +15,11 @@ async function loadLanguageFile() {
 
 const greetingElement = document.querySelector('.profile h1');
 const profileParagraphs = document.querySelectorAll('.profile p');
-const projectsDiscription1 = document.querySelector('.projects li:nth-child(1)');
-const projectsDiscription2 = document.querySelector('.projects li:nth-child(2)');
+const skilltreeParagraphs_python = document.querySelectorAll('.python p');
+const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.unity-csharp p');
+const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.html-css-javascript p');
+const skilltreeParagraphs_git_github = document.querySelectorAll('.git-github p');
+const projectsDiscriptions = document.querySelectorAll('.projects li:nth-child()');
 
 languageButton.addEventListener('click', () => {
     isJapanese = !isJapanese;
@@ -28,10 +31,34 @@ function updateLanguage() {
     const lang = isJapanese ? 'ja' : 'en';
     languageButton.textContent = texts['languageButton'][lang];
     greetingElement.textContent = texts['greeting'][lang];
-    profileParagraphs[0].textContent = texts['profileParagraph1'][lang];
-    profileParagraphs[1].textContent = texts['profileParagraph2'][lang];
-    projectsDiscription1.childNodes[1].nodeValue = texts['projectsDescription1'][lang];
-    projectsDiscription2.childNodes[1].nodeValue = texts['projectsDescription2'][lang];
+    for (let i = 0; i < profileParagraphs.length; i++) {
+        profileParagraphs[i].textContent = texts['profileParagraphs'][lang][i];
+    }
+    for (let i = 0; i < skilltreeParagraphs_python.length; i++) {
+        skilltreeParagraphs_python[i].textContent = texts['skilltreeparagraphs_python'][lang][i];
+    }
+    for (let i=0; i < skilltreeParagraphs_unity_csharp.length; i++){
+        skilltreeParagraphs_unity_csharp[i].textContent = texts['skilltreeparagraphs_unity'][lang][i];
+    }
+    for (let i=0; i < skilltreeParagraphs_html_css_javascript.length; i++){
+        skilltreeParagraphs_html_css_javascript[i].textContent = texts['skilltreeparagraphs_html-css-javascript'][lang][i];
+    }
+    for (let i=0; i < skilltreeParagraphs_git_github.length; i++){
+        skilltreeParagraphs_git_github[i].textContent = texts['skilltreeparagraphs_git-github'][lang][i];
+    }
+    projectsDiscriptions[0].childNodes[1].nodeValue = texts['projectsDescription_pyproma'][lang];
+    projectsDiscriptions[1].childNodes[1].nodeValue = texts['projectsDescription_multiplyplus'][lang];
+}
+
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+const unityIcon = document.querySelector('.unity-icon')
+
+function changeIcons(mediaQuery){
+    if (mediaQuery.matches) {
+        unityIcon.src = "./Sources/U_Logo_Small_White_RGB_1C.svg";
+    } else {
+        unityIcon.src = "./Sources/U_Logo_Small_Black_RGB_1C.svg";
+    }
 }
 
 const xButton = document.querySelector('.x-button');
@@ -46,3 +73,5 @@ githubButton.addEventListener('click', () => {
 });
 
 loadLanguageFile();
+changeIcons(prefersDark);
+prefersDark.addEventListener('change', changeIcons);

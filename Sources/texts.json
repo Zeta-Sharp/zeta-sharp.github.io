@@ -5,16 +5,25 @@
     "greeting": {
         "en": "Hi, I'm Ζ#.", "ja": "こんにちは、Ζ#です。"
         },
-    "profileParagraph1": {
-        "en": "I'm a hobbyist engineer, and stationery lover.", "ja": "趣味でエンジニアをやっている文房具好きです。"
+    "profileParagraphs": {
+        "en": ["I'm a hobbyist engineer, and stationery lover.", "I mainly write Python, and sometimes make games with Unity."], "ja": ["趣味でエンジニアをやっている文房具好きです。", "主にPythonでツールを作成し、たまにUnityでゲームを作っています。"]
         },
-    "profileParagraph2": {
-        "en": "I mainly write Python, and sometimes make games with Unity.", "ja": "主にPythonでツールを作成し、たまにUnityでゲームを作っています。"
+    "skilltreeparagraphs_python": {
+        "en":["My main programming language. I use this for multiple purposes.", "I'm currently learning TensorFlow(Keras) and Flask."], "ja":["主に使用しているプログラミング言語。様々な用途で使用しています。", "現在、TensorFlow(Keras)とFlaskを学習中です。"]
         },
-    "projectsDescription1":{
+    "skilltreeparagraphs_unity_csharp": {
+        "en":["I sometimes use this for making simple games.", "I'm also learning Unity Sentis and Blender."], "ja":["たまにゲーム作りをするときに使用する言語。", "Unity Sentis、Blenderも学習中。"]
+        },
+    "skilltreeparagraphs_html_css_javascript": {
+        "en":["I use these for make this page.", "Maybe, this page only."], "ja":["このページを作るために使用している言語。", "多分、このページだけ。"]
+        },
+    "skilltreeparagraphs_git_github": {
+        "en":["Needless to say, I use Git and GitHub for version control and sharing my projects.", "Without them, I can't do anything."], "ja":["言うまでもなく、バージョン管理とプロジェクト共有のためにGitとGitHubを使用しています。", "これらがなければ、何もできません。"]
+        },
+    "projectsDescription_pyproma":{
         "en": " - a project aimed to better Python project management.", "ja": " - Python製のプロジェクト管理をより良くすることを目指したプロジェクトです。"
         },
-    "projectsDescription2":{
+    "projectsDescription_multiplyplus":{
         "en": " - a Unity project of a simple board game.", "ja": " - シンプルなボードゲームのUnityプロジェクトです。"
         }
 }

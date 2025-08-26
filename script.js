@@ -1,4 +1,4 @@
-var isJapanese = navigator.language.startsWith('ja');
+let isJapanese = navigator.language.startsWith('ja');
 let texts
 const languageButton = document.querySelector('.language-button');
 

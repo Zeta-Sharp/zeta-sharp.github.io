@@ -30,17 +30,37 @@ body {
     }
 }
 
-.skilltreeparagraphs_python .python-icon{
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-    filter: grayscale(0%);
-}
-
-@media (prefers-color-scheme: dark)
-{
-    .skilltreeparagraphs_python .python-icon {
-        filter: grayscale(100%);
+.skill-tree{
+    .tools-box {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: wrap;
+        overscroll-behavior-x: contain;
+        padding: 10px;
+        gap: 20px;
+        justify-content: center;
+        .python, .unity-csharp, .html-css-javascript, .git-github {
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            @media (prefers-color-scheme: dark) {
+                border: 2px solid #fff;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            h3 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            p {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+        }
     }
 }
 

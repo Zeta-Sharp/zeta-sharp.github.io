@@ -5,11 +5,10 @@ body {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 20px;
         .language-button {
             margin-left: auto;
-            height: 50px;
-            width: 300px;
+            height: 30px;
+            width: 170px;
             border: none;
             background-size: cover;
             background-repeat: no-repeat;

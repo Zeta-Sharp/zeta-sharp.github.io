@@ -14,7 +14,8 @@ async function loadLanguageFile() {
     }
 }
 
-const greetingElement = document.querySelector('.profile h1');
+const firstH1 = document.querySelector('.profile h1');
+const greetingElement = document.querySelector('.profile h2');
 const profileParagraphs = document.querySelectorAll('.profile p');
 const skilltreeParagraphs_python = document.querySelectorAll('.python p');
 const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.unity-csharp p');
@@ -31,6 +32,7 @@ function updateLanguage() {
     if (!texts) return;
     const lang = isJapanese ? 'ja' : 'en';
     htmlTag.setAttribute('lang', lang);
+    firstH1.textContent = texts['h1'][lang];
     languageButton.textContent = texts['languageButton'][lang];
     greetingElement.textContent = texts['greeting'][lang];
     for (let i = 0; i < profileParagraphs.length; i++) {

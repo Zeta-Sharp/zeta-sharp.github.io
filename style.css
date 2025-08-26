@@ -30,16 +30,17 @@ body {
     }
 }
 
-.skilltreeparagraphs_python{
-    .python-icon{
-        width: 30px;
-        height: 30px;
-        vertical-align: middle;
-        filter: grayscale(0%) invert(0%);
-        @media (prefers-color-scheme: dark)
-        {
-            filter: grayscale(100%) invert(100%);
-        }
+.skilltreeparagraphs_python .python-icon{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    filter: grayscale(0%);
+}
+
+@media (prefers-color-scheme: dark)
+{
+    .skilltreeparagraphs_python .python-icon {
+        filter: grayscale(100%);
     }
 }
 

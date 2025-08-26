@@ -59,6 +59,10 @@ body {
                 margin: 5px 0;
                 font-size: 14px;
             }
+            .html-css-javascript-icon, .git-github-icon {
+                display: flex;
+                justify-content: center;
+            }
         }
     }
 }

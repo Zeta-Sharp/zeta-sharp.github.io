@@ -52,12 +52,24 @@ function updateLanguage() {
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 const unityIcon = document.querySelector('.unity-icon')
+const htmlIcon = document.querySelector('.html-icon')
+const cssIcon = document.querySelector('.css-icon')
+const gitIcon = document.querySelector('.git-icon')
+const githubIcon = document.querySelector('.github-icon')
 
 function changeIcons(mediaQuery){
     if (mediaQuery.matches) {
         unityIcon.src = "./Sources/U_Logo_Small_White_RGB_1C.svg";
+        htmlIcon.src = "./Sources/HTML5_1Color_White.svg";
+        cssIcon.src = "./Sources/css_white.png";
+        gitIcon.src = "./Sources/Git-Icon-White.svg";
+        githubIcon.src = "./Sources/github-mark-white.svg";
     } else {
         unityIcon.src = "./Sources/U_Logo_Small_Black_RGB_1C.svg";
+        htmlIcon.src = "./Sources/HTML5_Logo.svg";
+        cssIcon.src = "./Sources/css.png";
+        gitIcon.src = "./Sources/Git-Icon-1788C.svg";
+        githubIcon.src = "./Sources/github-mark.svg";
     }
 }
 

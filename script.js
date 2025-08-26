@@ -38,7 +38,7 @@ function updateLanguage() {
         skilltreeParagraphs_python[i].textContent = texts['skilltreeparagraphs_python'][lang][i];
     }
     for (let i=0; i < skilltreeParagraphs_unity_csharp.length; i++){
-        skilltreeParagraphs_unity_csharp[i].textContent = texts['skilltreeparagraphs_unity'][lang][i];
+        skilltreeParagraphs_unity_csharp[i].textContent = texts['skilltreeparagraphs_unity_csharp'][lang][i];
     }
     for (let i=0; i < skilltreeParagraphs_html_css_javascript.length; i++){
         skilltreeParagraphs_html_css_javascript[i].textContent = texts['skilltreeparagraphs_html_css_javascript'][lang][i];

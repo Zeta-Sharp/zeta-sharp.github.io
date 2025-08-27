@@ -73,11 +73,11 @@ body {
             @media (prefers-color-scheme: dark) {
                 border: 2px solid #fff;
             }
-            img .python-icon, .unity-icon{
+            .python-icon, .unity-icon{
                 max-width: 150px;
                 height: auto;
             }
-            img .html-icon, .css-icon, .javascript-icon, .git-icon, .github-icon {
+            .html-icon, .css-icon, .javascript-icon, .git-icon, .github-icon {
                 max-width: 50px;
                 height: auto;
                 margin: 0 5px;

@@ -58,9 +58,9 @@ body {
 
 .skill-tree{
     width: 100%;
+    max-width: 100vw;
     .tools-box {
         width: 100%;
-        max-width: 100vw;
         display: flex;
         overflow-x: auto;
         overscroll-behavior-x: contain;

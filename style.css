@@ -95,22 +95,6 @@ body {
                 justify-content: center;
             }
         }
-        @media (max-width: 768px) {
-            flex-wrap: wrap;
-            overflow-x: visible;
-            overscroll-behavior-x: auto;
-            justify-content: flex-start;
-            padding: 10px 0;
-
-            .tools-box > div {
-                width: calc(50% - 10px);
-            }
-
-            .python, .unity-csharp,
-            .html-css-javascript, .git-github {
-                margin: 5px;
-            }
-        }
     }
 }
 

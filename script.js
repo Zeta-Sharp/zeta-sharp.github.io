@@ -63,17 +63,17 @@ const githubIcon = document.querySelector('.github-icon')
 
 function changeIcons(mediaQuery){
     if (mediaQuery.matches) {
-        unityIcon.src = "./Sources/U_Logo_Small_White_RGB_1C.svg";
-        htmlIcon.src = "./Sources/HTML5_1Color_White.svg";
-        cssIcon.src = "./Sources/css_white.png";
-        gitIcon.src = "./Sources/Git-Icon-White.svg";
-        githubIcon.src = "./Sources/github-mark-white.svg";
+        unityIcon.src = "./Sources/Icons/U_Logo_Small_White_RGB_1C.svg";
+        htmlIcon.src = "./Sources/Icons/HTML5_1Color_White.svg";
+        cssIcon.src = "./Sources/Icons/css_white.png";
+        gitIcon.src = "./Sources/Icons/Git-Icon-White.svg";
+        githubIcon.src = "./Sources/Icons/github-mark-white.svg";
     } else {
-        unityIcon.src = "./Sources/U_Logo_Small_Black_RGB_1C.svg";
-        htmlIcon.src = "./Sources/HTML5_Logo.svg";
-        cssIcon.src = "./Sources/css.png";
-        gitIcon.src = "./Sources/Git-Icon-1788C.svg";
-        githubIcon.src = "./Sources/github-mark.svg";
+        unityIcon.src = "./Sources/Icons/U_Logo_Small_Black_RGB_1C.svg";
+        htmlIcon.src = "./Sources/Icons/HTML5_Logo.svg";
+        cssIcon.src = "./Sources/Icons/css.png";
+        gitIcon.src = "./Sources/Icons/Git-Icon-1788C.svg";
+        githubIcon.src = "./Sources/Icons/github-mark.svg";
     }
 }
 

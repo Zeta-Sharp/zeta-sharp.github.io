@@ -77,7 +77,7 @@ body {
         background-position: center;
         cursor: pointer;
         background-color: transparent;
-        background-image: url('./Sources/logo-black.png');
+        background-image: url('./Sources/Icons/logo-black.png');
     }
 
     .github-button {
@@ -89,15 +89,15 @@ body {
         background-position: center;
         cursor: pointer;
         background-color: transparent;
-        background-image: url('./Sources/github-mark.svg');
+        background-image: url('./Sources/Icons/github-mark.svg');
     }
 
     @media (prefers-color-scheme: dark) {
         .x-button {
-            background-image: url('./Sources/logo-white.png');
+            background-image: url('./Sources/Icons/logo-white.png');
         }
         .github-button {
-            background-image: url('./Sources/github-mark-white.svg');
+            background-image: url('./Sources/Icons/github-mark-white.svg');
         }
     }
 }

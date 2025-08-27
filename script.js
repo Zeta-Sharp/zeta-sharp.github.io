@@ -22,6 +22,8 @@ const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.unity-cshar
 const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.html-css-javascript p');
 const skilltreeParagraphs_git_github = document.querySelectorAll('.git-github p');
 const projectsDiscriptions = document.querySelectorAll('.projects li');
+const contactsParagraph_x = document.querySelector('.sns-x p');
+const contactsParagraph_github = document.querySelector('.sns-github p');
 
 languageButton.addEventListener('click', () => {
     isJapanese = !isJapanese;
@@ -52,6 +54,8 @@ function updateLanguage() {
     }
     projectsDiscriptions[0].childNodes[1].nodeValue = texts['projectsDescription_pyproma'][lang];
     projectsDiscriptions[1].childNodes[1].nodeValue = texts['projectsDescription_multiplyplus'][lang];
+    contactsParagraph_x.textContent = texts['sns_x'][lang];
+    contactsParagraph_github.textContent = texts['sns_github'][lang];
 }
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');

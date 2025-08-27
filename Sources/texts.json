@@ -28,5 +28,11 @@
         },
     "projectsDescription_multiplyplus":{
         "en": " - a Unity project of a simple board game.", "ja": " - シンプルなボードゲームのUnityプロジェクトです。"
-        }
+        },
+    "sns_x": {
+        "en": " - I usually post daily inspirations, and photos of stationery.", "ja": " - 日々のインスピレーションや文房具の写真を投稿しています。"
+        },
+    "sns_github": {
+        "en": " - I mainly share my projects, and sometimes star interesting repositories.", "ja": " - 主に自分のプロジェクトを共有し、たまに面白いリポジトリにスターを付けています。"
+    }
 }

@@ -22,7 +22,7 @@ const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.unity-cshar
 const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.html-css-javascript p');
 const skilltreeParagraphs_git_github = document.querySelectorAll('.git-github p');
 const projectsDiscriptions = document.querySelectorAll('.projects li');
-const contactsParagraph_x = document.querySelector('.sns-x p');
+const contactsParagraph_x = document.querySelector('.sns-twitter p');
 const contactsParagraph_github = document.querySelector('.sns-github p');
 
 languageButton.addEventListener('click', () => {

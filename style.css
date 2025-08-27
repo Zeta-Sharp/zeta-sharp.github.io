@@ -4,7 +4,7 @@ body {
     margin: 0;
     height: 100%;
     .header {
-        padding: 0px, 10px;
+        padding: 0px 20px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -73,9 +73,14 @@ body {
             @media (prefers-color-scheme: dark) {
                 border: 2px solid #fff;
             }
-            img {
-                max-width: 100%;
+            img .python-icon, .unity-icon{
+                max-width: 150px;
                 height: auto;
+            }
+            img .html-icon, .css-icon, .javascript-icon, .git-icon, .github-icon {
+                max-width: 50px;
+                height: auto;
+                margin: 0 5px;
             }
             h3 {
                 margin-top: 10px;

@@ -20,12 +20,28 @@ body {
     .h1{
         margin-left: 20px;
     }
-    .language-button {
+    .language-button-icon {
         margin-left: auto;
+        margin-right: 10px;
+        height: 30px;
+        width: 30px;
+        border: none;
+        background-color: transparent;
+        background-image: url('./Sources/Icons/AdobeStock_558900896.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        @media(prefers-color-scheme: dark) {
+            filter: invert(1);
+        }
+    }
+    .language-button {
         margin-right: 40px;
         height: 30px;
         width: 170px;
         border: none;
+        background-color: transparent;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;

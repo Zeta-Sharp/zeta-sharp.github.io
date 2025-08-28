@@ -118,6 +118,7 @@ body {
         align-items: center;
         justify-content: center;
         gap: 20px;
+        flex-wrap: nowrap;
         p {
             margin: 5px 0;
             text-align: left;

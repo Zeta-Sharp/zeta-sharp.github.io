@@ -153,12 +153,12 @@ body {
         background-position: center;
         cursor: pointer;
         background-color: transparent;
-        .x-button{
-            background-image: url('./Sources/Icons/logo-black.png');
-        }
-        .github-button {
-            background-image: url('./Sources/Icons/github-mark.svg');
-        }
+    }
+    .x-button{
+        background-image: url('./Sources/Icons/logo-black.png');
+    }
+    .github-button {
+        background-image: url('./Sources/Icons/github-mark.svg');
     }
 
     @media (prefers-color-scheme: dark) {

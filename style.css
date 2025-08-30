@@ -124,7 +124,7 @@ body {
             width: auto;
             text-align: center;
             flex-shrink: 0;
-            @media  (prefers-color-scheme: dark) {
+            @media (prefers-color-scheme: dark) {
                 border: 2px solid #fff;
             }
             .python-icon, .unity-icon{
@@ -136,11 +136,11 @@ body {
                 height: auto;
                 margin: 0 5px;
             }
-            h3 {
+            & h3 {
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
-            p {
+            & p {
                 margin: 5px 0;
                 font-size: 14px;
             }
@@ -163,7 +163,7 @@ body {
         justify-content: center;
         gap: 20px;
         flex-wrap: nowrap;
-        p {
+        & p {
             margin: 5px 0;
             text-align: left;
         }
@@ -185,7 +185,7 @@ body {
         background-image: url('./Sources/Icons/github-mark.svg');
     }
 
-    @media  (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
         .x-button {
             background-image: url('./Sources/Icons/logo-white.png');
         }

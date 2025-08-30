@@ -83,8 +83,11 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     padding-left: 25vw;
-    @media (max-width: 768px) {
-        padding-left: 0;
+}
+
+@media (max-width: 768px) {
+    .contents{
+    padding-left: 0;
     }
 }
 

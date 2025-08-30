@@ -10,20 +10,24 @@ body {
     background-position: left center;
     background-size: auto 100%;
     background-attachment: fixed;
-    @media (prefers-color-scheme: dark) {
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #fff;
+        background-color: #000;
         background-image: url('./Sources/background_black.svg');
     }
-    @media (max-width: 768px) {
-        p, h1, h2, h3 {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
+}
+@media (max-width: 768px) {
+    p, h1, h2, h3 {
+        background-color: rgba(255, 255, 255, 0.5);
     }
-    @media (max-width: 768px) and (prefers-color-scheme: dark) {
-        p, h1, h2, h3 {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+}
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    p, h1, h2, h3 {
+        background-color: rgba(0, 0, 0, 0.5);
     }
-    
 }
 
 .header {
@@ -71,14 +75,6 @@ body {
         @media (prefers-color-scheme: dark) {
             color: #fff;
         }
-    }
-}
-
-@media  (prefers-color-scheme: dark)
-{
-    body {
-        background-color: #000;
-        color: #fff;
     }
 }
 

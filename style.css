@@ -42,7 +42,7 @@ body {
         width: 50px;
         height: 50px;
     }
-    .h1{
+    .h1 {
         margin-left: 20px;
     }
     .language-button-icon {
@@ -78,7 +78,7 @@ body {
     }
 }
 
-.contents{
+.contents {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
@@ -105,7 +105,7 @@ body {
 }
 
 
-.skill-tree{
+.skill-tree {
     width: 100%;
     max-width: 100vw;
     .tools-box {
@@ -127,7 +127,7 @@ body {
             @media (prefers-color-scheme: dark) {
                 border: 2px solid #fff;
             }
-            .python-icon, .unity-icon{
+            .python-icon, .unity-icon {
                 max-width: 150px;
                 height: auto;
             }
@@ -152,7 +152,7 @@ body {
     }
 }
 
-.contacts{
+.contacts {
     .sns-twitter, .sns-github {
         padding: 10px;
         width: auto;
@@ -168,7 +168,7 @@ body {
             text-align: left;
         }
     }
-    .x-button, .github-button{
+    .x-button, .github-button {
         height: 50px;
         width: 50px;
         border: none;
@@ -178,7 +178,7 @@ body {
         cursor: pointer;
         background-color: transparent;
     }
-    .x-button{
+    .x-button {
         background-image: url('./Sources/Icons/logo-black.png');
     }
     .github-button {

@@ -21,7 +21,7 @@
         "en":["I use these for make this page.", "Maybe, this page only."], "ja":["このページを作るために使用している言語。", "多分、このページだけ。"]
         },
     "skilltreeparagraphs_git_github": {
-        "en":["Needless to say, I use Git and GitHub for version control and sharing my projects.", "Without them, I can't do anything."], "ja":["バージョン管理とプロジェクト共有のためにGitとGitHubを使用しています。", "これらがなければ、何もできません。"]
+        "en":["I use Git and GitHub for version control and sharing my projects.", "Without them, I can't do anything."], "ja":["バージョン管理とプロジェクト共有のためにGitとGitHubを使用しています。", ""]
         },
     "projectsDescription_pyproma":{
         "en": " - a project aimed to better Python project management.", "ja": " - Python製のプロジェクト管理をより良くすることを目指したプロジェクトです。"

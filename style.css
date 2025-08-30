@@ -3,6 +3,14 @@ body {
     color: #000;
     margin: 0;
     overflow-x: hidden;
+    background-image: url('./Sources/background.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    @media(prefers-color-scheme: dark) {
+        background-image: url('./Sources/background_black.svg');
+    }
 }
 
 .header {
@@ -65,6 +73,7 @@ body {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    padding-left: 25vw;
 }
 
 .profile, .skill-tree, .projects, .contacts {

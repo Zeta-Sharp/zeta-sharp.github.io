@@ -39,7 +39,7 @@ body {
         font-size: 1.2rem;
     }
     @media (prefers-color-scheme: dark) {
-        p, h1, h2, h3 li {
+        p, h1, h2, h3, li {
             background-color: rgba(0, 0, 0, 0.5);
         }
     }

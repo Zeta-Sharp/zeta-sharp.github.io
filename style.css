@@ -20,7 +20,7 @@ body {
     }
 }
 @media (max-width: 768px) {
-    p, h1, h2, h3 {
+    p, h1, h2, h3, li {
         background-color: rgba(255, 255, 255, 0.5);
     }
     p {
@@ -35,8 +35,11 @@ body {
     h3 {
         font-size: 1.3rem;
     }
+    li {
+        font-size: 1.2rem;
+    }
     @media (prefers-color-scheme: dark) {
-        p, h1, h2, h3 {
+        p, h1, h2, h3 li {
             background-color: rgba(0, 0, 0, 0.5);
         }
     }

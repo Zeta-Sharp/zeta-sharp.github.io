@@ -73,7 +73,8 @@ body {
             border-right: none;
             border-top: none;
             border-bottom: none;
-            height: 50px
+            width: 100px;
+            height: 50px;
         }
         & button:last-child {
             border-right: 2px solid rgba(0, 0, 0, 0.5);

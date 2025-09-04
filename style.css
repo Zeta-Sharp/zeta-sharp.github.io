@@ -124,8 +124,10 @@ body {
 }
 
 @media (max-width: 768px) {
-    .scroll-buttons &button{
-        display: none;
+    .scroll-buttons{
+        &button {
+            display: none;
+        }
     }
 }
 
@@ -206,11 +208,17 @@ body {
     }
 }
 
+.projects{
+    &li {
+        text-align: left;
+    }
+}
+
 .contacts {
     .sns-twitter, .sns-github {
         padding: 10px;
         width: auto;
-        text-align: center;
+        text-align: left;
         margin: 10px 0;
         display: flex;
         align-items: center;

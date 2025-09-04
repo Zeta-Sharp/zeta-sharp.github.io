@@ -88,6 +88,14 @@ function changeIcons(mediaQuery){
 
 const xButton = document.querySelector('.x-button');
 const githubButton = document.querySelector('.github-button');
+const profileButton = document.querySelector('.profile-button');
+const profileSection = document.querySelector('.profile');
+const skillTreeButton = document.querySelector('.skill-tree-button');
+const skillTreeSection = document.querySelector('.skill-tree');
+const projectsButton = document.querySelector('.projects-button');
+const projectsSection = document.querySelector('.projects');
+const contactsButton = document.querySelector('.contacts-button');
+const contactsSection = document.querySelector('.sns');
 
 xButton.addEventListener('click', () => {
     location.href = 'https://x.com/Zeta_Sharp';
@@ -95,6 +103,22 @@ xButton.addEventListener('click', () => {
 
 githubButton.addEventListener('click', () => {
     location.href = 'https://github.com/Zeta-Sharp';
+});
+
+profileButton.addEventListener('click', () => {
+    profileSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+skillTreeButton.addEventListener('click', () => {
+    skillTreeSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+projectsButton.addEventListener('click', () => {
+    projectsSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+contactsButton.addEventListener('click', () => {
+    contactsSection.scrollIntoView({ behavior: 'smooth' });
 });
 
 loadLanguageFile();

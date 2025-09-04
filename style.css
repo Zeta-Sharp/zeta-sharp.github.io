@@ -53,12 +53,23 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
     .icon {
         width: 50px;
         height: 50px;
     }
     .h1 {
         margin-left: 20px;
+    }
+    .scroll-buttons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 10px;
+        background-color: transparent;
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        border-top: none;
+        border-bottom: none;
     }
     .language-button-icon {
         margin-left: auto;
@@ -72,9 +83,6 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         cursor: pointer;
-        @media (prefers-color-scheme: dark) {
-            filter: invert(1);
-        }
     }
     .language-button {
         margin-right: 40px;
@@ -87,9 +95,24 @@ body {
         background-position: center;
         cursor: pointer;
         color: #000;
-        @media (prefers-color-scheme: dark) {
+    }
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba(0, 0, 0, 0.5);
+        .scroll-buttons{
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        .language-button-icon {
+            filter: invert(1);
+        }
+        .language-button {
             color: #fff;
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .scroll-buttons {
+        display: none;
     }
 }
 

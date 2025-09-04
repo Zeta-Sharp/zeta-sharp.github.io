@@ -95,7 +95,7 @@ const skillTreeSection = document.querySelector('.skill-tree');
 const projectsButton = document.querySelector('.projects-button');
 const projectsSection = document.querySelector('.projects');
 const contactsButton = document.querySelector('.contacts-button');
-const contactsSection = document.querySelector('.sns');
+const contactsSection = document.querySelector('.contacts');
 
 xButton.addEventListener('click', () => {
     location.href = 'https://x.com/Zeta_Sharp';

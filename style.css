@@ -76,6 +76,7 @@ body {
             border-bottom: none;
             width: 100px;
             height: 50px;
+            cursor: pointer;
         }
         & button:last-child {
             border-right: 2px solid rgba(0, 0, 0, 0.5);
@@ -206,6 +207,9 @@ body {
                 max-width: 80vw;
             }
         }
+    }
+    .tools-box::-webkit-scrollbar {
+        display: none;
     }
 }
 

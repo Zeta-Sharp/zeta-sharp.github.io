@@ -19,6 +19,7 @@ body {
         background-image: url('./Sources/background_black.svg');
     }
 }
+
 @media (max-width: 768px) {
     p, h1, h2, h3, li, img, button, :not(.header p1), :not(.header img) {
         background-color: rgba(255, 255, 255, 0.5);
@@ -38,10 +39,11 @@ body {
     li {
         font-size: 1.2rem;
     }
-    @media (prefers-color-scheme: dark) {
-        p, h1, h2, h3, li, img, button, :not(.header p1), :not(.header img) {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+}
+
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    p, h1, h2, h3, li, img, button, :not(.header p1), :not(.header img) {
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -66,7 +68,7 @@ body {
         display: flex;
         align-items: center;
         margin-left: 10px;
-        & button {
+        button {
             color : #000;
             background-color: transparent;
             border-left: 2px solid rgba(0, 0, 0, 0.5);
@@ -78,7 +80,7 @@ body {
             height: 50px;
             cursor: pointer;
         }
-        & button:last-child {
+        button:last-child {
             border-right: 2px solid rgba(0, 0, 0, 0.5);
         }
     }
@@ -107,7 +109,10 @@ body {
         cursor: pointer;
         color: #000;
     }
-    @media (prefers-color-scheme: dark) {
+}
+
+@media (prefers-color-scheme: dark) {
+    .header{
         background-color: rgba(0, 0, 0, 0.5);
         .scroll-buttons button{
             color: #fff;
@@ -127,7 +132,7 @@ body {
 
 @media (max-width: 768px) {
     .scroll-buttons{
-        & button {
+        button {
             display: none;
         }
     }
@@ -191,11 +196,11 @@ body {
                 height: auto;
                 margin: 0 5px;
             }
-            & h3 {
+            h3 {
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
-            & p {
+            p {
                 margin: 5px 0;
                 font-size: 14px;
             }
@@ -213,13 +218,11 @@ body {
     }
 }
 
-.projects{
-    & li {
-        text-align: left;
-    }
+.projects li {
+    text-align: left;
 }
 
-.contacts .snss{
+.contacts .snss {
     display: flex;
     justify-content: flex-end;
     flex-direction: row-reverse;
@@ -234,7 +237,7 @@ body {
         justify-content: center;
         gap: 20px;
         flex-wrap: nowrap;
-        & p {
+        p {
             margin: 5px 0;
             text-align: left;
         }
@@ -257,13 +260,13 @@ body {
     .github-button {
         background-image: url('./Sources/Icons/github-mark.svg');
     }
+}
 
-    @media (prefers-color-scheme: dark) {
-        .x-button {
-            background-image: url('./Sources/Icons/logo-white.png');
-        }
-        .github-button {
-            background-image: url('./Sources/Icons/github-mark-white.svg');
-        }
+@media (prefers-color-scheme: dark) {
+    .contacts .snss .x-button {
+        background-image: url('./Sources/Icons/logo-white.png');
+    }
+    .contacts .snss .github-button {
+        background-image: url('./Sources/Icons/github-mark-white.svg');
     }
 }

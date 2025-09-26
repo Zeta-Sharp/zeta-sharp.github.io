@@ -1,28 +1,42 @@
+:root {
+    --clr-bg: #fff;
+    --clr-text: #000;
+    --clr-overlay: rgba(255, 255, 255, 0.5);
+    --clr-border: rgba(0, 0, 0, 0.5);
+    --img-bg: url('./Sources/background.svg');
+    --img-x-icon: url('./Sources/Icons/logo-black.png');
+    --img-github-icon: url('./Sources/Icons/github-mark.svg');
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-bg: #000;
+        --clr-text: #fff;
+        --clr-overlay: rgba(0, 0, 0, 0.5);
+        --clr-border: rgba(255, 255, 255, 0.5);
+        --img-bg: url('./Sources/background_black.svg');
+        --img-x-icon: url('./Sources/Icons/logo-white.png');
+        --img-github-icon: url('./Sources/Icons/github-mark-white.svg');
+    }
+}
+
 body {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
     height : 100vh;
     width: 100vw;
     margin: 0;
     overflow-x: hidden;
-    background-image: url('./Sources/background.svg');
+    background-image: var(--img-bg);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: auto 100%;
     background-attachment: fixed;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #fff;
-        background-color: #000;
-        background-image: url('./Sources/background_black.svg');
-    }
-}
-
 @media (max-width: 768px) {
     p, h1, h2, h3, li, img, button, :not(.header p1), :not(.header img) {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--clr-overlay);
     }
     p {
         font-size: 1.2rem;
@@ -41,12 +55,6 @@ body {
     }
 }
 
-@media (max-width: 768px) and (prefers-color-scheme: dark) {
-    p, h1, h2, h3, li, img, button, :not(.header p1), :not(.header img) {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-}
-
 .header {
     padding: 0px 20px;
     display: flex;
@@ -56,7 +64,7 @@ body {
     top: 0;
     width: 100%;
     max-width: 100vw;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--clr-overlay);
     .icon {
         width: 50px;
         height: 50px;
@@ -69,9 +77,9 @@ body {
         align-items: center;
         margin-left: 10px;
         button {
-            color : #000;
+            color : var(--clr-text);
             background-color: transparent;
-            border-left: 2px solid rgba(0, 0, 0, 0.5);
+            border-left: 2px solid var(--clr-border);
             border-radius: 5px;
             border-right: none;
             border-top: none;
@@ -81,7 +89,7 @@ body {
             cursor: pointer;
         }
         button:last-child {
-            border-right: 2px solid rgba(0, 0, 0, 0.5);
+            border-right: 2px solid var(--clr-border);
         }
     }
     .language-button-icon {
@@ -107,26 +115,13 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         cursor: pointer;
-        color: #000;
+        color: var(--clr-text);
     }
 }
 
 @media (prefers-color-scheme: dark) {
-    .header{
-        background-color: rgba(0, 0, 0, 0.5);
-        .scroll-buttons button{
-            color: #fff;
-            border-left: 2px solid rgba(255, 255, 255, 0.5);
-        }
-        .scroll-buttons button:last-child {
-            border-right: 2px solid rgba(255, 255, 255, 0.5);
-        }
-        .language-button-icon {
-            filter: invert(1);
-        }
-        .language-button {
-            color: #fff;
-        }
+    .header .language-button-icon {
+        filter: invert(1);
     }
 }
 
@@ -147,7 +142,7 @@ body {
 
 @media (max-width: 768px) {
     .contents{
-    padding-left: 0;
+        padding-left: 0;
     }
 }
 
@@ -164,7 +159,6 @@ body {
     font-size: 2rem;
 }
 
-
 .skill-tree {
     width: 100%;
     max-width: 100vw;
@@ -178,15 +172,12 @@ body {
         gap: 20px;
         justify-content: flex-start;
         .python, .unity-csharp, .html-css-javascript, .git-github {
-            border: 2px solid #000;
+            border: 2px solid var(--clr-text);
             border-radius: 10px;
             padding: 10px;
             width: auto;
             text-align: center;
             flex-shrink: 0;
-            @media (prefers-color-scheme: dark) {
-                border: 2px solid #fff;
-            }
             .python-icon, .unity-icon {
                 max-width: 150px;
                 height: auto;
@@ -255,18 +246,9 @@ body {
         background-color: transparent;
     }
     .x-button {
-        background-image: url('./Sources/Icons/logo-black.png');
+        background-image: var(--img-x-icon);
     }
     .github-button {
-        background-image: url('./Sources/Icons/github-mark.svg');
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .contacts .snss .x-button {
-        background-image: url('./Sources/Icons/logo-white.png');
-    }
-    .contacts .snss .github-button {
-        background-image: url('./Sources/Icons/github-mark-white.svg');
+        background-image: var(--img-github-icon);
     }
 }

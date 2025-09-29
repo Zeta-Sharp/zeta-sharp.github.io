@@ -5,7 +5,7 @@ const languageButton = document.querySelector('.language-button');
 const languageIconButton = document.querySelector('.language-button-icon');
 
 async function loadLanguageFile() {
-    try{
+    try {
         const responce = await fetch("./Sources/texts.json");
         texts = await responce.json();
         updateLanguage();
@@ -48,13 +48,13 @@ function updateLanguage() {
     for (let i = 0; i < skilltreeParagraphs_python.length; i++) {
         skilltreeParagraphs_python[i].textContent = texts['skilltreeparagraphs_python'][lang][i];
     }
-    for (let i=0; i < skilltreeParagraphs_unity_csharp.length; i++){
+    for (let i = 0; i < skilltreeParagraphs_unity_csharp.length; i++) {
         skilltreeParagraphs_unity_csharp[i].textContent = texts['skilltreeparagraphs_unity_csharp'][lang][i];
     }
-    for (let i=0; i < skilltreeParagraphs_html_css_javascript.length; i++){
+    for (let i = 0; i < skilltreeParagraphs_html_css_javascript.length; i++) {
         skilltreeParagraphs_html_css_javascript[i].textContent = texts['skilltreeparagraphs_html_css_javascript'][lang][i];
     }
-    for (let i=0; i < skilltreeParagraphs_git_github.length; i++){
+    for (let i = 0; i < skilltreeParagraphs_git_github.length; i++) {
         skilltreeParagraphs_git_github[i].textContent = texts['skilltreeparagraphs_git_github'][lang][i];
     }
     projectsDiscriptions[0].childNodes[1].nodeValue = texts['projectsDescription_pyproma'][lang];
@@ -70,7 +70,7 @@ const cssIcon = document.querySelector('.css-icon')
 const gitIcon = document.querySelector('.git-icon')
 const githubIcon = document.querySelector('.github-icon')
 
-function changeIcons(mediaQuery){
+function changeIcons(mediaQuery) {
     if (mediaQuery.matches) {
         unityIcon.src = "./Sources/Icons/U_Logo_Small_White_RGB_1C.svg";
         htmlIcon.src = "./Sources/Icons/HTML5_1Color_White.svg";

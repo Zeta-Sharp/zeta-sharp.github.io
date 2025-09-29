@@ -23,7 +23,7 @@
 body {
     background-color: var(--clr-bg);
     color: var(--clr-text);
-    height : 100vh;
+    height: 100vh;
     width: 100vw;
     margin: 0;
     overflow-x: hidden;
@@ -35,21 +35,35 @@ body {
 }
 
 @media (max-width: 768px) {
-    p, h1, h2, h3, li, img, button, :not(.header p1), :not(.header img) {
+
+    p,
+    h1,
+    h2,
+    h3,
+    li,
+    img,
+    button,
+    :not(.header p1),
+    :not(.header img) {
         background-color: var(--clr-overlay);
     }
+
     p {
         font-size: 1.2rem;
     }
+
     h1 {
         font-size: 2rem;
     }
+
     h2 {
         font-size: 1.5rem;
     }
+
     h3 {
         font-size: 1.3rem;
     }
+
     li {
         font-size: 1.2rem;
     }
@@ -65,19 +79,23 @@ body {
     width: 100%;
     max-width: 100vw;
     background-color: var(--clr-overlay);
+
     .icon {
         width: 50px;
         height: 50px;
     }
+
     .h1 {
         margin-left: 20px;
     }
+
     .scroll-buttons {
         display: flex;
         align-items: center;
         margin-left: 10px;
+
         button {
-            color : var(--clr-text);
+            color: var(--clr-text);
             background-color: transparent;
             border-left: 2px solid var(--clr-border);
             border-radius: 5px;
@@ -88,10 +106,12 @@ body {
             height: 50px;
             cursor: pointer;
         }
+
         button:last-child {
             border-right: 2px solid var(--clr-border);
         }
     }
+
     .language-button-icon {
         margin-left: auto;
         margin-right: 10px;
@@ -105,6 +125,7 @@ body {
         background-position: center;
         cursor: pointer;
     }
+
     .language-button {
         margin-right: 40px;
         height: 30px;
@@ -126,7 +147,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .scroll-buttons{
+    .scroll-buttons {
         button {
             display: none;
         }
@@ -141,12 +162,15 @@ body {
 }
 
 @media (max-width: 768px) {
-    .contents{
+    .contents {
         padding-left: 0;
     }
 }
 
-.profile, .skill-tree, .projects, .contacts {
+.profile,
+.skill-tree,
+.projects,
+.contacts {
     height: 100vh;
     scroll-snap-align: start;
     display: flex;
@@ -162,6 +186,7 @@ body {
 .skill-tree {
     width: 100%;
     max-width: 100vw;
+
     .tools-box {
         width: 100%;
         display: flex;
@@ -171,39 +196,56 @@ body {
         scroll-padding: 0 20px;
         gap: 20px;
         justify-content: flex-start;
-        .python, .unity-csharp, .html-css-javascript, .git-github {
+
+        .python,
+        .unity-csharp,
+        .html-css-javascript,
+        .git-github {
             border: 2px solid var(--clr-text);
             border-radius: 10px;
             padding: 10px;
             width: auto;
             text-align: center;
             flex-shrink: 0;
-            .python-icon, .unity-icon {
+
+            .python-icon,
+            .unity-icon {
                 max-width: 150px;
                 height: auto;
             }
-            .html-icon, .css-icon, .javascript-icon, .git-icon, .github-icon {
+
+            .html-icon,
+            .css-icon,
+            .javascript-icon,
+            .git-icon,
+            .github-icon {
                 max-width: 50px;
                 height: auto;
                 margin: 0 5px;
             }
+
             h3 {
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
+
             p {
                 margin: 5px 0;
                 font-size: 14px;
             }
-            .html-css-javascript-icon, .git-github-icon {
+
+            .html-css-javascript-icon,
+            .git-github-icon {
                 display: flex;
                 justify-content: center;
             }
+
             @media (max-width: 768px) {
                 max-width: 80vw;
             }
         }
     }
+
     .tools-box::-webkit-scrollbar {
         display: none;
     }
@@ -219,7 +261,9 @@ body {
     flex-direction: row-reverse;
     flex-wrap: wrap;
     align-content: center;
-    .sns-twitter, .sns-github {
+
+    .sns-twitter,
+    .sns-github {
         padding: 10px;
         width: auto;
         text-align: left;
@@ -228,12 +272,15 @@ body {
         justify-content: center;
         gap: 20px;
         flex-wrap: nowrap;
+
         p {
             margin: 5px 0;
             text-align: left;
         }
     }
-    .x-button, .github-button {
+
+    .x-button,
+    .github-button {
         max-width: 50px;
         max-height: 50px;
         width: 100%;
@@ -245,9 +292,11 @@ body {
         cursor: pointer;
         background-color: transparent;
     }
+
     .x-button {
         background-image: var(--img-x-icon);
     }
+
     .github-button {
         background-image: var(--img-github-icon);
     }

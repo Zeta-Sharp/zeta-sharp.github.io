@@ -1,38 +1,80 @@
 {
     "languageButton": {
-        "en": "En→日 日本語に切り替え", "ja": "日→En Switch to English"
-        },
+        "en": "En→日 日本語に切り替え",
+        "ja": "日→En Switch to English"
+    },
     "h1": {
-        "en": "From something troublesome, boring, or difficult to ideas", "ja": "面倒、退屈、難しいことからアイデアへ"
-        },
+        "en": "From something troublesome, boring, or difficult to ideas",
+        "ja": "面倒、退屈、難しいことからアイデアへ"
+    },
     "greeting": {
-        "en": "Hi, I'm Ζ#.", "ja": "こんにちは、Ζ#です。"
-        },
+        "en": "Hi, I'm Ζ#.",
+        "ja": "こんにちは、Ζ#です。"
+    },
     "profileParagraphs": {
-        "en": ["I'm a hobbyist engineer, and stationery lover.", "I mainly write Python, and sometimes make games with Unity."], "ja": ["趣味でエンジニアをやっている文房具好きです。", "主にPythonでツールを作成し、たまにUnityでゲームを作っています。"]
-        },
+        "en": [
+            "I'm a hobbyist engineer, and stationery lover.",
+            "I mainly write Python, and sometimes make games with Unity."
+        ],
+        "ja": [
+            "趣味でエンジニアをやっている文房具好きです。",
+            "主にPythonでツールを作成し、たまにUnityでゲームを作っています。"
+        ]
+    },
     "skilltreeparagraphs_python": {
-        "en":["My main programming language. I use this for multiple purposes.", "I'm currently learning TensorFlow(Keras) and Flask."], "ja":["主に使用しているプログラミング言語。様々な用途で使用しています。", "現在、TensorFlow(Keras)とFlaskを学習中です。"]
-        },
+        "en": [
+            "My main programming language. I use this for multiple purposes.",
+            "I'm currently learning TensorFlow(Keras) and Flask."
+        ],
+        "ja": [
+            "主に使用しているプログラミング言語。様々な用途で使用しています。",
+            "現在、TensorFlow(Keras)とFlaskを学習中です。"
+        ]
+    },
     "skilltreeparagraphs_unity_csharp": {
-        "en":["I sometimes use this for making simple games.", "I'm also learning Unity Sentis and Blender."], "ja":["たまにゲーム作りをするときに使用する言語。", "Unity Sentis、Blenderも学習中。"]
-        },
+        "en": [
+            "I sometimes use this for making simple games.",
+            "I'm also learning Unity Sentis and Blender."
+        ],
+        "ja": [
+            "たまにゲーム作りをするときに使用する言語。",
+            "Unity Sentis、Blenderも学習中。"
+        ]
+    },
     "skilltreeparagraphs_html_css_javascript": {
-        "en":["I use these for make this page.", "Maybe, this page only."], "ja":["このページを作るために使用している言語。", "多分、このページだけ。"]
-        },
+        "en": [
+            "I use these for make this page.",
+            "Maybe, this page only."
+        ],
+        "ja": [
+            "このページを作るために使用している言語。",
+            "多分、このページだけ。"
+        ]
+    },
     "skilltreeparagraphs_git_github": {
-        "en":["I use Git and GitHub for version control and sharing my projects.", "Without them, I can't do anything."], "ja":["バージョン管理とプロジェクト共有のためにGitとGitHubを使用しています。", ""]
-        },
-    "projectsDescription_pyproma":{
-        "en": " - a project aimed to better Python project management.", "ja": " - Python製のプロジェクト管理をより良くすることを目指したプロジェクトです。"
-        },
-    "projectsDescription_multiplyplus":{
-        "en": " - a Unity project of a simple board game.", "ja": " - シンプルなボードゲームのUnityプロジェクトです。"
-        },
+        "en": [
+            "I use Git and GitHub for version control and sharing my projects.",
+            "Without them, I can't do anything."
+        ],
+        "ja": [
+            "バージョン管理とプロジェクト共有のためにGitとGitHubを使用しています。",
+            ""
+        ]
+    },
+    "projectsDescription_pyproma": {
+        "en": " - a project aimed to better Python project management.",
+        "ja": " - Python製のプロジェクト管理をより良くすることを目指したプロジェクトです。"
+    },
+    "projectsDescription_multiplyplus": {
+        "en": " - a Unity project of a simple board game.",
+        "ja": " - シンプルなボードゲームのUnityプロジェクトです。"
+    },
     "sns_x": {
-        "en": " - I usually post daily inspirations, and photos of stationery.", "ja": " - 日々のインスピレーションや文房具の写真を投稿しています。"
-        },
+        "en": " - I usually post daily inspirations, and photos of stationery.",
+        "ja": " - 日々のインスピレーションや文房具の写真を投稿しています。"
+    },
     "sns_github": {
-        "en": " - I mainly share my projects, and sometimes star interesting repositories.", "ja": " - 主に自分のプロジェクトを共有し、たまに面白いリポジトリにスターを付けています。"
+        "en": " - I mainly share my projects, and sometimes star interesting repositories.",
+        "ja": " - 主に自分のプロジェクトを共有し、たまに面白いリポジトリにスターを付けています。"
     }
 }

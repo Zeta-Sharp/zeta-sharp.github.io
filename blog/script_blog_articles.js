@@ -14,7 +14,7 @@ let texts
 const languageButton = document.querySelector('.language-button');
 const languageButtonIcon = document.querySelector('.language-button-icon');
 const currentURL = window.location.href;
-const match = currentURL.match(/\/blog\/(\d{8})\.html/);
+const match = currentURL.match(/articles\/(\d{8})\.html$/);
 const articleId = match[1];
 const titleContent = document.querySelector('.contents > h1')
 const articleContent = document.querySelector('.article-body')

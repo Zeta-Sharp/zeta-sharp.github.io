@@ -1,0 +1,15 @@
+{
+    "20250930": {
+        "id": "20250930",
+        "title": {
+            "ja": "Hello, World!",
+            "en": "Hello, World!"
+        },
+        "date": "2025-09-30",
+        "summary": {
+            "ja": "これはこのブログの記念すべき第一記事です",
+            "en": "This is my first article in my blog!"
+        },
+        "translation_file": "articles/20250930.json"
+    }
+}

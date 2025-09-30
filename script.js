@@ -96,6 +96,7 @@ const projectsButton = document.querySelector('.projects-button');
 const projectsSection = document.querySelector('.projects');
 const contactsButton = document.querySelector('.contacts-button');
 const contactsSection = document.querySelector('.contacts');
+const blogButton = document.querySelector('.blog-button');
 
 xButton.addEventListener('click', () => {
     location.href = 'https://x.com/Zeta_Sharp';
@@ -119,6 +120,10 @@ projectsButton.addEventListener('click', () => {
 
 contactsButton.addEventListener('click', () => {
     contactsSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+blogButton.addEventListener('click', () => {
+    location.href = 'https://zeta-sharp.github.io/blog/';
 });
 
 loadLanguageFile();

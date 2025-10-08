@@ -1,3 +1,7 @@
+.contacts {
+    scroll-snap-type: y mandatory;
+}
+
 .profile,
 .skill-tree,
 .projects,

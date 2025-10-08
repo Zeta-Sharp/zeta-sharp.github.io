@@ -1,4 +1,5 @@
 .contacts {
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
 

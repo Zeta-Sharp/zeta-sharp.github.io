@@ -156,7 +156,6 @@ body {
 
 .contents {
     height: 100vh;
-    overflow-y: scroll;
     padding-left: 25vw;
 }
 

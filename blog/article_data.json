@@ -11,5 +11,18 @@
             "en": "This is my first article in my blog!"
         },
         "translation_file": "articles/20250930.json"
+    },
+    "20251008": {
+        "id": "20251008",
+        "title": {
+            "ja": "新しいソートアルゴリズム...？",
+            "en": "New sort algorithm?"
+        },
+        "date": "2025-10-08",
+        "summary": {
+            "ja": "新しいソートアルゴリズムを閃いてしまったかもしれない...",
+            "en": "I (maybe) found new sort algorithm...?"
+        },
+        "translation_file": "articles/20251008.json"
     }
 }

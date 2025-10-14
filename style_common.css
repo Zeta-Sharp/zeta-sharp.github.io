@@ -1,4 +1,5 @@
 :root {
+    color-scheme: light dark;
     --clr-bg: #fff;
     --clr-text: #000;
     --clr-overlay: rgba(255, 255, 255, 0.5);

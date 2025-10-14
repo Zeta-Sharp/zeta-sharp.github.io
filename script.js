@@ -1,8 +1,7 @@
 const htmlTag = document.querySelector('html');
 let isJapanese = navigator.language.startsWith('ja');
 let texts
-const languageButton = document.querySelector('.language-button');
-const languageIconButton = document.querySelector('.language-button-icon');
+const languageButton = document.querySelector('.language-buttons');
 
 async function loadLanguageFile() {
     try {
@@ -27,10 +26,6 @@ const contactsParagraph_x = document.querySelector('.sns-twitter p');
 const contactsParagraph_github = document.querySelector('.sns-github p');
 
 languageButton.addEventListener('click', () => {
-    isJapanese = !isJapanese;
-    updateLanguage();
-});
-languageIconButton.addEventListener('click', () => {
     isJapanese = !isJapanese;
     updateLanguage();
 });

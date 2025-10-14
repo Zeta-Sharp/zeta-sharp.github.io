@@ -88,6 +88,13 @@ body {
     .h1 {
         margin-left: 20px;
     }
+}
+
+.header .header-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
 
     .scroll-buttons {
         display: flex;
@@ -112,36 +119,39 @@ body {
         }
     }
 
-    .language-button-icon {
-        margin-left: auto;
-        margin-right: 10px;
-        height: 50px;
-        width: 50px;
-        border: none;
-        background-color: transparent;
-        background-image: url('./Sources/Icons/AdobeStock_558900896.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-    }
+    .language-buttons {
+        display: flex;
+        align-items: center;
 
-    .language-button {
-        margin-right: 40px;
-        height: 30px;
-        width: 170px;
-        border: none;
-        background-color: transparent;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-        color: var(--clr-text);
+        .language-button-icon {
+            height: 50px;
+            width: 50px;
+            border: none;
+            background-color: transparent;
+            background-image: url('./Sources/Icons/AdobeStock_558900896.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+        }
+
+        .language-button {
+            margin-right: 40px;
+            height: 30px;
+            width: 170px;
+            border: none;
+            background-color: transparent;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            color: var(--clr-text);
+        }
     }
 }
 
 @media (prefers-color-scheme: dark) {
-    .header .language-button-icon {
+    .language-button-icon {
         filter: invert(1);
     }
 }

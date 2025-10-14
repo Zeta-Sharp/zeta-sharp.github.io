@@ -49,4 +49,22 @@ function updateLanguage() {
     articleContent.innerHTML = texts['content'][lang];
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    const hamburgerButton = document.querySelector('.hamburger-button');
+    const headerButtons = document.querySelector('.header-buttons');
+
+    hamburgerButton.addEventListener('click', () => {
+        headerButtons.classList.toggle('is-open');
+    });
+
+    const allButtons = headerButtons.querySelectorAll('button');
+    allButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            headerButtons.classList.remove('is-open');
+        });
+    });
+});
+
+
 loadLanguageFile();

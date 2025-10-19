@@ -7,3 +7,9 @@
         padding: 80px 10% 0 10%;
     }
 }
+
+pre {
+    background-color: var(--clr-overlay);
+    white-space: pre;
+    overflow-x: auto;
+}

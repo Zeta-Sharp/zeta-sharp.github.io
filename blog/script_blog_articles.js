@@ -16,7 +16,7 @@ const languageButtonIcon = document.querySelector('.language-button-icon');
 const currentURL = window.location.href;
 const match = currentURL.match(/articles\/(\d{8})\.html$/);
 const articleId = match[1];
-const titleContent = document.querySelector('.contents > h1')
+const titleContent = document.querySelector('main > h1')
 const articleContent = document.querySelector('.article-body')
 
 languageButton.addEventListener('click', () => {

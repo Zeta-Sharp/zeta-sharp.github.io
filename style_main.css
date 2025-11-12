@@ -1,4 +1,4 @@
-.contents {
+main {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }

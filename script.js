@@ -2,6 +2,7 @@ const htmlTag = document.querySelector('html');
 let isJapanese = navigator.language.startsWith('ja');
 let texts
 const languageButton = document.querySelector('.language-buttons');
+const languageButtonText = document.querySelector('.language-button');
 
 async function loadLanguageFile() {
     try {
@@ -35,7 +36,7 @@ function updateLanguage() {
     const lang = isJapanese ? 'ja' : 'en';
     htmlTag.setAttribute('lang', lang);
     firstH1.textContent = texts['h1'][lang];
-    languageButton.textContent = texts['languageButton'][lang];
+    languageButtonText.textContent = texts['languageButton'][lang];
     greetingElement.textContent = texts['greeting'][lang];
     for (let i = 0; i < profileParagraphs.length; i++) {
         profileParagraphs[i].textContent = texts['profileParagraphs'][lang][i];

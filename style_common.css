@@ -44,8 +44,8 @@ body {
     li,
     img,
     button,
-    :not(.header p1),
-    :not(.header img) {
+    :not(header p1),
+    :not(header img) {
         background-color: var(--clr-overlay);
     }
 
@@ -70,7 +70,7 @@ body {
     }
 }
 
-.header {
+header {
     padding: 0px 20px;
     display: flex;
     align-items: center;
@@ -91,7 +91,7 @@ body {
     }
 }
 
-.header .header-buttons {
+header .header-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -150,7 +150,7 @@ body {
     }
 }
 
-.header .hamburger-button {
+header .hamburger-button {
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -173,11 +173,11 @@ body {
 
 
 @media (max-width: 768px) {
-    .header .hamburger-button {
+    header .hamburger-button {
         display: flex;
     }
 
-    .header .header-buttons {
+    header .header-buttons {
         position: fixed;
         top: 0;
         right: 0;
@@ -195,24 +195,24 @@ body {
         z-index: 1000;
     }
 
-    .header .header-buttons.is-open {
+    header .header-buttons.is-open {
         transform: translateX(0);
     }
 
-    .header .scroll-buttons {
+    header .scroll-buttons {
         flex-direction: column;
         margin-left: 0;
         width: 100%;
         gap: 10px;
     }
 
-    .header .scroll-buttons button {
+    header .scroll-buttons button {
         width: 80%;
         border-left: none !important;
         border-top: 2px solid var(--clr-border) !important;
     }
 
-    .header .scroll-buttons button:last-child {
+    header .scroll-buttons button:last-child {
         border-right: none !important;
         border-bottom: 2px solid var(--clr-border) !important;
     }
@@ -224,13 +224,13 @@ body {
     }
 }
 
-.contents {
+main {
     height: 100vh;
     padding-left: 25vw;
 }
 
 @media (max-width: 768px) {
-    .contents {
+    main {
         padding-left: 0;
     }
 }

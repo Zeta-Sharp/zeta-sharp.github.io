@@ -137,3 +137,7 @@ main {
         background-image: var(--img-github-icon);
     }
 }
+
+footer {
+    scroll-snap-align: end;
+}

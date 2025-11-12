@@ -24,5 +24,18 @@
             "en": "I (maybe) found new sort algorithm...?"
         },
         "translation_file": "articles/20251008.json"
+    },
+    "20251112": {
+        "id": "20251112",
+        "title": {
+            "ja": "Ζ# Blog アップデート!",
+            "en": "Ζ# Blog Update!"
+        },
+        "date": "2025-11-12",
+        "summary": {
+            "ja": "Ζ# Blog アップデートのリリースノートです。",
+            "en": "Release Note of Ζ# Blog Update."
+        },
+        "translation_file": "articles/20251112.json"
     }
 }

@@ -1,6 +1,14 @@
+const iconElement = document.querySelector('header img');
+const titleElement = document.querySelector('header h1');
 const profileButton = document.querySelector('.profile-button');
 const blogButton = document.querySelector('.blog-button');
 
+iconElement.addEventListener('click', () => {
+    location.href = 'https://zeta-sharp.github.io/blog/';
+});
+titleElement.addEventListener('click', () => {
+    location.href = 'https://zeta-sharp.github.io/blog/';
+});
 profileButton.addEventListener('click', () => {
     location.href = 'https://zeta-sharp.github.io/';
 });

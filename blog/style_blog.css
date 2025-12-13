@@ -1,5 +1,17 @@
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
 main {
     padding-top: 80px;
+    flex-grow: 1;
 }
 
 @media (max-width: 768px) {

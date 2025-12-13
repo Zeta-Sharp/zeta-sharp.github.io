@@ -37,5 +37,18 @@
             "en": "Release Note of Ζ# Blog Update."
         },
         "translation_file": "articles/20251112.json"
+    },
+    "20251213": {
+        "id": "20251213",
+        "title": {
+            "ja": "筆箱紹介 メイン筆箱編",
+            "en": "Pencase introduction -main"
+        },
+        "date": "2025-12-13",
+        "summary": {
+            "ja": "メインで使っている筆箱の紹介です",
+            "en": "Introduction of my main pencase. This article is Japanese only."
+        },
+        "translation_file": "articles/20251213.json"
     }
 }

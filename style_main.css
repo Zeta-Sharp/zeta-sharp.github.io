@@ -1,6 +1,7 @@
 main {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    height: 100vh;
 }
 
 .profile,

@@ -1,4 +1,4 @@
-html{
+html {
     height: 100%;
 }
 
@@ -26,7 +26,7 @@ pre {
     overflow-x: auto;
 }
 
-img, :not(header img) {
+body img {
     display: block;
     margin: 20px auto;
     max-width: 80%;
@@ -34,7 +34,7 @@ img, :not(header img) {
 }
 
 @media (max-width: 768px) {
-    img, :not(header img) {
+    body img {
         max-width: 100%;
         height: auto;
     }

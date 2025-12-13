@@ -225,7 +225,7 @@ header .hamburger-button {
 }
 
 main {
-    height: 100vh;
+    min-height: 100vh;
     padding-left: 25vw;
 }
 

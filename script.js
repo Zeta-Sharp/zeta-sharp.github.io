@@ -85,13 +85,13 @@ function changeIcons(mediaQuery) {
 const xButton = document.querySelector('.x-button');
 const githubButton = document.querySelector('.github-button');
 const profileButton = document.querySelector('.profile-button');
-const profileSection = document.querySelector('.profile');
+const profileSection = document.getElementById('profile');
 const skillTreeButton = document.querySelector('.skill-tree-button');
-const skillTreeSection = document.querySelector('.skill-tree');
+const skillTreeSection = document.getElementById('skill-tree');
 const projectsButton = document.querySelector('.projects-button');
-const projectsSection = document.querySelector('.projects');
+const projectsSection = document.getElementById('projects');
 const contactsButton = document.querySelector('.contacts-button');
-const contactsSection = document.querySelector('.contacts');
+const contactsSection = document.getElementById('contacts');
 const blogButton = document.querySelector('.blog-button');
 
 xButton.addEventListener('click', () => {

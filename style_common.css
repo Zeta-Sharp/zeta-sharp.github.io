@@ -41,7 +41,6 @@ body::before {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 @media (max-width: 768px) {

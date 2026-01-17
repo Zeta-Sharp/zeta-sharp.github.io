@@ -18,10 +18,10 @@ async function loadLanguageFile() {
 const firstH1 = document.querySelector('section#profile h1');
 const greetingElement = document.querySelector('section#profile h2');
 const profileParagraphs = document.querySelectorAll('section#profile p');
-const skilltreeParagraphs_python = document.querySelectorAll('section#skills .python p');
-const skilltreeParagraphs_unity_csharp = document.querySelectorAll('section#skills .unity-csharp p');
-const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('section#skills .html-css-javascript p');
-const skilltreeParagraphs_git_github = document.querySelectorAll('section#skills .git-github p');
+const skilltreeParagraphs_python = document.querySelectorAll('.python p');
+const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.unity-csharp p');
+const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.html-css-javascript p');
+const skilltreeParagraphs_git_github = document.querySelectorAll('.git-github p');
 const projectsDiscriptions = document.querySelectorAll('section#projects li');
 const contactsParagraph_x = document.querySelector('section#contacts .sns-twitter p');
 const contactsParagraph_github = document.querySelector('section#contacts .sns-github p');

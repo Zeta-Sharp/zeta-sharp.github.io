@@ -141,3 +141,4 @@ document.addEventListener('DOMContentLoaded', () => {
 loadLanguageFile();
 changeIcons(prefersDark);
 prefersDark.addEventListener('change', changeIcons);
+htmlTag.removeAttribute('translate')

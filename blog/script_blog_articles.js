@@ -76,3 +76,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 loadLanguageFile();
+htmlTag.removeAttribute('translate')

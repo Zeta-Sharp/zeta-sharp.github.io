@@ -38,7 +38,7 @@ languageButtonIcon.addEventListener('click', () => {
 
 async function loadLanguageFile() {
     try {
-        const responce = await fetch(`./${articleId}.json`);
+        const responce = await fetch("./article_data.json");
         texts = await responce.json();
         updateLanguage();
     }

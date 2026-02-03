@@ -52,7 +52,7 @@ function updateLanguage() {
     const lang = isJapanese ? 'ja' : 'en';
     htmlTag.setAttribute('lang', lang);
     document.title = texts['title'][lang]
-    languageButton.textContent = isJapanese ? 'En→日 日本語に切り替え' : '日→En Switch to English';
+    languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
     titleContent.textContent = texts['title'][lang]
     articleContent.innerHTML = texts['content'][lang];
 }

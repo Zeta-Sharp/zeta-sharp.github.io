@@ -29,9 +29,7 @@ function updateLanguage() {
     const lang = isJapanese ? 'ja' : 'en';
     htmlTag.setAttribute('lang', lang);
 
-    languageButton.textContent = isJapanese
-        ? 'En→日 日本語に切り替え'
-        : '日→En Switch to English';
+    languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
 
     document.querySelectorAll('.blog-article[data-id]').forEach(articleEl => {
         const id = articleEl.dataset.id;

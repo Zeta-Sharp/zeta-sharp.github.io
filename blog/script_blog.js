@@ -57,13 +57,13 @@ function applyFilters() {
         if (!data) return;
 
         const articleTags = data.tags || [];
-        const isVisible = activeSearchTags.size === 0 ||
-            Array.from(activeSearchTags).every(tag => articleTags.includes(tag));
+        const isVisible = activeTags.size === 0 ||
+            Array.from(activeTags).every(tag => articleTags.includes(tag));
         articleEl.style.display = isVisible ? "block" : "none";
         if (isVisible) visibleCount++;
         articleEl.querySelectorAll('.meta .tag').forEach(tagEl => {
             const tagName = tagEl.textContent.trim();
-            tagEl.classList.toggle('is-active', activeSearchTags.has(tagName));
+            tagEl.classList.toggle('is-active', activeTags.has(tagName));
         });
     });
 

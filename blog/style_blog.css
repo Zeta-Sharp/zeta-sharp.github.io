@@ -81,6 +81,9 @@ main img {
         align-items: center;
         flex-shrink: 0;
         padding: 0px 28px;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
         border-left: 2px solid var(--clr-border);
         text-decoration: none;
         transform: skewX(-20deg);

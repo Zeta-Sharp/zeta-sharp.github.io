@@ -1,3 +1,13 @@
+:root {
+    --clr-accent: rgba(0, 122, 204, 0.5);
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --clr-accent: rgba(0, 122, 204, 0.5);
+    }
+}
+
 html {
     height: 100%;
 }
@@ -56,6 +66,9 @@ main img {
 
 .meta .tags {
     flex: 1;
+}
+
+.tags {
     display: flex;
     height: auto;
     overflow-x: auto;
@@ -70,6 +83,7 @@ main img {
         border-left: 2px solid var(--clr-border);
         text-decoration: none;
         transform: skewX(-20deg);
+        background-color: transparent;
     }
 
     .tag:last-child {
@@ -80,4 +94,16 @@ main img {
         display: inline-block;
         transform: skewX(20deg);
     }
+}
+
+.tag.is-active {
+    background-color: var(--clr-accent);
+}
+
+.no-articles {
+    display: none;
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--clr-text);
+    margin-top: 40px;
 }

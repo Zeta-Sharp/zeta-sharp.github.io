@@ -1,6 +1,7 @@
 const htmlTag = document.querySelector('html');
 const languageButton = document.querySelector('.language-button');
 const languageButtonIcon = document.querySelector('.language-button-icon');
+const noArticlesMsg = document.querySelector('.no-articles');
 
 let isJapanese = navigator.language.startsWith('ja');
 let articlesData = null;
@@ -18,11 +19,60 @@ async function loadArticles() {
     try {
         const response = await fetch('./article_data.json');
         articlesData = await response.json();
+        setupTagSearch();
         updateLanguage();
     } catch (error) {
         console.error('Error loading articles:', error);
     }
 }
+
+const activeTags = new Set();
+
+function setupTagSearch() {
+    const searchTags = document.querySelectorAll('search .tag');
+    searchTags.forEach(tagEl => {
+        tagEl.addEventListener('click', () => {
+            const tagName = tagEl.textContent.trim();
+            if (activeTags.has(tagName)) {
+                activeTags.delete(tagName);
+                tagEl.classList.remove('is-active');
+            } else {
+                activeTags.add(tagName);
+                tagEl.classList.add('is-active');
+            }
+            applyFilters();
+        });
+    });
+}
+
+function applyFilters() {
+    if (!articlesData) return;
+
+    let visibleCount = 0;
+    const articles = document.querySelectorAll('.blog-article[data-id]');
+
+    articles.forEach(articleEl => {
+        const id = articleEl.dataset.id;
+        const data = articlesData[id];
+        if (!data) return;
+
+        const articleTags = data.tags || [];
+        const isVisible = activeSearchTags.size === 0 ||
+            Array.from(activeSearchTags).every(tag => articleTags.includes(tag));
+        articleEl.style.display = isVisible ? "block" : "none";
+        if (isVisible) visibleCount++;
+        articleEl.querySelectorAll('.meta .tag').forEach(tagEl => {
+            const tagName = tagEl.textContent.trim();
+            tagEl.classList.toggle('is-active', activeSearchTags.has(tagName));
+        });
+    });
+
+    if (noArticlesMsg) {
+        noArticlesMsg.style.display = (visibleCount === 0) ? "block" : "none";
+    }
+}
+
+
 function updateLanguage() {
     if (!articlesData) return;
 
@@ -30,8 +80,10 @@ function updateLanguage() {
     htmlTag.setAttribute('lang', lang);
 
     languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
+    noArticlesMsg.textContent = isJapanese ? '指定されたタグの記事が見つかりません。' : 'No articles found for the specified tags.';
 
-    document.querySelectorAll('.blog-article[data-id]').forEach(articleEl => {
+    const articles = document.querySelectorAll('.blog-article[data-id]');
+    articles.forEach(articleEl => {
         const id = articleEl.dataset.id;
         const data = articlesData[id];
         if (!data) return;

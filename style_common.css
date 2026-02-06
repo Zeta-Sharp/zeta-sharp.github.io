@@ -48,15 +48,8 @@ body::before {
 
 @media (max-width: 768px) {
 
-    p,
-    h1,
-    h2,
-    h3,
-    li,
-    img,
-    button,
-    :not(header h1),
-    :not(header img) {
+    main {
+
         background-color: var(--clr-overlay);
     }
 
@@ -80,6 +73,7 @@ body::before {
         font-size: 1.2rem;
     }
 }
+
 
 header {
     padding: 0px 20px;

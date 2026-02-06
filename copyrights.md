@@ -2,7 +2,7 @@ Copyrights of images
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/AdobeStock_558900896.svg?raw=true" alt="translation-icon" height=50px>: [Adobe_stock](https://stock.adobe.com/jp/images/languages-glyph-icon/558900896)  
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/Git-Icon-1788C.svg?raw=true" alt="git-icon" height=50px>
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/Git-Icon-White.svg?raw=true" alt="git-icon-white" height=50px>: [git](https://git-scm.com/community/logos)  
-<img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/HTML5_1Color_White.svg?raw=true" alt="html5-logo" height=50px>
+<img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/HTML5_Logo.svg?raw=true" alt="html5-logo" height=50px>
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/HTML5_1Color_White.svg?raw=true" alt="html5-logo-white" height=50px>: [W3C](https://www.w3.org/html/logo/)  
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/U_Logo_Small_Black_RGB_1C.svg?raw=true" alt="unity-logo" height=50px>
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/U_Logo_Small_White_RGB_1C.svg?raw=true" alt="unity-logo-white" height=50px>: [Unity](https://unity.com/ja/legal/branding-trademarks)  

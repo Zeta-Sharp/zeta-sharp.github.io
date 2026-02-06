@@ -7,6 +7,9 @@
     --img-bg: url('./Sources/background.svg');
     --img-x-icon: url('./Sources/Icons/logo-black.png');
     --img-github-icon: url('./Sources/Icons/github-mark.svg');
+    --z-index-extra-overlay: 20;
+    --z-index-overlay: 10;
+    --z-index-underlay: -1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,7 +39,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: var(--z-index-underlay);
     background-image: var(--img-bg);
     background-repeat: no-repeat;
     background-position: left center;
@@ -52,7 +55,7 @@ body::before {
     li,
     img,
     button,
-    :not(header p1),
+    :not(header h1),
     :not(header img) {
         background-color: var(--clr-overlay);
     }
@@ -168,7 +171,7 @@ header .hamburger-button {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
+    z-index: var(--z-index-extra-overlay);
     margin-left: auto;
     margin-right: 30px;
 
@@ -191,16 +194,16 @@ header .hamburger-button {
         right: 0;
         width: 250px;
         height: 100vh;
+        box-sizing: border-box;
         background-color: var(--clr-overlay);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         padding-top: 80px;
-        gap: 20px;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
-        z-index: 1000;
+        z-index: var(--z-index-overlay);
     }
 
     header .header-buttons.is-open {
@@ -209,9 +212,9 @@ header .hamburger-button {
 
     header .scroll-buttons {
         flex-direction: column;
-        margin-left: 0;
+        margin-left: 0 !important;
         width: 100%;
-        gap: 10px;
+        gap: 0;
     }
 
     header .scroll-buttons button {
@@ -223,6 +226,15 @@ header .hamburger-button {
     header .scroll-buttons button:last-child {
         border-right: none !important;
         border-bottom: 2px solid var(--clr-border) !important;
+    }
+
+    header .language-buttons {
+        margin-top: auto;
+        margin-bottom: 10px;
+    }
+
+    header .language-buttons .language-button {
+        margin-right: 0 !important;
     }
 }
 

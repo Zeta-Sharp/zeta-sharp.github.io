@@ -76,8 +76,9 @@ main img {
     padding-left: 20px;
 
     .tag {
-        height: auto;
-        display: block;
+        height: 40px;
+        display: flex;
+        align-items: center;
         flex-shrink: 0;
         padding: 0px 28px;
         border-left: 2px solid var(--clr-border);

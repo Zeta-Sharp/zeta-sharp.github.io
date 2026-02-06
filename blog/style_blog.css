@@ -39,3 +39,45 @@ main img {
         height: auto;
     }
 }
+
+.meta {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.meta .date {
+    width: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.meta .tags {
+    flex: 1;
+    display: flex;
+    height: auto;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding-left: 20px;
+
+    .tag {
+        height: auto;
+        display: block;
+        flex-shrink: 0;
+        padding: 0px 28px;
+        border-left: 2px solid var(--clr-border);
+        text-decoration: none;
+        transform: skewX(-20deg);
+    }
+
+    .tag:last-child {
+        border-right: 2px solid var(--clr-border);
+    }
+
+    .tag span {
+        display: inline-block;
+        transform: skewX(20deg);
+    }
+}

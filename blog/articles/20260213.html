@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Blog - Ζ#">
+  <meta property="og:description" content="This is a blog page of Ζ#.">
+  <meta property="og:image"
+    content="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/OG_image.png?raw=true">
+  <meta property="og:url" content="https://zeta-sharp.github.io/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Zeta_Sharp">
+  <meta name="twitter:creator" content="@Zeta_Sharp">
+  <title>Blog - Ζ# PyProma Git Tab 2.0.0 (Preview)</title>
+  <link rel="icon" href="../../Sources/Icons/zeta-sharp-icon.png">
+  <link rel="apple-touch-icon" href="../Sources/Icons/zeta-sharp-icon.png">
+  <link rel="stylesheet" href="../../style_common.css">
+  <link rel="stylesheet" href="../style_blog.css">
+  <script defer src="../script_blog_articles.js"></script>
+</head>
+
+<body>
+  <header>
+    <img src="../../Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon">
+    <h1>Blog</h1>
+    <div class="header-buttons">
+      <nav class="scroll-buttons">
+        <button type="button" class="profile-button">Profile</button>
+        <button type="button" class="blog-button">Blog</button>
+      </nav>
+      <div class="language-buttons">
+        <button type="button" class="language-button-icon" aria-label="Change language"></button>
+        <button type="button" class="language-button">En→日 日本語に切り替え</button>
+      </div>
+    </div>
+    <button type="button" class="hamburger-button" aria-label="Menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </header>
+  <main>
+    <h1>PyProma Git Tab 2.0.0 (Preview)</h1>
+    <div class="meta">
+      <p class="date"></p>
+      <div class="tags">
+        
+      </div>
+    </div>
+    <div class="article-body">
+      <p>We are excited to announce that Git Tab 2.0.0 is now available on the preview branch!</p>
+<p>This release represents a major step forward for Git integration in PyProma.
+Git Tab is no longer just a remote operation tool — it now provides direct visibility into your GitHub repository activity.</p>
+<hr />
+<h3>What’s New</h3>
+<h4>GitHub Issues &amp; Pull Requests Support (Preview)</h4>
+<p>Git Tab now integrates with the GitHub API and displays:</p>
+<ul>
+<li>All Issues (open &amp; closed)</li>
+<li>All Pull Requests</li>
+<li>Issue/PR number</li>
+<li>Title</li>
+<li>State (open / closed)</li>
+</ul>
+<p>Issues and Pull Requests are displayed in a structured tree view:</p>
+<pre class="codehilite"><code>GitHub Issues
+  ├─ #12 Fix crash on startup
+  ├─ #18 Improve UI responsiveness
+GitHub Pull Requests
+  ├─ #21 Add feature X
+  ├─ #24 Refactor remote handling
+</code></pre>
+
+<p>You can double-click any item to instantly open it in your web browser.<br />
+This allows you to review repository activity directly inside PyProma without leaving the application.</p>
+<hr />
+<h4>Improved UI Layout</h4>
+<p>The Git Tab interface has been redesigned into a two-panel layout:</p>
+<ul>
+<li>Left panel: Remote operations (pull / push / fetch)</li>
+<li>Right panel: GitHub Issues &amp; Pull Requests viewer</li>
+</ul>
+<p>This separation improves clarity and prepares the interface for future feature expansion.</p>
+<hr />
+<h4>Better Error Handling for Git Operations</h4>
+<p>Remote operations (pull, push, fetch) now include:</p>
+<ul>
+<li><code>GitCommandError</code> handling</li>
+<li>Graceful handling of unexpected exceptions</li>
+<li>User-friendly error dialogs</li>
+</ul>
+<p>This prevents silent failures and improves overall stability.</p>
+<hr />
+<h3>Internal Improvements</h3>
+<ul>
+<li>Remote detection refactored into <code>get_git_remotes()</code></li>
+<li>GitHub integration isolated into <code>get_github_issues()</code></li>
+<li>Structured node metadata storage for Issue/PR handling</li>
+<li>Cleaner separation between UI and logic</li>
+<li>Foundation laid for future GitHub feature expansion</li>
+</ul>
+<p>This refactoring makes the Git Tab easier to maintain and extend.</p>
+<hr />
+<h3>Preview Status</h3>
+<p>GitHub integration is currently in preview.</p>
+<p>Known limitations:</p>
+<ul>
+<li>Only GitHub remotes are supported</li>
+<li>Access tokens must be manually generated</li>
+<li>Large repositories may take time to load</li>
+<li>Pagination is not yet implemented</li>
+</ul>
+<p>If you encounter issues or unexpected behavior, please report them via:</p>
+<ul>
+<li>GitHub Issues</li>
+<li>Pull Requests</li>
+</ul>
+<hr />
+<h3>What’s Next</h3>
+<p>Planned improvements may include:</p>
+<ul>
+<li>Filtering (open / closed / assigned)</li>
+<li>Access token expiration handling (including integration with Calendar Tab)</li>
+<li>Expanded Git remote support (e.g., Azure DevOps)</li>
+<li>GitHub Pull Request creation and merging support</li>
+</ul>
+<p>Contributions are welcome!</p>
+<hr />
+<h3>Thank You</h3>
+<p>Thank you for using PyProma and helping improve the Git Tab.<br />
+Your feedback and contributions help shape the future of this tool.</p>
+<p>Stay tuned for further updates!</p>
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 Ζ#. Images, Icon copyrights:
+      <a href="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/copyrights.md">Copyrights</a>
+    </p>
+  </footer>
+</body>

@@ -6,7 +6,9 @@
             "en": "Hello, World!"
         },
         "date": "2025-09-30",
-        "tags": ["blog"],
+        "tags": [
+            "blog"
+        ],
         "summary": {
             "ja": "これはこのブログの記念すべき第一記事です",
             "en": "This is my first article in my blog!"
@@ -20,7 +22,9 @@
             "en": "New sort algorithm?"
         },
         "date": "2025-10-08",
-        "tags": ["python"],
+        "tags": [
+            "python"
+        ],
         "summary": {
             "ja": "新しいソートアルゴリズムを閃いてしまったかもしれない...",
             "en": "I (maybe) found new sort algorithm...?"
@@ -34,7 +38,10 @@
             "en": "Ζ# Blog Update!"
         },
         "date": "2025-11-12",
-        "tags": ["release-note", "blog"],
+        "tags": [
+            "release-note",
+            "blog"
+        ],
         "summary": {
             "ja": "Ζ# Blog アップデートのリリースノートです。",
             "en": "Release Note of Ζ# Blog Update."
@@ -48,11 +55,30 @@
             "en": "Pencase introduction -main"
         },
         "date": "2025-12-13",
-        "tags": ["stationery"],
+        "tags": [
+            "stationery"
+        ],
         "summary": {
             "ja": "メインで使っている筆箱の紹介です",
             "en": "Introduction of my main pencase. This article is Japanese only."
         },
         "translation_file": "articles/20251213.json"
+    },
+    "20260213": {
+        "id": "20260213",
+        "title": {
+            "ja": "PyProma Git Tab 2.0.0（プレビュー版）リリース",
+            "en": "PyProma Git Tab 2.0.0 (Preview)"
+        },
+        "date": "2026-02-13",
+        "tags": [
+            "PyProma",
+            "release-note"
+        ],
+        "summary": {
+            "ja": "Git Tab 2.0.0のリリースノートです",
+            "en": "Release note of Git Tab 2.0.0 preview"
+        },
+        "translation_file": "articles/20260213.json"
     }
 }

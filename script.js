@@ -6,8 +6,8 @@ const languageButtonText = document.querySelector('.language-button');
 
 async function loadLanguageFile() {
     try {
-        const responce = await fetch("./Sources/texts.json");
-        texts = await responce.json();
+        const response = await fetch("./Sources/texts.json");
+        texts = await response.json();
         updateLanguage();
     }
     catch (error) {

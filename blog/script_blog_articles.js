@@ -17,7 +17,7 @@ blogButton.addEventListener('click', () => {
 });
 
 const htmlTag = document.querySelector('html');
-let isJapanese = navigator.language.startsWith('ja');
+let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 let texts
 const languageButton = document.querySelector('.language-button');
 const languageButtonIcon = document.querySelector('.language-button-icon');
@@ -50,11 +50,33 @@ async function loadLanguageFile() {
 function updateLanguage() {
     if (!texts) return;
     const lang = isJapanese ? 'ja' : 'en';
+    localStorage.setItem('selectedLang', lang);
     htmlTag.setAttribute('lang', lang);
-    document.title = texts['title'][lang]
+    document.title = texts['title'][lang] + ' - Ζ# Blog';
     languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
-    titleContent.textContent = texts['title'][lang]
-    articleContent.innerHTML = texts['content'][lang];
+    document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
+        const key = translatableElement.getAttribute('data-i18n');
+        const type = translatableElement.getAttribute('data-i18n-type')
+        const keys = key.split('.');
+
+        let translation = texts;
+
+        const found = keys.every(k => {
+            if (translation && translation[k] !== undefined) {
+                translation = translation[k];
+                return true;
+            }
+            return false;
+        });
+
+        if (found && translation[lang] !== undefined) {
+            if (type === 'html') {
+                translatableElement.innerHTML = translation[lang];
+            } else {
+                translatableElement.textContent = translation[lang];
+            }
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {

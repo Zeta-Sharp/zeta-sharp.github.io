@@ -15,14 +15,15 @@ async function loadLanguageFile() {
     }
 }
 
-const firstH1 = document.querySelector('section#profile h1');
-const greetingElement = document.querySelector('section#profile h2');
+const firstH2 = document.querySelector('section#profile h2');
+const greetingElement = document.querySelector('section#profile h3');
 const profileParagraphs = document.querySelectorAll('section#profile p');
-const skilltreeParagraphs_python = document.querySelectorAll('.python p');
-const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.unity-csharp p');
-const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.html-css-javascript p');
-const skilltreeParagraphs_git_github = document.querySelectorAll('.git-github p');
-const projectsDiscriptions = document.querySelectorAll('section#projects li');
+const skilltreeParagraphs_python = document.querySelectorAll('.skill-card-python p');
+const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.skill-card-unity-csharp p');
+const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.skill-card-html-css-javascript p');
+const skilltreeParagraphs_git_github = document.querySelectorAll('.skill-card-git-github p');
+const pypromaDescription = document.querySelector('section#projects ul li:nth-child(1) span');
+const multiplyplusDescription = document.querySelector('section#projects ul li:nth-child(2) span');
 const contactsParagraph_x = document.querySelector('section#contacts .sns-twitter p');
 const contactsParagraph_github = document.querySelector('section#contacts .sns-github p');
 languageButton.addEventListener('click', () => {
@@ -34,7 +35,7 @@ function updateLanguage() {
     if (!texts) return;
     const lang = isJapanese ? 'ja' : 'en';
     htmlTag.setAttribute('lang', lang);
-    firstH1.textContent = texts['h1'][lang];
+    firstH2.textContent = texts['h1'][lang];
     languageButtonText.textContent = texts['languageButton'][lang];
     greetingElement.textContent = texts['greeting'][lang];
     for (let i = 0; i < profileParagraphs.length; i++) {
@@ -52,8 +53,8 @@ function updateLanguage() {
     for (let i = 0; i < skilltreeParagraphs_git_github.length; i++) {
         skilltreeParagraphs_git_github[i].textContent = texts['skilltreeparagraphs_git_github'][lang][i];
     }
-    projectsDiscriptions[0].childNodes[1].nodeValue = texts['projectsDescription_pyproma'][lang];
-    projectsDiscriptions[1].childNodes[1].nodeValue = texts['projectsDescription_multiplyplus'][lang];
+    pypromaDescription.textContent = texts['projectsDescription_pyproma'][lang];
+    multiplyplusDescription.textContent = texts['projectsDescription_multiplyplus'][lang];
     contactsParagraph_x.textContent = texts['sns_x'][lang];
     contactsParagraph_github.textContent = texts['sns_github'][lang];
 }

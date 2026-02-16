@@ -31,10 +31,7 @@ section#skill-tree {
         gap: 20px;
         justify-content: flex-start;
 
-        .python,
-        .unity-csharp,
-        .html-css-javascript,
-        .git-github {
+        article {
             border: 2px solid var(--clr-text);
             border-radius: 10px;
             padding: 10px;

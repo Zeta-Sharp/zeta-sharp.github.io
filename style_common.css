@@ -75,7 +75,7 @@ body::before {
 }
 
 
-header {
+body > header {
     padding: 0px 20px;
     display: flex;
     align-items: center;
@@ -96,7 +96,7 @@ header {
     }
 }
 
-header .header-buttons {
+body > header .header-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,7 +155,7 @@ header .header-buttons {
     }
 }
 
-header .hamburger-button {
+body > header .hamburger-button {
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -178,11 +178,11 @@ header .hamburger-button {
 
 
 @media (max-width: 768px) {
-    header .hamburger-button {
+    body > header .hamburger-button {
         display: flex;
     }
 
-    header .header-buttons {
+    body > header .header-buttons {
         position: fixed;
         top: 0;
         right: 0;
@@ -200,34 +200,34 @@ header .hamburger-button {
         z-index: var(--z-index-overlay);
     }
 
-    header .header-buttons.is-open {
+    body > header .header-buttons.is-open {
         transform: translateX(0);
     }
 
-    header .scroll-buttons {
+    body > header .scroll-buttons {
         flex-direction: column;
         margin-left: 0 !important;
         width: 100%;
         gap: 0;
     }
 
-    header .scroll-buttons button {
+    body > header .scroll-buttons button {
         width: 80%;
         border-left: none !important;
         border-top: 2px solid var(--clr-border) !important;
     }
 
-    header .scroll-buttons button:last-child {
+    body > header .scroll-buttons button:last-child {
         border-right: none !important;
         border-bottom: 2px solid var(--clr-border) !important;
     }
 
-    header .language-buttons {
+    body > header .language-buttons {
         margin-top: auto;
         margin-bottom: 10px;
     }
 
-    header .language-buttons .language-button {
+    body > header .language-buttons .language-button {
         margin-right: 0 !important;
     }
 }

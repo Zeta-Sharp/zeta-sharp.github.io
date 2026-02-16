@@ -1,5 +1,5 @@
-const iconElement = document.querySelector('header img');
-const titleElement = document.querySelector('header h1');
+const iconElement = document.querySelector('body > header img');
+const titleElement = document.querySelector('body > header h1');
 const profileButton = document.querySelector('.profile-button');
 const blogButton = document.querySelector('.blog-button');
 

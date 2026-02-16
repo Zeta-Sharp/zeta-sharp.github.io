@@ -1,3 +1,15 @@
+:root {
+    --img-github-icon: url('./Sources/Icons/github-mark.svg');
+    --img-x-icon: url('./Sources/Icons/logo-black.png');
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --img-x-icon: url('./Sources/Icons/logo-white.png');
+        --img-github-icon: url('./Sources/Icons/github-mark-white.svg');
+    }
+}
+
 main {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;

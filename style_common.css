@@ -5,8 +5,6 @@
     --clr-overlay: rgba(255, 255, 255, 0.5);
     --clr-border: rgba(0, 0, 0, 0.5);
     --img-bg: url('./Sources/background.svg');
-    --img-x-icon: url('./Sources/Icons/logo-black.png');
-    --img-github-icon: url('./Sources/Icons/github-mark.svg');
     --z-index-extra-overlay: 20;
     --z-index-overlay: 10;
     --z-index-underlay: -1;
@@ -19,8 +17,6 @@
         --clr-overlay: rgba(0, 0, 0, 0.5);
         --clr-border: rgba(255, 255, 255, 0.5);
         --img-bg: url('./Sources/background_black.svg');
-        --img-x-icon: url('./Sources/Icons/logo-white.png');
-        --img-github-icon: url('./Sources/Icons/github-mark-white.svg');
     }
 }
 

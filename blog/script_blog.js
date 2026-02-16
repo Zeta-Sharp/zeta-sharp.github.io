@@ -49,7 +49,7 @@ function applyFilters() {
     if (!articlesData) return;
 
     let visibleCount = 0;
-    const articles = document.querySelectorAll('.blog-article[data-id]');
+    const articles = document.querySelectorAll('article[data-id]');
 
     articles.forEach(articleEl => {
         const id = articleEl.dataset.id;
@@ -82,7 +82,7 @@ function updateLanguage() {
     languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
     noArticlesMsg.textContent = isJapanese ? '指定されたタグの記事が見つかりません。' : 'No articles found for the specified tags.';
 
-    const articles = document.querySelectorAll('.blog-article[data-id]');
+    const articles = document.querySelectorAll('article[data-id]');
     articles.forEach(articleEl => {
         const id = articleEl.dataset.id;
         const data = articlesData[id];

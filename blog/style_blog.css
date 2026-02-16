@@ -58,7 +58,7 @@ main img {
     overflow-x: hidden;
 }
 
-.meta .date {
+.meta time {
     width: auto;
     white-space: nowrap;
     flex-shrink: 0;

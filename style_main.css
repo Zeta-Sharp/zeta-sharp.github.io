@@ -17,6 +17,10 @@ section {
     font-size: 2rem;
 }
 
+section#skill-tree article picture {
+    display: contents;
+}
+
 section#skill-tree {
     width: 100%;
     max-width: 100vw;

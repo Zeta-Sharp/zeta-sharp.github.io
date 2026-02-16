@@ -28,15 +28,15 @@
     <h1>Ζ#</h1>
     <div class="header-buttons">
       <nav class="scroll-buttons">
-        <button type="button" class="profile-button">Profile</button>
-        <button type="button" class="skill-tree-button">Skill Tree</button>
-        <button type="button" class="projects-button">Projects</button>
-        <button type="button" class="contacts-button">SNS</button>
+        <button type="button" class="profile-button" data-target="profile">Profile</button>
+        <button type="button" class="skill-tree-button" data-target="skill-tree">Skill Tree</button>
+        <button type="button" class="projects-button" data-target="projects">Projects</button>
+        <button type="button" class="contacts-button" data-target="contacts">SNS</button>
         <button type="button" class="blog-button">Blog</button>
       </nav>
       <div class="language-buttons">
         <button type="button" class="language-button-icon" aria-label="Change language"></button>
-        <button type="button" class="language-button">En→日 日本語に切り替え</button>
+        <button type="button" class="language-button" data-i18n="languageButton">En→日 日本語に切り替え</button>
       </div>
     </div>
     <button type="button" class="hamburger-button" aria-label="Menu">
@@ -47,10 +47,10 @@
   </header>
   <main>
     <section id="profile">
-      <h2>From something troublesome, boring, or difficult to ideas</h2>
-      <h3>Hi, I'm Ζ#.</h3>
-      <p>I'm a hobbyist engineer, and stationery lover.</p>
-      <p>I mainly write Python, and sometimes make games with Unity.</p>
+      <h2 data-i18n="catchphrase">From something troublesome, boring, or difficult to ideas</h2>
+      <h3 data-i18n="greeting">Hi, I'm Ζ#.</h3>
+      <p data-i18n="profileParagraphs.0">I'm a hobbyist engineer, and stationery lover.</p>
+      <p data-i18n="profileParagraphs.1">I mainly write Python, and sometimes make games with Unity.</p>
     </section>
     <section id="skill-tree">
       <h2>Skill Tree</h2>
@@ -58,43 +58,62 @@
         <article class="skill-card-python" aria-labelledby="skill-python">
           <img src="./Sources/Icons/python-logo-generic.svg" alt="" aria-hidden="true" class="python-icon">
           <h3>Python</h3>
-          <p>My main programming language. I use this for multiple purposes.</p>
-          <p>I'm currently learning TensorFlow(Keras) and Flask.</p>
+          <p data-i18n="skilltreeparagraphs_python.0">My main programming language. I use this for multiple purposes.
+          </p>
+          <p data-i18n="skilltreeparagraphs_python.1">I'm currently learning TensorFlow(Keras) and Flask.</p>
         </article>
         <article class="skill-card-unity-csharp" aria-labelledby="skill-unity-csharp">
-          <img src="./Sources/Icons/U_Logo_Small_Black_RGB_1C.svg" alt="" aria-hidden="true" class="unity-icon">
+          <picture>
+            <source srcset="./Sources/Icons/U_Logo_Small_White_RGB_1C.svg" media="(prefers-color-scheme: dark)">
+            <img src="./Sources/Icons/U_Logo_Small_Black_RGB_1C.svg" alt="" aria-hidden="true" class="unity-icon">
+          </picture>
           <h3>Unity/C#</h3>
-          <p>I sometimes use this for making simple games.</p>
-          <p>I'm also learning Unity Sentis and Blender.</p>
+          <p data-i18n="skilltreeparagraphs_unity_csharp.0">I sometimes use this for making simple games.</p>
+          <p data-i18n="skilltreeparagraphs_unity_csharp.1">I'm also learning Unity Sentis and Blender.</p>
         </article>
         <article class="skill-card-html-css-javascript" aria-labelledby="skill-html-css-javascript">
           <div class="html-css-javascript-icon">
-            <img src="./Sources/Icons/HTML5_Logo.svg" alt="" aria-hidden="true" class="html-icon">
-            <img src="./Sources/Icons/css.png" alt="" aria-hidden="true" class="css-icon">
+            <picture>
+              <source srcset="./Sources/Icons/HTML5_1Color_White.svg" media="(prefers-color-scheme: dark)">
+              <img src="./Sources/Icons/HTML5_Logo.svg" alt="" aria-hidden="true" class="html-icon">
+            </picture>
+            <picture>
+              <source srcset="./Sources/Icons/css_white.png" media="(prefers-color-scheme: dark)">
+              <img src="./Sources/Icons/css.png" alt="" aria-hidden="true" class="css-icon">
+            </picture>
             <img src="./Sources/Icons/js.svg" alt="" aria-hidden="true" class="javascript-icon">
           </div>
           <h3>JavaScript/HTML/CSS</h3>
-          <p>I use these for make this page.</p>
-          <p>Maybe, this page only.</p>
+          <p data-i18n="skilltreeparagraphs_html_css_javascript.0">I use these for make this page.</p>
+          <p data-i18n="skilltreeparagraphs_html_css_javascript.1">Maybe, this page only.</p>
         </article>
         <article class="skill-card-git-github" aria-labelledby="skill-git-github">
           <div class="git-github-icon">
+            <picture>
+              <source srcset="./Sources/Icons/Git-Icon-White.svg" media="(prefers-color-scheme: dark)">
             <img src="./Sources/Icons/Git-Icon-1788C.svg" alt="" aria-hidden="true" class="git-icon">
+            </picture>
+            <picture>
+              <source srcset="./Sources/Icons/github-mark-white.svg" media="(prefers-color-scheme: dark)">
             <img src="./Sources/Icons/github-mark.svg" alt="" aria-hidden="true" class="github-icon">
+            </picture>
           </div>
           <h3>Git/GitHub</h3>
-          <p>I use Git and GitHub for version control and sharing my projects.</p>
-          <p>Without them, I can't do anything.</p>
+          <p data-i18n="skilltreeparagraphs_git_github.0">I use Git and GitHub for version control and sharing my
+            projects.</p>
+          <p data-i18n="skilltreeparagraphs_git_github.1">Without them, I can't do anything.</p>
         </article>
       </div>
     </section>
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><a href="https://github.com/Zeta-Sharp/PyProma" target="_blank" rel="noopener noreferrer">PyProma</a><span> - a project aimed to
-          better project management.</span></li>
-        <li><a href="https://github.com/Zeta-Sharp/MultiplyPlus_Unity" target="_blank" rel="noopener noreferrer">×+</a><span> - a Unity project
-          of a simple board game.</span></li>
+        <li><a href="https://github.com/Zeta-Sharp/PyProma" target="_blank" rel="noopener noreferrer">PyProma</a><span
+            data-i18n="projectsDescription_pyproma"> - a project aimed to
+            better project management.</span></li>
+        <li><a href="https://github.com/Zeta-Sharp/MultiplyPlus_Unity" target="_blank"
+            rel="noopener noreferrer">×+</a><span data-i18n="projectsDescription_multiplyplus"> - a Unity project
+            of a simple board game.</span></li>
       </ul>
     </section>
     <section id="contacts">
@@ -102,11 +121,11 @@
       <div class="snss">
         <div class="sns-twitter">
           <button type="button" class="x-button" aria-label="Twitter"></button>
-          <p> - I usually post daily inspirations, and photos of stationery.</p>
+          <p data-i18n="sns_x"> - I usually post daily inspirations, and photos of stationery.</p>
         </div>
         <div class="sns-github">
           <button type="button" class="github-button" aria-label="GitHub"></button>
-          <p> - I mainly share my projects, and sometimes star interesting repositories.</p>
+          <p data-i18n="sns_github"> - I mainly share my projects, and sometimes star interesting repositories.</p>
         </div>
       </div>
     </section>

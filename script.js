@@ -1,5 +1,5 @@
 const htmlTag = document.querySelector('html');
-let isJapanese = navigator.language.startsWith('ja');
+let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 let texts
 const languageButton = document.querySelector('.language-buttons');
 const languageButtonText = document.querySelector('.language-button');
@@ -15,17 +15,6 @@ async function loadLanguageFile() {
     }
 }
 
-const firstH2 = document.querySelector('section#profile h2');
-const greetingElement = document.querySelector('section#profile h3');
-const profileParagraphs = document.querySelectorAll('section#profile p');
-const skilltreeParagraphs_python = document.querySelectorAll('.skill-card-python p');
-const skilltreeParagraphs_unity_csharp = document.querySelectorAll('.skill-card-unity-csharp p');
-const skilltreeParagraphs_html_css_javascript = document.querySelectorAll('.skill-card-html-css-javascript p');
-const skilltreeParagraphs_git_github = document.querySelectorAll('.skill-card-git-github p');
-const pypromaDescription = document.querySelector('section#projects ul li:nth-child(1) span');
-const multiplyplusDescription = document.querySelector('section#projects ul li:nth-child(2) span');
-const contactsParagraph_x = document.querySelector('section#contacts .sns-twitter p');
-const contactsParagraph_github = document.querySelector('section#contacts .sns-github p');
 languageButton.addEventListener('click', () => {
     isJapanese = !isJapanese;
     updateLanguage();
@@ -34,65 +23,31 @@ languageButton.addEventListener('click', () => {
 function updateLanguage() {
     if (!texts) return;
     const lang = isJapanese ? 'ja' : 'en';
+    localStorage.setItem('selectedLang', lang);
     htmlTag.setAttribute('lang', lang);
-    firstH2.textContent = texts['h1'][lang];
-    languageButtonText.textContent = texts['languageButton'][lang];
-    greetingElement.textContent = texts['greeting'][lang];
-    for (let i = 0; i < profileParagraphs.length; i++) {
-        profileParagraphs[i].textContent = texts['profileParagraphs'][lang][i];
-    }
-    for (let i = 0; i < skilltreeParagraphs_python.length; i++) {
-        skilltreeParagraphs_python[i].textContent = texts['skilltreeparagraphs_python'][lang][i];
-    }
-    for (let i = 0; i < skilltreeParagraphs_unity_csharp.length; i++) {
-        skilltreeParagraphs_unity_csharp[i].textContent = texts['skilltreeparagraphs_unity_csharp'][lang][i];
-    }
-    for (let i = 0; i < skilltreeParagraphs_html_css_javascript.length; i++) {
-        skilltreeParagraphs_html_css_javascript[i].textContent = texts['skilltreeparagraphs_html_css_javascript'][lang][i];
-    }
-    for (let i = 0; i < skilltreeParagraphs_git_github.length; i++) {
-        skilltreeParagraphs_git_github[i].textContent = texts['skilltreeparagraphs_git_github'][lang][i];
-    }
-    pypromaDescription.textContent = texts['projectsDescription_pyproma'][lang];
-    multiplyplusDescription.textContent = texts['projectsDescription_multiplyplus'][lang];
-    contactsParagraph_x.textContent = texts['sns_x'][lang];
-    contactsParagraph_github.textContent = texts['sns_github'][lang];
-}
 
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-const unityIcon = document.querySelector('.unity-icon')
-const htmlIcon = document.querySelector('.html-icon')
-const cssIcon = document.querySelector('.css-icon')
-const gitIcon = document.querySelector('.git-icon')
-const githubIcon = document.querySelector('.github-icon')
+    document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
+        const key = translatableElement.getAttribute('data-i18n');
+        const keys = key.split('.');
 
-function changeIcons(mediaQuery) {
-    if (mediaQuery.matches) {
-        unityIcon.src = "./Sources/Icons/U_Logo_Small_White_RGB_1C.svg";
-        htmlIcon.src = "./Sources/Icons/HTML5_1Color_White.svg";
-        cssIcon.src = "./Sources/Icons/css_white.png";
-        gitIcon.src = "./Sources/Icons/Git-Icon-White.svg";
-        githubIcon.src = "./Sources/Icons/github-mark-white.svg";
-    } else {
-        unityIcon.src = "./Sources/Icons/U_Logo_Small_Black_RGB_1C.svg";
-        htmlIcon.src = "./Sources/Icons/HTML5_Logo.svg";
-        cssIcon.src = "./Sources/Icons/css.png";
-        gitIcon.src = "./Sources/Icons/Git-Icon-1788C.svg";
-        githubIcon.src = "./Sources/Icons/github-mark.svg";
-    }
+        let translation = texts;
+
+        const found = keys.every(k => {
+            if (translation && translation[k] !== undefined) {
+                translation = translation[k];
+                return true;
+            }
+            return false;
+        });
+
+        if (found && translation[lang] !== undefined) {
+            translatableElement.textContent = translation[lang];
+        }
+    });
 }
 
 const xButton = document.querySelector('.x-button');
 const githubButton = document.querySelector('.github-button');
-const profileButton = document.querySelector('.profile-button');
-const profileSection = document.getElementById('profile');
-const skillTreeButton = document.querySelector('.skill-tree-button');
-const skillTreeSection = document.getElementById('skill-tree');
-const projectsButton = document.querySelector('.projects-button');
-const projectsSection = document.getElementById('projects');
-const contactsButton = document.querySelector('.contacts-button');
-const contactsSection = document.getElementById('contacts');
-const blogButton = document.querySelector('.blog-button');
 
 xButton.addEventListener('click', () => {
     location.href = 'https://x.com/Zeta_Sharp';
@@ -102,21 +57,19 @@ githubButton.addEventListener('click', () => {
     location.href = 'https://github.com/Zeta-Sharp';
 });
 
-profileButton.addEventListener('click', () => {
-    profileSection.scrollIntoView({ behavior: 'smooth' });
+const scrollButtons = document.querySelectorAll('.scroll-buttons button')
+
+scrollButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const tergetElement = document.getElementById(targetId);
+        if (tergetElement) {
+            tergetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
 
-skillTreeButton.addEventListener('click', () => {
-    skillTreeSection.scrollIntoView({ behavior: 'smooth' });
-});
-
-projectsButton.addEventListener('click', () => {
-    projectsSection.scrollIntoView({ behavior: 'smooth' });
-});
-
-contactsButton.addEventListener('click', () => {
-    contactsSection.scrollIntoView({ behavior: 'smooth' });
-});
+const blogButton = document.querySelector('.blog-button');
 
 blogButton.addEventListener('click', () => {
     location.href = 'https://zeta-sharp.github.io/blog/';
@@ -140,6 +93,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 loadLanguageFile();
-changeIcons(prefersDark);
-prefersDark.addEventListener('change', changeIcons);
 htmlTag.removeAttribute('translate')

@@ -3,7 +3,7 @@ const languageButton = document.querySelector('.language-button');
 const languageButtonIcon = document.querySelector('.language-button-icon');
 const noArticlesMsg = document.querySelector('.no-articles');
 
-let isJapanese = navigator.language.startsWith('ja');
+let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 let articlesData = null;
 
 languageButton.addEventListener('click', () => {
@@ -77,25 +77,28 @@ function updateLanguage() {
     if (!articlesData) return;
 
     const lang = isJapanese ? 'ja' : 'en';
+    localStorage.setItem('selectedLang', lang);
     htmlTag.setAttribute('lang', lang);
 
     languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
     noArticlesMsg.textContent = isJapanese ? '指定されたタグの記事が見つかりません。' : 'No articles found for the specified tags.';
 
-    const articles = document.querySelectorAll('article[data-id]');
-    articles.forEach(articleEl => {
-        const id = articleEl.dataset.id;
-        const data = articlesData[id];
-        if (!data) return;
+    document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
+        const key = translatableElement.getAttribute('data-i18n');
+        const keys = key.split('.');
 
-        const titleLink = articleEl.querySelector('h2 a');
-        const summary = articleEl.querySelector('.summary');
+        let translation = articlesData;
 
-        if (titleLink) {
-            titleLink.textContent = data.title[lang];
-        }
-        if (summary) {
-            summary.textContent = data.summary[lang];
+        const found = keys.every(k => {
+            if (translation && translation[k] !== undefined) {
+                translation = translation[k];
+                return true;
+            }
+            return false;
+        });
+
+        if (found && translation[lang] !== undefined) {
+            translatableElement.textContent = translation[lang];
         }
     });
 }

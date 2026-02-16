@@ -59,9 +59,9 @@ githubButton.addEventListener('click', () => {
 
 const scrollButtons = document.querySelectorAll('.scroll-buttons button')
 
-scrollButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-target');
+scrollButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
         const tergetElement = document.getElementById(targetId);
         if (tergetElement) {
             tergetElement.scrollIntoView({ behavior: 'smooth' });

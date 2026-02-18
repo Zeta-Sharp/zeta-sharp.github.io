@@ -11,14 +11,12 @@ document.addEventListener('alpine:init', () => {
         articles: null,
 
         init() {
-            const checkData = setInterval(() => {
-                if (window.articlesData) {
-                    this.articles = window.articlesData;
-                    clearInterval(checkData);
+            this.$watch(() => window.articlesData, (value) => {
+                if (value) {
+                    this.articles = Object.values(value);
                 }
-            }, 100);
+            });
         },
-
 
         toggleTag(tagName) {
             if (this.activeTags.includes(tagName)) {
@@ -34,13 +32,12 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            if (this.activeTags.length === 0 || !this.articles) return false;
-            const anyVisible = Object.values(this.articles).some(article =>
-                article.tags && this.isArticleVisible(article.tags)
+            if (!this.articles) return false;
+            if (this.activeTags.length === 0) return false;
+            return !this.articles.some(article =>
+                this.isArticleVisible(article.tags)
             );
-            return !anyVisible;
         }
-
     }));
 });
 

@@ -1,7 +1,7 @@
 // Blog Page Script
 
 // Tag-Based Article Filtering
-/*
+
 document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
@@ -21,15 +21,16 @@ document.addEventListener('alpine:init', () => {
 
         get hasNoResults() {
             if (this.activeTags.length === 0) return false;
-
-            const allArticles = document.querySelectorAll('li[data-id]');
-            const visibleArticles = Array.from(allArticles).filter(el => el.style.display !== 'none');
-            return visibleArticles.length === 0;
+            if (!articlesData) return false;
+            const anyVisible = Object.values(articlesData).some(article => {
+                return this.isArticleVisible(article.tags);
+            });
+            return !anyVisible;
         }
     }));
 });
 
-*/
+
 // Language Changing
 const htmlTag = document.querySelector('html');
 const languageButton = document.querySelector('.language-button');

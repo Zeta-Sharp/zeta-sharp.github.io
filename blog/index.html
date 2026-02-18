@@ -162,30 +162,6 @@
       <a href="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/copyrights.md">Copyrights</a>
     </p>
   </footer>
-<!--for debug-->
-  <script>
-    document.addEventListener('alpine:init', () => {
-      console.log('Alpine Init Start');
-      Alpine.data('tagSearch', () => ({
-        activeTags: [],
-        toggleTag(tagName) {
-          if (this.activeTags.includes(tagName)) {
-            this.activeTags = this.activeTags.filter(t => t !== tagName);
-          } else {
-            this.activeTags.push(tagName);
-          }
-        },
-        isArticleVisible(articleTags) {
-          if (this.activeTags.length === 0) return true;
-          return this.activeTags.every(tag => articleTags.includes(tag));
-        },
-        get hasNoResults() {
-          if (this.activeTags.length === 0) return false;
-          return false;
-        }
-      }));
-    });
-  </script>
 </body>
 
 </html>

@@ -1,3 +1,6 @@
+// Main Page Script
+
+// Language Changing
 const htmlTag = document.querySelector('html');
 let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 let texts
@@ -46,6 +49,8 @@ function updateLanguage() {
     });
 }
 
+// Header Buttons
+
 const xButton = document.querySelector('.x-button');
 const githubButton = document.querySelector('.github-button');
 
@@ -73,23 +78,6 @@ const blogButton = document.querySelector('.blog-button');
 
 blogButton.addEventListener('click', () => {
     location.href = 'https://zeta-sharp.github.io/blog/';
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const hamburgerButton = document.querySelector('.hamburger-button');
-    const headerButtons = document.querySelector('.header-buttons');
-
-    hamburgerButton.addEventListener('click', () => {
-        headerButtons.classList.toggle('is-open');
-    });
-
-    const allButtons = headerButtons.querySelectorAll('button');
-    allButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            headerButtons.classList.remove('is-open');
-        });
-    });
 });
 
 loadLanguageFile();

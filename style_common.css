@@ -165,14 +165,28 @@ body > header .hamburger-button {
     z-index: var(--z-index-extra-overlay);
     margin-left: auto;
     margin-right: 30px;
+    position: relative;
 
     .hamburger-line {
         width: 30px;
         height: 3px;
         background-color: var(--clr-text);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 }
 
+body > header .hamburger-button.is-open .hamburger-line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+body > header .hamburger-button.is-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+body > header .hamburger-button.is-open .hamburger-line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
 
 @media (max-width: 768px) {
     body > header .hamburger-button {

@@ -1,3 +1,6 @@
+// Blog Page Script
+
+// Language Changing
 const htmlTag = document.querySelector('html');
 const languageButton = document.querySelector('.language-button');
 const languageButtonIcon = document.querySelector('.language-button-icon');
@@ -25,6 +28,38 @@ async function loadArticles() {
         console.error('Error loading articles:', error);
     }
 }
+
+function updateLanguage() {
+    if (!articlesData) return;
+
+    const lang = isJapanese ? 'ja' : 'en';
+    localStorage.setItem('selectedLang', lang);
+    htmlTag.setAttribute('lang', lang);
+
+    languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
+    noArticlesMsg.textContent = isJapanese ? '指定されたタグの記事が見つかりません。' : 'No articles found for the specified tags.';
+
+    document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
+        const key = translatableElement.getAttribute('data-i18n');
+        const keys = key.split('.');
+
+        let translation = articlesData;
+
+        const found = keys.every(k => {
+            if (translation && translation[k] !== undefined) {
+                translation = translation[k];
+                return true;
+            }
+            return false;
+        });
+
+        if (found && translation[lang] !== undefined) {
+            translatableElement.textContent = translation[lang];
+        }
+    });
+}
+
+// Tag-Based Article Filtering
 
 const activeTags = new Set();
 
@@ -72,57 +107,11 @@ function applyFilters() {
     }
 }
 
-
-function updateLanguage() {
-    if (!articlesData) return;
-
-    const lang = isJapanese ? 'ja' : 'en';
-    localStorage.setItem('selectedLang', lang);
-    htmlTag.setAttribute('lang', lang);
-
-    languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
-    noArticlesMsg.textContent = isJapanese ? '指定されたタグの記事が見つかりません。' : 'No articles found for the specified tags.';
-
-    document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
-        const key = translatableElement.getAttribute('data-i18n');
-        const keys = key.split('.');
-
-        let translation = articlesData;
-
-        const found = keys.every(k => {
-            if (translation && translation[k] !== undefined) {
-                translation = translation[k];
-                return true;
-            }
-            return false;
-        });
-
-        if (found && translation[lang] !== undefined) {
-            translatableElement.textContent = translation[lang];
-        }
-    });
-}
+// Header Buttons
 
 const profileButton = document.querySelector('.profile-button');
 profileButton.addEventListener('click', () => {
     location.href = 'https://zeta-sharp.github.io/';
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const hamburgerButton = document.querySelector('.hamburger-button');
-    const headerButtons = document.querySelector('.header-buttons');
-
-    hamburgerButton.addEventListener('click', () => {
-        headerButtons.classList.toggle('is-open');
-    });
-
-    const allButtons = headerButtons.querySelectorAll('button');
-    allButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            headerButtons.classList.remove('is-open');
-        });
-    });
 });
 
 loadArticles();

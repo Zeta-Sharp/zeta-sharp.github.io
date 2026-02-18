@@ -1,21 +1,6 @@
-const iconElement = document.querySelector('body > header img');
-const titleElement = document.querySelector('body > header h1');
-const profileButton = document.querySelector('.profile-button');
-const blogButton = document.querySelector('.blog-button');
+// Blog Article Page Script
 
-iconElement.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/blog/';
-});
-titleElement.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/blog/';
-});
-profileButton.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/';
-});
-blogButton.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/blog/';
-});
-
+// Language Changing
 const htmlTag = document.querySelector('html');
 let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 let texts
@@ -79,23 +64,25 @@ function updateLanguage() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// Header Buttons
 
-    const hamburgerButton = document.querySelector('.hamburger-button');
-    const headerButtons = document.querySelector('.header-buttons');
+const iconElement = document.querySelector('body > header img');
+const titleElement = document.querySelector('body > header h1');
+const profileButton = document.querySelector('.profile-button');
+const blogButton = document.querySelector('.blog-button');
 
-    hamburgerButton.addEventListener('click', () => {
-        headerButtons.classList.toggle('is-open');
-    });
-
-    const allButtons = headerButtons.querySelectorAll('button');
-    allButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            headerButtons.classList.remove('is-open');
-        });
-    });
+iconElement.addEventListener('click', () => {
+    location.href = 'https://zeta-sharp.github.io/blog/';
 });
-
+titleElement.addEventListener('click', () => {
+    location.href = 'https://zeta-sharp.github.io/blog/';
+});
+profileButton.addEventListener('click', () => {
+    location.href = 'https://zeta-sharp.github.io/';
+});
+blogButton.addEventListener('click', () => {
+    location.href = 'https://zeta-sharp.github.io/blog/';
+});
 
 loadLanguageFile();
 htmlTag.removeAttribute('translate')

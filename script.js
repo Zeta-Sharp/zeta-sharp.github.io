@@ -7,10 +7,14 @@ let texts
 const languageButton = document.querySelector('.language-buttons');
 const languageButtonText = document.querySelector('.language-button');
 
-async function loadLanguageFile() {
+async function setupi18n() {
     try {
         const response = await fetch("./Sources/texts.json");
         texts = await response.json();
+        await i18next.init({
+            lng: localStorage.getItem('selectedLang') || (navigator.language.startsWith('ja') ? 'ja' : 'en'),
+            resources: texts
+        });
         updateLanguage();
     }
     catch (error) {
@@ -18,36 +22,26 @@ async function loadLanguageFile() {
     }
 }
 
-languageButton.addEventListener('click', () => {
-    isJapanese = !isJapanese;
-    updateLanguage();
-});
-
 function updateLanguage() {
     if (!texts) return;
-    const lang = isJapanese ? 'ja' : 'en';
+    const lang = i18next.language;
     localStorage.setItem('selectedLang', lang);
     htmlTag.setAttribute('lang', lang);
 
     document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
         const key = translatableElement.getAttribute('data-i18n');
-        const keys = key.split('.');
-
-        let translation = texts;
-
-        const found = keys.every(k => {
-            if (translation && translation[k] !== undefined) {
-                translation = translation[k];
-                return true;
-            }
-            return false;
-        });
-
-        if (found && translation[lang] !== undefined) {
-            translatableElement.textContent = translation[lang];
+        const translation = i18next.t(key);
+        if (translation) {
+            translatableElement.textContent = translation;
         }
     });
 }
+
+languageButton.addEventListener('click', () => {
+    const newLanguage = i18next.language === 'en' ? 'ja' : 'en';
+    i18next.changeLanguage(newLanguage, updateLanguage);
+});
+
 
 // Header Buttons
 
@@ -80,5 +74,5 @@ blogButton.addEventListener('click', () => {
     location.href = 'https://zeta-sharp.github.io/blog/';
 });
 
-loadLanguageFile();
+setupi18n();
 htmlTag.removeAttribute('translate')

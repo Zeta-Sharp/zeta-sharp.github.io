@@ -1,5 +1,35 @@
 // Blog Page Script
 
+// Tag-Based Article Filtering
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('tagSearch', () => ({
+        activeTags: [],
+
+        toggleTag(tagName) {
+            if (this.activeTags.includes(tagName)) {
+                this.activeTags = this.activeTags.filter(t => t !== tagName);
+            } else {
+                this.activeTags.push(tagName);
+            }
+        },
+
+        isArticleVisible(articleTags) {
+            if (this.activeTags.length === 0) return true;
+            return this.activeTags.every(tag => articleTags.includes(tag));
+        },
+
+        get hasNoResults() {
+            if (this.activeTags.length === 0) return false;
+
+            const allArticles = document.querySelectorAll('li[data-id]');
+            const visibleArticles = Array.from(allArticles).filter(el => el.style.display !== 'none');
+            return visibleArticles.length === 0;
+        }
+    }));
+});
+
+
 // Language Changing
 const htmlTag = document.querySelector('html');
 const languageButton = document.querySelector('.language-button');
@@ -22,7 +52,6 @@ async function loadArticles() {
     try {
         const response = await fetch('./article_data.json');
         articlesData = await response.json();
-        setupTagSearch();
         updateLanguage();
     } catch (error) {
         console.error('Error loading articles:', error);
@@ -59,26 +88,6 @@ function updateLanguage() {
     });
 }
 
-// Tag-Based Article Filtering
-
-document.addEventListener('alpine:init', () => {
-    Alpine.data('tagSearch', () => ({
-        activeTags: [],
-
-        toggleTag(tagName) {
-            if (this.activeTags.includes(tagName)) {
-                this.activeTags = this.activeTags.filter(t => t !== tagName);
-            } else {
-                this.activeTags.push(tagName);
-            }
-        },
-
-        isArticleVisible(articleTags) {
-            if (this.activeTags.length === 0) return true;
-            return this.activeTags.every(tag => articleTags.includes(tag));
-        }
-    }));
-});
 
 // Header Buttons
 

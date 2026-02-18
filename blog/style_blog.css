@@ -56,13 +56,6 @@ main {
     margin-bottom: 0;
     pointer-events: none;
     visibility: hidden;
-    min-height: 0;
-    line-height: 0;
-}
-
-.articles-list li[data-id].is-hidden > * {
-    margin: 0;
-    padding: 0;
 }
 
 li[data-id]>article>h3 {

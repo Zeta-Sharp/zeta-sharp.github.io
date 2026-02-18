@@ -11,9 +11,6 @@ document.addEventListener('alpine:init', () => {
         articles: null,
 
         init() {
-            this.$watch('activeTags', () => {
-                if (!this.articles) this.articles = window.articlesData;
-            });
             const checkData = setInterval(() => {
                 if (window.articlesData) {
                     this.articles = window.articlesData;
@@ -21,6 +18,7 @@ document.addEventListener('alpine:init', () => {
                 }
             }, 100);
         },
+
 
         toggleTag(tagName) {
             if (this.activeTags.includes(tagName)) {
@@ -36,13 +34,13 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            const data = this.articles;
-            if (this.activeTags.length === 0 || !data) return false;
-            const anyVisible = Object.values(data.articles || data).some(article => {
-                return article.tags && this.isArticleVisible(article.tags);
-            });
+            if (this.activeTags.length === 0 || !this.articles) return false;
+            const anyVisible = Object.values(this.articles).some(article =>
+                article.tags && this.isArticleVisible(article.tags)
+            );
             return !anyVisible;
         }
+
     }));
 });
 

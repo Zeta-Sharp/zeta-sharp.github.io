@@ -2,7 +2,7 @@
 
 let articlesData = null;
 let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
-const htmlTag = null;
+let htmlTag = null;
 
 // Tag-Based Article Filtering
 

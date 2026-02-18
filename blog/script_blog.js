@@ -9,6 +9,14 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
 
+        init() {
+            this.$watch(() => window.articlesData, (value) => {
+                if (value) {
+                    this.articles = Object.values(value)
+                }
+            })
+        },
+
         toggleTag(tag) {
             if (this.activeTags.includes(tag)) {
                 this.activeTags = this.activeTags.filter(t => t !== tag)

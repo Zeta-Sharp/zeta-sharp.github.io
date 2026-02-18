@@ -2,12 +2,20 @@
 
 let articlesData = null;
 let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
+const htmlTag = null;
 
 // Tag-Based Article Filtering
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
+        articles: null,
+
+        init() {
+            this.$watch('activeTags', () => {
+                if (!this.articles) this.articles = window.articlesData;
+            });
+        },
 
         toggleTag(tagName) {
             if (this.activeTags.includes(tagName)) {
@@ -23,11 +31,12 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            if (this.activeTags.length === 0) return false;
-            if (!articlesData) return false;
-            return !Object.values(articlesData.articles || articlesData).some(article => {
+            const data = this.articles || window.articlesData;
+            if (this.activeTags.length === 0 || !data) return false;
+            const anyVisible = Object.values(data.articles || data).some(article => {
                 return article.tags && this.isArticleVisible(article.tags);
             });
+            return !anyVisible;
         }
     }));
 });
@@ -36,7 +45,7 @@ document.addEventListener('alpine:init', () => {
 // Language Changing
 
 document.addEventListener("DOMContentLoaded", () => {
-    const htmlTag = document.querySelector('html');
+    htmlTag = document.querySelector('html');
     const languageButton = document.querySelector('.language-button');
     const languageButtonIcon = document.querySelector('.language-button-icon');
 

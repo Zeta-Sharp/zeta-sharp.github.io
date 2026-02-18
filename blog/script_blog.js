@@ -84,28 +84,26 @@ function applyFilters() {
     if (!articlesData) return;
 
     let visibleCount = 0;
-    const articles = document.querySelectorAll('li[data-id]');
+    const articles = document.querySelectorAll('article[data-id]');
 
-    articles.forEach(liElement => {
-        const id = liElement.dataset.id;
+    articles.forEach(articleEl => {
+        const id = articleEl.dataset.id;
         const data = articlesData[id];
         if (!data) return;
 
         const articleTags = data.tags || [];
         const isVisible = activeTags.size === 0 ||
             Array.from(activeTags).every(tag => articleTags.includes(tag));
-        liElement.classList.toggle('is-hidden', !isVisible);
-        liElement.setAttribute('aria-hidden', !isVisible);
+        articleEl.style.display = isVisible ? "block" : "none";
         if (isVisible) visibleCount++;
-        liElement.querySelectorAll('.meta .tag').forEach(tagEl => {
+        articleEl.querySelectorAll('.meta .tag').forEach(tagEl => {
             const tagName = tagEl.textContent.trim();
             tagEl.classList.toggle('is-active', activeTags.has(tagName));
         });
     });
 
     if (noArticlesMsg) {
-        noArticlesMsg.classList.toggle('is-visible', visibleCount === 0);
-        noArticlesMsg.setAttribute('aria-hidden', visibleCount !== 0);
+        noArticlesMsg.style.display = (visibleCount === 0) ? "block" : "none";
     }
 }
 

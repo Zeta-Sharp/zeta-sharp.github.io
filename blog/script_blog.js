@@ -5,7 +5,7 @@ let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.lang
 
 // Tag-Based Article Filtering
 
-document.addEventListener('alpine:init', () => {
+document.addEventListener('DOMContentLoaded', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
         articles: null,
@@ -39,6 +39,7 @@ document.addEventListener('alpine:init', () => {
             );
         }
     }));
+    Alpine.start();
 });
 
 

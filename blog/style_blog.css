@@ -134,13 +134,8 @@ main img {
 }
 
 .no-articles {
-    display: none;
     text-align: center;
     font-size: 1.2em;
     color: var(--clr-text);
     margin-top: 40px;
-}
-
-.no-articles.is-visible {
-    display: block;
 }

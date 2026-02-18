@@ -1,7 +1,7 @@
 // Blog Page Script
 
+window.articlesData = null;
 let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
-let htmlTag = null;
 
 // Tag-Based Article Filtering
 
@@ -14,6 +14,12 @@ document.addEventListener('alpine:init', () => {
             this.$watch('activeTags', () => {
                 if (!this.articles) this.articles = window.articlesData;
             });
+            const checkData = setInterval(() => {
+                if (window.articlesData) {
+                    this.articles = window.articlesData;
+                    clearInterval(checkData);
+                }
+            }, 100);
         },
 
         toggleTag(tagName) {
@@ -30,7 +36,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            const data = this.articles || window.articlesData;
+            const data = this.articles;
             if (this.activeTags.length === 0 || !data) return false;
             const anyVisible = Object.values(data.articles || data).some(article => {
                 return article.tags && this.isArticleVisible(article.tags);
@@ -48,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const languageButton = document.querySelector('.language-button');
     const languageButtonIcon = document.querySelector('.language-button-icon');
 
-    let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
+    isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
     loadArticles()
     languageButton.addEventListener('click', () => {
         isJapanese = !isJapanese;

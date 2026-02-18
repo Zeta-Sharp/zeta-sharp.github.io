@@ -1,6 +1,5 @@
 // Blog Page Script
 
-let articlesData = null;
 let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 let htmlTag = null;
 
@@ -45,7 +44,7 @@ document.addEventListener('alpine:init', () => {
 // Language Changing
 
 document.addEventListener("DOMContentLoaded", () => {
-    htmlTag = document.querySelector('html');
+    const htmlTag = document.querySelector('html');
     const languageButton = document.querySelector('.language-button');
     const languageButtonIcon = document.querySelector('.language-button-icon');
 
@@ -75,6 +74,8 @@ async function loadArticles() {
 
 function updateLanguage() {
     if (!articlesData) return;
+    const htmlTag = document.querySelector('html');
+    const languageButton = document.querySelector('.language-button');
 
     const lang = isJapanese ? 'ja' : 'en';
     localStorage.setItem('selectedLang', lang);

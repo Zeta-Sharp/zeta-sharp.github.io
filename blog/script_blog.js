@@ -8,6 +8,7 @@ let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.lang
 document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
+        visibleCount: 0,
 
         toggleTag(tag) {
             if (this.activeTags.includes(tag)) {
@@ -15,6 +16,7 @@ document.addEventListener('alpine:init', () => {
             } else {
                 this.activeTags.push(tag)
             }
+            this.updateVisibleCount();
         },
 
         isArticleVisible(tags) {
@@ -23,11 +25,15 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            if (this.activeTags.length === 0) return false
-            const visibleArticles = this.$root.querySelectorAll(
-                '.articles-list > li:not([style*="display: none"])'
-            )
-            return visibleArticles.length === 0
+            return this.activeTags.length > 0 && this.visibleCount === 0
+        },
+
+        updateVisibleCount() {
+            const articles = this.$root.querySelectorAll('.articles-list > li')
+            this.visibleCount = Array.from(articles).filter(li => {
+                const tags = JSON.parse(li.getAttribute('x-show').match(/\[(.*?)\]/)[0])
+                return this.isArticleVisible(tags)
+            }).length
         }
 
 

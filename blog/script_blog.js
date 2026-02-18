@@ -1,5 +1,8 @@
 // Blog Page Script
 
+let articlesData = null;
+let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
+
 // Tag-Based Article Filtering
 
 document.addEventListener('alpine:init', () => {
@@ -22,31 +25,33 @@ document.addEventListener('alpine:init', () => {
         get hasNoResults() {
             if (this.activeTags.length === 0) return false;
             if (!articlesData) return false;
-            const anyVisible = Object.values(articlesData).some(article => {
-                return this.isArticleVisible(article.tags);
+            return !Object.values(articlesData.articles || articlesData).some(article => {
+                return article.tags && this.isArticleVisible(article.tags);
             });
-            return !anyVisible;
         }
     }));
 });
 
 
 // Language Changing
-const htmlTag = document.querySelector('html');
-const languageButton = document.querySelector('.language-button');
-const languageButtonIcon = document.querySelector('.language-button-icon');
-const noArticlesMsg = document.querySelector('.no-articles');
 
-let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
-let articlesData = null;
+document.addEventListener("DOMContentLoaded", () => {
+    const htmlTag = document.querySelector('html');
+    const languageButton = document.querySelector('.language-button');
+    const languageButtonIcon = document.querySelector('.language-button-icon');
 
-languageButton.addEventListener('click', () => {
-    isJapanese = !isJapanese;
-    updateLanguage();
-});
-languageButtonIcon.addEventListener('click', () => {
-    isJapanese = !isJapanese;
-    updateLanguage();
+    let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
+    loadArticles()
+    languageButton.addEventListener('click', () => {
+        isJapanese = !isJapanese;
+        updateLanguage();
+    });
+    languageButtonIcon.addEventListener('click', () => {
+        isJapanese = !isJapanese;
+        updateLanguage();
+    });
+    htmlTag.removeAttribute('translate')
+
 });
 
 async function loadArticles() {
@@ -91,11 +96,9 @@ function updateLanguage() {
 
 
 // Header Buttons
-
-const profileButton = document.querySelector('.profile-button');
-profileButton.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/';
+document.addEventListener("DOMContentLoaded", () => {
+    const profileButton = document.querySelector('.profile-button');
+    profileButton.addEventListener('click', () => {
+        location.href = 'https://zeta-sharp.github.io/';
+    });
 });
-
-loadArticles();
-htmlTag.removeAttribute('translate')

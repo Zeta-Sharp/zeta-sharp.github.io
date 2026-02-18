@@ -1,7 +1,7 @@
 // Blog Page Script
 
 // Tag-Based Article Filtering
-
+/*
 document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
@@ -29,7 +29,7 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
-
+*/
 // Language Changing
 const htmlTag = document.querySelector('html');
 const languageButton = document.querySelector('.language-button');

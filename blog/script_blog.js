@@ -9,6 +9,14 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
 
+        init() {
+            this.$watch(() => window.articlesData, (value) => {
+                if (value) {
+                    this.articles = Object.values(value)
+                }
+            })
+        },
+
         toggleTag(tag) {
             if (this.activeTags.includes(tag)) {
                 this.activeTags = this.activeTags.filter(t => t !== tag)
@@ -23,12 +31,12 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            if (this.activeTags.length === 0) return false
-            const visibleArticles = this.$root.querySelectorAll(
-                '.articles-list > li:not([style*="display: none"])'
+            if (!this.articles || this.activeTags.length === 0) return false
+            return !this.articles.some(article =>
+                this.isArticleVisible(article.tags)
             )
-            return visibleArticles.length === 0
         }
+
 
 
     }))

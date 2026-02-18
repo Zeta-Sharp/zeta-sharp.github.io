@@ -94,9 +94,18 @@ function applyFilters() {
         const articleTags = data.tags || [];
         const isVisible = activeTags.size === 0 ||
             Array.from(activeTags).every(tag => articleTags.includes(tag));
-        liElement.classList.toggle('is-hidden', !isVisible);
-        liElement.setAttribute('aria-hidden', !isVisible);
-        if (isVisible) visibleCount++;
+
+        if (isVisible) {
+            visibleCount++;
+            liElement.classList.remove('is-hidden');
+            liElement.setAttribute('aria-hidden', 'false');
+            const scrollHeight = liElement.scrollHeight;
+            liElement.style.maxHeight = `${scrollHeight}px`;
+        } else {
+            liElement.classList.add('is-hidden');
+            liElement.setAttribute('aria-hidden', 'true');
+            liElement.style.maxHeight = '0px';
+        }
         liElement.querySelectorAll('.meta .tag').forEach(tagEl => {
             const tagName = tagEl.textContent.trim();
             tagEl.classList.toggle('is-active', activeTags.has(tagName));
@@ -108,6 +117,18 @@ function applyFilters() {
         noArticlesMsg.setAttribute('aria-hidden', visibleCount !== 0);
     }
 }
+
+function updateArticleHeights() {
+    document.querySelectorAll('li[data-id]').forEach(li => {
+        if (!li.classList.contains('is-hidden')) {
+            li.style.maxHeight = li.scrollHeight + 'px';
+        }
+    });
+}
+
+window.addEventListener('resize', updateArticleHeights);
+document.addEventListener('DOMContentLoaded', updateArticleHeights);
+
 
 // Header Buttons
 

@@ -34,12 +34,13 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100svh;
     z-index: var(--z-index-underlay);
     background-image: var(--img-bg);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: cover;
+    overscroll-behavior: none;
 }
 
 @media (max-width: 768px) {

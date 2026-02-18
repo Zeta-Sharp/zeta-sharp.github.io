@@ -5,41 +5,29 @@ let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.lang
 
 // Tag-Based Article Filtering
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
-        articles: null,
 
-        init() {
-            this.$watch(() => window.articlesData, (value) => {
-                if (value) {
-                    this.articles = Object.values(value);
-                }
-            });
-        },
-
-        toggleTag(tagName) {
-            if (this.activeTags.includes(tagName)) {
-                this.activeTags = this.activeTags.filter(t => t !== tagName);
+        toggleTag(tag) {
+            if (this.activeTags.includes(tag)) {
+                this.activeTags = this.activeTags.filter(t => t !== tag)
             } else {
-                this.activeTags.push(tagName);
+                this.activeTags.push(tag)
             }
         },
 
-        isArticleVisible(articleTags) {
-            if (this.activeTags.length === 0) return true;
-            return this.activeTags.every(tag => articleTags.includes(tag));
+        isArticleVisible(tags) {
+            if (this.activeTags.length === 0) return true
+            return this.activeTags.some(tag => tags.includes(tag))
         },
 
         get hasNoResults() {
-            if (!this.articles) return false;
-            if (this.activeTags.length === 0) return false;
-            return !this.articles.some(article =>
-                this.isArticleVisible(article.tags)
-            );
+            return false // temp
         }
-    }));
-});
+    }))
+})
+
 
 
 // Language Changing

@@ -38,31 +38,14 @@ main {
 }
 
 .articles-list li[data-id] {
-    display: grid;
-    grid-template-rows: 1fr;
-    opacity: 1;
-    margin-bottom: 20px;
-    transition:
-        grid-template-rows 0.4s ease,
-        opacity 0.3s ease,
-        margin 0.4s ease,
-        visibility 0.3s;
-    overflow: hidden;
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .articles-list li[data-id].is-hidden {
-    grid-template-rows: 0fr;
+    transform: scaleY(0);
     opacity: 0;
-    margin-bottom: 0;
     pointer-events: none;
-    visibility: hidden;
-    min-height: 0;
-    line-height: 0;
-}
-
-.articles-list li[data-id].is-hidden > * {
-    margin: 0;
-    padding: 0;
 }
 
 li[data-id]>article>h3 {

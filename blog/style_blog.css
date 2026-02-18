@@ -57,25 +57,6 @@ li[data-id]>article>h3 {
     }
 }
 
-li[data-id] {
-    transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
-    overflow: hidden;
-    opacity: 1;
-    max-height: 1000px; /* arbitrary large value to allow full height */
-    margin: 1em 0;
-    padding: 0;
-}
-
-
-li[data-id].is-hidden {
-    opacity: 0;
-    max-height: 0;
-    margin: 0;
-    padding: 0;
-    pointer-events: none;
-}
-
-
 pre {
     background-color: var(--clr-overlay);
     white-space: pre;

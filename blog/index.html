@@ -18,6 +18,7 @@
   <link rel="apple-touch-icon" href="../Sources/Icons/zeta-sharp-icon.png">
   <link rel="stylesheet" href="../style_common.css">
   <link rel="stylesheet" href="./style_blog.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script defer src="./script_blog.js"></script>
   <script defer src="../script_menu.js"></script>
 </head>
@@ -41,27 +42,37 @@
       <span class="hamburger-line"></span>
     </button>
   </header>
-  <main>
+  <main x-data="tagSearch">
     <search>
       <h2>Tag search:</h2>
       <div class="tags">
         
-        <button type="button" class="tag" aria-label="Tag Search"><span>PyProma</span></button>
+        <button type="button" class="tag" aria-label="Tag Search">:class="activeTags.includes('PyProma') &&
+          'is-active'"
+          @click="toggleTag('PyProma')"> <span>PyProma</span></button>
         
-        <button type="button" class="tag" aria-label="Tag Search"><span>blog</span></button>
+        <button type="button" class="tag" aria-label="Tag Search">:class="activeTags.includes('blog') &&
+          'is-active'"
+          @click="toggleTag('blog')"> <span>blog</span></button>
         
-        <button type="button" class="tag" aria-label="Tag Search"><span>python</span></button>
+        <button type="button" class="tag" aria-label="Tag Search">:class="activeTags.includes('python') &&
+          'is-active'"
+          @click="toggleTag('python')"> <span>python</span></button>
         
-        <button type="button" class="tag" aria-label="Tag Search"><span>release-note</span></button>
+        <button type="button" class="tag" aria-label="Tag Search">:class="activeTags.includes('release-note') &&
+          'is-active'"
+          @click="toggleTag('release-note')"> <span>release-note</span></button>
         
-        <button type="button" class="tag" aria-label="Tag Search"><span>stationery</span></button>
+        <button type="button" class="tag" aria-label="Tag Search">:class="activeTags.includes('stationery') &&
+          'is-active'"
+          @click="toggleTag('stationery')"> <span>stationery</span></button>
         
       </div>
     </search>
     <h2>Articles:</h2>
     <ul class="articles-list">
       
-      <li data-id="20260213">
+      <li data-id="20260213" x-show="isArticleVisible(["PyProma", "release-note"])" x-collapse>
         <article>
           <h3><a href="https://zeta-sharp.github.io/blog/articles/20260213.html" data-i18n="20260213.title">PyProma Git Tab 2.0.0 (Preview)</a></h3>
           <div class="meta">
@@ -78,7 +89,7 @@
         </article>
       </li>
       
-      <li data-id="20251213">
+      <li data-id="20251213" x-show="isArticleVisible(["stationery"])" x-collapse>
         <article>
           <h3><a href="https://zeta-sharp.github.io/blog/articles/20251213.html" data-i18n="20251213.title">Pencase introduction -main</a></h3>
           <div class="meta">
@@ -93,7 +104,7 @@
         </article>
       </li>
       
-      <li data-id="20251112">
+      <li data-id="20251112" x-show="isArticleVisible(["release-note", "blog"])" x-collapse>
         <article>
           <h3><a href="https://zeta-sharp.github.io/blog/articles/20251112.html" data-i18n="20251112.title">Ζ# Blog Update!</a></h3>
           <div class="meta">
@@ -110,7 +121,7 @@
         </article>
       </li>
       
-      <li data-id="20251008">
+      <li data-id="20251008" x-show="isArticleVisible(["python"])" x-collapse>
         <article>
           <h3><a href="https://zeta-sharp.github.io/blog/articles/20251008.html" data-i18n="20251008.title">New sort algorithm?</a></h3>
           <div class="meta">
@@ -125,7 +136,7 @@
         </article>
       </li>
       
-      <li data-id="20250930">
+      <li data-id="20250930" x-show="isArticleVisible(["blog"])" x-collapse>
         <article>
           <h3><a href="https://zeta-sharp.github.io/blog/articles/20250930.html" data-i18n="20250930.title">Hello, World!</a></h3>
           <div class="meta">
@@ -141,7 +152,7 @@
       </li>
       
     </ul>
-      <p class="no-articles" aria-hidden="true" aria-live="polite">No articles found for the specified tags.</p>
+    <p class="no-articles" aria-hidden="true" aria-live="polite">No articles found for the specified tags.</p>
   </main>
   <footer>
     <p>© 2025 Ζ#. Images, Icon copyrights:

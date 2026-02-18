@@ -61,74 +61,24 @@ function updateLanguage() {
 
 // Tag-Based Article Filtering
 
-const activeTags = new Set();
+document.addEventListener('alpine:init', () => {
+    Alpine.data('tagSearch', () => ({
+        activeTags: [],
 
-function setupTagSearch() {
-    const searchTags = document.querySelectorAll('search .tag');
-    searchTags.forEach(tagEl => {
-        tagEl.addEventListener('click', () => {
-            const tagName = tagEl.textContent.trim();
-            if (activeTags.has(tagName)) {
-                activeTags.delete(tagName);
-                tagEl.classList.remove('is-active');
+        toggleTag(tagName) {
+            if (this.activeTags.includes(tagName)) {
+                this.activeTags = this.activeTags.filter(t => t !== tagName);
             } else {
-                activeTags.add(tagName);
-                tagEl.classList.add('is-active');
+                this.activeTags.push(tagName);
             }
-            applyFilters();
-        });
-    });
-}
+        },
 
-function applyFilters() {
-    if (!articlesData) return;
-
-    let visibleCount = 0;
-    const articles = document.querySelectorAll('li[data-id]');
-
-    articles.forEach(liElement => {
-        const id = liElement.dataset.id;
-        const data = articlesData[id];
-        if (!data) return;
-
-        const articleTags = data.tags || [];
-        const isVisible = activeTags.size === 0 ||
-            Array.from(activeTags).every(tag => articleTags.includes(tag));
-
-        if (isVisible) {
-            visibleCount++;
-            liElement.classList.remove('is-hidden');
-            liElement.setAttribute('aria-hidden', 'false');
-            const scrollHeight = liElement.scrollHeight;
-            liElement.style.maxHeight = `${scrollHeight}px`;
-        } else {
-            liElement.classList.add('is-hidden');
-            liElement.setAttribute('aria-hidden', 'true');
-            liElement.style.maxHeight = '0px';
+        isArticleVisible(articleTags) {
+            if (this.activeTags.length === 0) return true;
+            return this.activeTags.every(tag => articleTags.includes(tag));
         }
-        liElement.querySelectorAll('.meta .tag').forEach(tagEl => {
-            const tagName = tagEl.textContent.trim();
-            tagEl.classList.toggle('is-active', activeTags.has(tagName));
-        });
-    });
-
-    if (noArticlesMsg) {
-        noArticlesMsg.classList.toggle('is-visible', visibleCount === 0);
-        noArticlesMsg.setAttribute('aria-hidden', visibleCount !== 0);
-    }
-}
-
-function updateArticleHeights() {
-    document.querySelectorAll('li[data-id]').forEach(li => {
-        if (!li.classList.contains('is-hidden')) {
-            li.style.maxHeight = li.scrollHeight + 'px';
-        }
-    });
-}
-
-window.addEventListener('resize', updateArticleHeights);
-document.addEventListener('DOMContentLoaded', updateArticleHeights);
-
+    }));
+});
 
 // Header Buttons
 

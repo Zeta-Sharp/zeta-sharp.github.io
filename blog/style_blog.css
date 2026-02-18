@@ -31,7 +31,13 @@ main {
     }
 }
 
-article[data-id] > h3 {
+main>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li[data-id]>article>h3 {
     font-size: 1.5em;
     margin: 0.5em 0;
 
@@ -49,6 +55,10 @@ article[data-id] > h3 {
             color: var(--clr-link);
         }
     }
+}
+
+li[data-id].is-hidden {
+    display: none;
 }
 
 pre {
@@ -133,4 +143,8 @@ main img {
     font-size: 1.2em;
     color: var(--clr-text);
     margin-top: 40px;
+}
+
+.no-articles.is-visible {
+    display: block;
 }

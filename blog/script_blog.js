@@ -76,6 +76,7 @@ function updateLanguage() {
     if (!articlesData) return;
     const htmlTag = document.querySelector('html');
     const languageButton = document.querySelector('.language-button');
+    const noArticlesMsg = document.querySelector('.no-articles')
 
     const lang = isJapanese ? 'ja' : 'en';
     localStorage.setItem('selectedLang', lang);

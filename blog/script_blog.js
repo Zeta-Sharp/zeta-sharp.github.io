@@ -104,6 +104,7 @@ function applyFilters() {
         } else {
             liElement.classList.add('is-hidden');
             liElement.setAttribute('aria-hidden', 'true');
+            liElement.style.maxHeight = '0px';
         }
         liElement.querySelectorAll('.meta .tag').forEach(tagEl => {
             const tagName = tagEl.textContent.trim();

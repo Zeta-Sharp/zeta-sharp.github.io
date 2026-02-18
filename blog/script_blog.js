@@ -23,8 +23,12 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            return false // temp
+            if (!this.articles || this.activeTags.length === 0) return false
+            return !this.articles.some(article =>
+                this.isArticleVisible(article.tags)
+            )
         }
+
     }))
 })
 

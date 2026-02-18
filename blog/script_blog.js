@@ -19,7 +19,7 @@ document.addEventListener('alpine:init', () => {
 
         isArticleVisible(tags) {
             if (this.activeTags.length === 0) return true
-            return this.activeTags.some(tag => tags.includes(tag))
+            return this.activeTags.every(tag => tags.includes(tag))
         },
 
         get hasNoResults() {

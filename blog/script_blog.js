@@ -25,18 +25,10 @@ document.addEventListener('alpine:init', () => {
         },
 
         get hasNoResults() {
-            return this.activeTags.length > 0 && this.visibleCount === 0
-        },
-
-        updateVisibleCount() {
-            const articles = this.$root.querySelectorAll('.articles-list > li')
-            this.visibleCount = Array.from(articles).filter(li => {
-                const tags = JSON.parse(li.getAttribute('x-show').match(/\[(.*?)\]/)[0])
-                return this.isArticleVisible(tags)
-            }).length
+        if (this.activeTags.length === 0) return false
+        const articles = this.$root.querySelectorAll('.articles-list > li')
+        return !Array.from(articles).some(li => li._x_isShown)
         }
-
-
     }))
 })
 

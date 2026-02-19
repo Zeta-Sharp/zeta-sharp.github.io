@@ -28,8 +28,8 @@ document.addEventListener('alpine:init', () => {
 
         isArticleVisible(id) {
             id = String(id)
-            if (!this.articlesData) return true
-            if (this.activeTags.length === 0) return true
+            if (!this.articlesData || this.activeTags.length === 0)
+                return true
             const article = this.articlesData[id]
             return this.activeTags.every(tag =>
                 article.tags.includes(tag)

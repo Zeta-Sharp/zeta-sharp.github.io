@@ -39,7 +39,7 @@ main>ul {
 
 li[data-id]>article>h3 {
     font-size: 1.5em;
-    margin: 0.5em 0;
+    padding: 0.5em 0;
 
     a {
         color: var(--clr-text);

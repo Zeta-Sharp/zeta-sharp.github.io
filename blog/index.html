@@ -48,19 +48,19 @@
       <h2>Tag search:</h2>
       <div class="tags">
         
-        <button type="button" class="tag" :class="activeTags.includes('PyProma') && 'is-active'"
+        <button type="button" class="tag" :class="{ 'is-active': activeTags.includes('PyProma') }"
           @click="toggleTag('PyProma')"> <span>PyProma</span></button>
         
-        <button type="button" class="tag" :class="activeTags.includes('blog') && 'is-active'"
+        <button type="button" class="tag" :class="{ 'is-active': activeTags.includes('blog') }"
           @click="toggleTag('blog')"> <span>blog</span></button>
         
-        <button type="button" class="tag" :class="activeTags.includes('python') && 'is-active'"
+        <button type="button" class="tag" :class="{ 'is-active': activeTags.includes('python') }"
           @click="toggleTag('python')"> <span>python</span></button>
         
-        <button type="button" class="tag" :class="activeTags.includes('release-note') && 'is-active'"
+        <button type="button" class="tag" :class="{ 'is-active': activeTags.includes('release-note') }"
           @click="toggleTag('release-note')"> <span>release-note</span></button>
         
-        <button type="button" class="tag" :class="activeTags.includes('stationery') && 'is-active'"
+        <button type="button" class="tag" :class="{ 'is-active': activeTags.includes('stationery') }"
           @click="toggleTag('stationery')"> <span>stationery</span></button>
         
       </div>
@@ -75,9 +75,9 @@
             <time datetime="2026-02-13">2026-02-13</time>
             <ul class="tags">
               
-              <li class="tag"><span>PyProma</span></li>
+              <li class="tag" :class="{ 'is-active': activeTags.includes('PyProma') }"><span>PyProma</span></li>
               
-              <li class="tag"><span>release-note</span></li>
+              <li class="tag" :class="{ 'is-active': activeTags.includes('release-note') }"><span>release-note</span></li>
               
             </ul>
           </div>
@@ -92,7 +92,7 @@
             <time datetime="2025-12-13">2025-12-13</time>
             <ul class="tags">
               
-              <li class="tag"><span>stationery</span></li>
+              <li class="tag" :class="{ 'is-active': activeTags.includes('stationery') }"><span>stationery</span></li>
               
             </ul>
           </div>
@@ -107,9 +107,9 @@
             <time datetime="2025-11-12">2025-11-12</time>
             <ul class="tags">
               
-              <li class="tag"><span>release-note</span></li>
+              <li class="tag" :class="{ 'is-active': activeTags.includes('release-note') }"><span>release-note</span></li>
               
-              <li class="tag"><span>blog</span></li>
+              <li class="tag" :class="{ 'is-active': activeTags.includes('blog') }"><span>blog</span></li>
               
             </ul>
           </div>
@@ -124,7 +124,7 @@
             <time datetime="2025-10-08">2025-10-08</time>
             <ul class="tags">
               
-              <li class="tag"><span>python</span></li>
+              <li class="tag" :class="{ 'is-active': activeTags.includes('python') }"><span>python</span></li>
               
             </ul>
           </div>
@@ -139,7 +139,7 @@
             <time datetime="2025-09-30">2025-09-30</time>
             <ul class="tags">
               
-              <li class="tag"><span>blog</span></li>
+              <li class="tag" :class="{ 'is-active': activeTags.includes('blog') }"><span>blog</span></li>
               
             </ul>
           </div>
@@ -148,7 +148,8 @@
       </li>
       
     </ul>
-    <p class="no-articles" aria-hidden="true" aria-live="polite" x-show="hasNoResults" x-transition>No articles found for the specified tags.</p>
+    <p class="no-articles" aria-hidden="true" aria-live="polite" x-show="hasNoResults" x-transition>No articles found
+      for the specified tags.</p>
   </main>
   <footer>
     <p>© 2025 Ζ#. Images, Icon copyrights:

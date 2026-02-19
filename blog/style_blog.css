@@ -98,7 +98,7 @@ main img {
 .tags {
     display: flex;
     height: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
     overscroll-behavior-x: contain;
     padding-left: 20px;
     list-style: none;

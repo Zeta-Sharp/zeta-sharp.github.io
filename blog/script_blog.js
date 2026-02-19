@@ -1,6 +1,6 @@
 // Blog Page Script
 
-window.articlesData = null;
+let articlesData = null;
 let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 
 // Tag-Based Article Filtering
@@ -8,7 +8,6 @@ let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.lang
 document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
-        visibleCount: 0,
 
         toggleTag(tag) {
             if (this.activeTags.includes(tag)) {
@@ -16,18 +15,26 @@ document.addEventListener('alpine:init', () => {
             } else {
                 this.activeTags.push(tag)
             }
-            this.updateVisibleCount();
         },
 
-        isArticleVisible(tags) {
+        isArticleVisible(id) {
+            id = String(id)
+            if (!articlesData) return true
             if (this.activeTags.length === 0) return true
-            return this.activeTags.every(tag => tags.includes(tag))
+            const article = articlesData[id]
+            return this.activeTags.every(tag =>
+                article.tags.includes(tag)
+            )
         },
 
         get hasNoResults() {
-        if (this.activeTags.length === 0) return false
-        const articles = this.$root.querySelectorAll('.articles-list > li')
-        return !Array.from(articles).some(li => li._x_isShown)
+            if (!articlesData || this.activeTags.length === 0)
+                return false
+            return !Object.values(articlesData).some(article =>
+                this.activeTags.every(tag =>
+                    article.tags.includes(tag)
+                )
+            )
         }
     }))
 })

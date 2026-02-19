@@ -1,0 +1,10 @@
+dockerfile
+.dockerignore
+.vscode/
+
+markdown/
+templates/
+
+poetry.lock
+pyproject.toml
+generator.py

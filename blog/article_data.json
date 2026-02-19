@@ -1,35 +1,36 @@
 {
-    "20250930": {
-        "id": "20250930",
+    "20260213": {
+        "id": "20260213",
         "title": {
-            "ja": "Hello, World!",
-            "en": "Hello, World!"
+            "ja": "PyProma Git Tab 2.0.0（プレビュー版）リリース",
+            "en": "PyProma Git Tab 2.0.0 (Preview)"
         },
-        "date": "2025-09-30",
+        "date": "2026-02-13",
         "tags": [
-            "blog"
+            "PyProma",
+            "release-note"
         ],
         "summary": {
-            "ja": "これはこのブログの記念すべき第一記事です",
-            "en": "This is my first article in my blog!"
+            "ja": "Git Tab 2.0.0のリリースノートです",
+            "en": "Release note of Git Tab 2.0.0 preview"
         },
-        "translation_file": "articles/20250930.json"
+        "translation_file": "articles/20260213.json"
     },
-    "20251008": {
-        "id": "20251008",
+    "20251213": {
+        "id": "20251213",
         "title": {
-            "ja": "新しいソートアルゴリズム...？",
-            "en": "New sort algorithm?"
+            "ja": "筆箱紹介 メイン筆箱編",
+            "en": "Pencase introduction -main"
         },
-        "date": "2025-10-08",
+        "date": "2025-12-13",
         "tags": [
-            "python"
+            "stationery"
         ],
         "summary": {
-            "ja": "新しいソートアルゴリズムを閃いてしまったかもしれない...",
-            "en": "I (maybe) found new sort algorithm...?"
+            "ja": "メインで使っている筆箱の紹介です",
+            "en": "Introduction of my main pencase. This article is Japanese only."
         },
-        "translation_file": "articles/20251008.json"
+        "translation_file": "articles/20251213.json"
     },
     "20251112": {
         "id": "20251112",
@@ -48,37 +49,36 @@
         },
         "translation_file": "articles/20251112.json"
     },
-    "20251213": {
-        "id": "20251213",
+    "20251008": {
+        "id": "20251008",
         "title": {
-            "ja": "筆箱紹介 メイン筆箱編",
-            "en": "Pencase introduction -main"
+            "ja": "新しいソートアルゴリズム...？",
+            "en": "New sort algorithm?"
         },
-        "date": "2025-12-13",
+        "date": "2025-10-08",
         "tags": [
-            "stationery"
+            "python"
         ],
         "summary": {
-            "ja": "メインで使っている筆箱の紹介です",
-            "en": "Introduction of my main pencase. This article is Japanese only."
+            "ja": "新しいソートアルゴリズムを閃いてしまったかもしれない...",
+            "en": "I (maybe) found new sort algorithm...?"
         },
-        "translation_file": "articles/20251213.json"
+        "translation_file": "articles/20251008.json"
     },
-    "20260213": {
-        "id": "20260213",
+    "20250930": {
+        "id": "20250930",
         "title": {
-            "ja": "PyProma Git Tab 2.0.0（プレビュー版）リリース",
-            "en": "PyProma Git Tab 2.0.0 (Preview)"
+            "ja": "Hello, World!",
+            "en": "Hello, World!"
         },
-        "date": "2026-02-13",
+        "date": "2025-09-30",
         "tags": [
-            "PyProma",
-            "release-note"
+            "blog"
         ],
         "summary": {
-            "ja": "Git Tab 2.0.0のリリースノートです",
-            "en": "Release note of Git Tab 2.0.0 preview"
+            "ja": "これはこのブログの記念すべき第一記事です",
+            "en": "This is my first article in my blog!"
         },
-        "translation_file": "articles/20260213.json"
+        "translation_file": "articles/20250930.json"
     }
 }

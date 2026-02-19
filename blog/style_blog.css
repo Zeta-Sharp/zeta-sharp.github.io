@@ -36,6 +36,12 @@ main>ul {
     margin: 0;
 }
 
+li[data-id] {
+    display: block;
+    contain: layout;
+}
+
+
 li[data-id]>article>h3 {
     font-size: 1.5em;
     padding: 0.5em 0;

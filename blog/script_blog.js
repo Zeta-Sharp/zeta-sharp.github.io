@@ -8,6 +8,15 @@ let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.lang
 document.addEventListener('alpine:init', () => {
     Alpine.data('tagSearch', () => ({
         activeTags: [],
+        articlesData: {},
+
+        init() {
+            fetch('./article_data.json')
+                .then(r => r.json())
+                .then(data => {
+                    this.articlesData = data
+                })
+        },
 
         toggleTag(tag) {
             if (this.activeTags.includes(tag)) {
@@ -38,7 +47,6 @@ document.addEventListener('alpine:init', () => {
         }
     }))
 })
-
 
 
 // Language Changing

@@ -7,6 +7,7 @@
     --img-bg: url('./Sources/background.svg');
     --z-index-extra-overlay: 20;
     --z-index-overlay: 10;
+    --z-index-neutral: 1;
     --z-index-underlay: -1;
 }
 
@@ -82,6 +83,7 @@ body > header {
     width: 100%;
     max-width: 100vw;
     background-color: var(--clr-overlay);
+    z-index: var(--z-index-overlay);
 
     h1 {
         margin-left: 20px;
@@ -208,7 +210,7 @@ body > header .hamburger-button.is-open .hamburger-line:nth-child(3) {
         padding-top: 80px;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
-        z-index: var(--z-index-overlay);
+        z-index: var(--z-index-extra-overlay);
     }
 
     body > header .header-buttons.is-open {
@@ -252,6 +254,8 @@ body > header .hamburger-button.is-open .hamburger-line:nth-child(3) {
 main {
     min-height: 100vh;
     padding-left: 25vw;
+    z-index: var(--z-index-neutral);
+    position: relative;
 }
 
 @media (max-width: 768px) {

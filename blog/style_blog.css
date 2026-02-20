@@ -103,7 +103,9 @@ main img {
 .tags {
     display: flex;
     height: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
     overscroll-behavior-x: contain;
     padding-left: 20px;
     list-style: none;
@@ -132,6 +134,10 @@ main img {
         display: inline-block;
         transform: skewX(20deg);
     }
+}
+
+.tags::-webkit-scrollbar {
+    display: none;
 }
 
 .tag.is-active {

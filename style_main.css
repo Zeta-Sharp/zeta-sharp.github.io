@@ -1,6 +1,7 @@
 :root {
     --img-github-icon: url('./Sources/Icons/github-mark.svg');
     --img-x-icon: url('./Sources/Icons/logo-black.png');
+    --img-google-form-icon: url('./Sources/Icons/logo_forms_2020q4_color_1x_web_64dp.png')
 }
 
 @media (prefers-color-scheme: dark) {
@@ -102,7 +103,7 @@ section#projects li {
     text-align: left;
 }
 
-section#contacts .snss {
+section#connect .snss {
     display: flex;
     justify-content: flex-end;
     flex-direction: row-reverse;
@@ -110,7 +111,8 @@ section#contacts .snss {
     align-content: center;
 
     .sns-twitter,
-    .sns-github {
+    .sns-github,
+    .google-form {
         padding: 10px;
         width: auto;
         text-align: left;
@@ -126,8 +128,7 @@ section#contacts .snss {
         }
     }
 
-    .x-button,
-    .github-button {
+    button {
         max-width: 50px;
         max-height: 50px;
         width: 100%;
@@ -146,6 +147,10 @@ section#contacts .snss {
 
     .github-button {
         background-image: var(--img-github-icon);
+    }
+
+    .google-form-button {
+        background-image: var(--img-google-form-icon);
     }
 }
 

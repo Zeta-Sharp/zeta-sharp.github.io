@@ -14,5 +14,6 @@ Copyrights of images
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/logo-black.png?raw=true" alt="x-icon" height=50px>
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/logo-white.png?raw=true" alt="x-icon-white" height=50px>: [𝕏](https://about.x.com/ja/who-we-are/brand-toolkit)  
 <img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/python-logo-generic.svg?raw=true" alt="python-logo" height=50px>: [Python](https://www.python.org/community/logos/)  
+<img src="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/logo_forms_2020q4_color_1x_web_64dp.png?raw=true" alt="google-form-icon" height=50px>: [Google Form](https://knowledge.workspace.google.com/admin/getting-started/brand-your-internal-communications-with-google-workspace)  
 <br>
 Others: Copyright by Ζ#.

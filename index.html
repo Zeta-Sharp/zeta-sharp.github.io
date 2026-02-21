@@ -21,27 +21,27 @@
   <link rel="stylesheet" href="./style_main.css">
   <script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
   <script defer src="./script.js"></script>
-  <script defer src="./script_menu.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <img src="./Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon">
-    <h1>Ζ#</h1>
-    <div class="header-buttons">
+  <header x-data="{ open: false }"  @click.outside="open = false">
+    <img src="./Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
+    <h1 @click="open = false">Ζ#</h1>
+    <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">
-        <button type="button" class="profile-button" data-target="profile">Profile</button>
-        <button type="button" class="skill-tree-button" data-target="skill-tree">Skill Tree</button>
-        <button type="button" class="projects-button" data-target="projects">Projects</button>
-        <button type="button" class="contacts-button" data-target="contacts">SNS</button>
-        <button type="button" class="blog-button">Blog</button>
+        <button type="button" class="profile-button" @click="open = false" data-target="profile">Profile</button>
+        <button type="button" class="skill-tree-button" @click="open = false" data-target="skill-tree">Skill Tree</button>
+        <button type="button" class="projects-button" @click="open = false" data-target="projects">Projects</button>
+        <button type="button" class="contacts-button" @click="open = false" data-target="contacts">SNS</button>
+        <button type="button" class="blog-button" @click="open = false">Blog</button>
       </nav>
       <div class="language-buttons">
-        <button type="button" class="language-button-icon" aria-label="Change language"></button>
+        <button type="bttoun" class="language-button-icon" aria-label="Change language"></button>
         <button type="button" class="language-button" data-i18n="languageButton">En→日 日本語に切り替え</button>
       </div>
     </div>
-    <button type="button" class="hamburger-button" aria-label="Menu">
+    <button type="button" class="hamburger-button" aria-label="Menu" @click="open = !open" :class="{ 'is-open': open }">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
@@ -93,11 +93,11 @@
           <div class="git-github-icon">
             <picture>
               <source srcset="./Sources/Icons/Git-Icon-White.svg" media="(prefers-color-scheme: dark)">
-            <img src="./Sources/Icons/Git-Icon-1788C.svg" alt="" aria-hidden="true" class="git-icon">
+              <img src="./Sources/Icons/Git-Icon-1788C.svg" alt="" aria-hidden="true" class="git-icon">
             </picture>
             <picture>
               <source srcset="./Sources/Icons/github-mark-white.svg" media="(prefers-color-scheme: dark)">
-            <img src="./Sources/Icons/github-mark.svg" alt="" aria-hidden="true" class="github-icon">
+              <img src="./Sources/Icons/github-mark.svg" alt="" aria-hidden="true" class="github-icon">
             </picture>
           </div>
           <h3>Git/GitHub</h3>

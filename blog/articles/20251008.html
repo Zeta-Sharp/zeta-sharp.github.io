@@ -19,24 +19,24 @@
   <link rel="stylesheet" href="../../style_common.css">
   <link rel="stylesheet" href="../style_blog.css">
   <script defer src="../script_blog_articles.js"></script>
-  <script defer src="../../script_menu.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
-  <header>
-    <img src="../../Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon">
-    <h1>Blog</h1>
-    <div class="header-buttons">
+  <header x-data="{ open: false }" @click.outside="open = false">
+    <img src="../../Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
+    <h1 @click="open = false">Blog</h1>
+    <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">
-        <button type="button" class="profile-button">Profile</button>
-        <button type="button" class="blog-button">Blog</button>
+        <button type="button" class="profile-button" @click="open = false">Profile</button>
+        <button type="button" class="blog-button" @click="open = false">Blog</button>
       </nav>
       <div class="language-buttons">
         <button type="button" class="language-button-icon" aria-label="Change language"></button>
         <button type="button" class="language-button">En→日 日本語に切り替え</button>
       </div>
     </div>
-    <button type="button" class="hamburger-button" aria-label="Menu">
+    <button type="button" class="hamburger-button" aria-label="Menu" @click="open = !open" :class="{ 'is-open': open }">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>

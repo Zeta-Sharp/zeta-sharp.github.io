@@ -50,9 +50,9 @@ const scrollButtons = document.querySelectorAll('.scroll-buttons button')
 scrollButtons.forEach(button => {
     button.addEventListener('click', () => {
         const targetId = button.getAttribute('data-target');
-        const tergetElement = document.getElementById(targetId);
-        if (tergetElement) {
-            tergetElement.scrollIntoView({ behavior: 'smooth' });
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });

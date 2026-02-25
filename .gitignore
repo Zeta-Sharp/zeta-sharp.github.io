@@ -1,7 +1,9 @@
+.vscode/
+.idea/
+
 dockerfile
 docker-compose.yml
 .dockerignore
-.vscode/
 
 markdown/
 templates/

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Blog - Ζ#">
+  <meta property="og:description" content="This is a blog page of Ζ#.">
+  <meta property="og:image"
+    content="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/Sources/Icons/OG_image.png?raw=true">
+  <meta property="og:url" content="https://zeta-sharp.github.io/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Zeta_Sharp">
+  <meta name="twitter:creator" content="@Zeta_Sharp">
+  <title>PyProma - Ζ# Projects</title>
+  <link rel="icon" href="../Sources/Icons/zeta-sharp-icon.png">
+  <link rel="apple-touch-icon" href="../Sources/Icons/zeta-sharp-icon.png">
+  <link rel="stylesheet" href="../style_common.css">
+  <link rel="stylesheet" href="./style_projects.css">
+  <script defer src="./script_projects_detail.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+  <header x-data="{ open: false }" @click.outside="open = false">
+    <img src="../Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
+    <h1 @click="open = false">Projects</h1>
+    <div class="header-buttons" :class="{ 'is-open': open }">
+      <nav class="scroll-buttons">
+        <button type="button" class="profile-button" @click="open = false">Profile</button>
+        <button type="button" class="blog-button" @click="open = false">Blog</button>
+      </nav>
+      <div class="language-buttons">
+        <button type="button" class="language-button-icon" aria-label="Change language"></button>
+        <button type="button" class="language-button">En→日 日本語に切り替え</button>
+      </div>
+    </div>
+    <button type="button" class="hamburger-button" aria-label="Menu" @click="open = !open" :class="{ 'is-open': open }">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>PyProma</h1>
+        <div class="meta">
+          <div class="project-stats">
+            <p>License: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1</p>
+            <p>Version: 0.2.6</p>
+            <p class="status-open">Status: Open</p>
+          </div>
+          <ul class="tags">
+            
+            <li class="tag"><span>Python</span></li>
+            
+          </ul>
+          <a href="https://github.com/Zeta-Sharp/PyProma" data-i18n="see_repository">See repository</a>
+        </div>
+      </header>
+      <div class="description" data-i18n="description" data-i18n-type="html">
+        <h3>Python Project Management Simplified</h3>
+<p>PyProma is a Python project manager designed to improve cross-project workflow.<br />
+IDEs are powerful, but they are not optimized for managing multiple projects at once.<br />
+PyProma does not replace your IDE — it acts as a customized assistant that fills the gaps between projects.</p>
+<h4>Main Points</h4>
+<ul>
+<li>Does not replace your IDE  </li>
+<li>Fills the blanks between projects  </li>
+<li>Brings multiple tools into one window  </li>
+</ul>
+<h4>Not an IDE</h4>
+<p>PyProma was not created to compete with IDEs.<br />
+It exists to support Python development alongside your IDE.  </p>
+<p>While IDEs focus on writing and debugging code,<br />
+PyProma focuses on project-level management and tool consolidation.</p>
+<h4>All in One Window</h4>
+<p>PyProma provides two views: <strong>Project View</strong> and <strong>Dir View</strong>.  </p>
+<p>In Project View, you can see all your projects in one place.<br />
+With plugins, you can solve cross-project tasks and start projects directly from the GUI.  </p>
+<p>In Dir View, you can inspect project details.<br />
+With plugins, you can execute CLI tools such as Poetry, git, or Flake8 through the GUI, with seamless connection to VSCode.</p>
+<h4>Customization</h4>
+<p>Customization is the core of PyProma.<br />
+It is not meant to be a finished product — it is meant to grow with you.  </p>
+<p>To add new functionality, simply create a <code>*_plugin.py</code> file and place it in the <code>plugins</code> directory.  </p>
+<p>For more information, see the Extensibility section in <a href="https://github.com/Zeta-Sharp/PyProma/blob/main/CONTRIBUTING.md#Extensibility">CONTRIBUTING.md</a>.  </p>
+<p>Write plugins. Add features.<br />
+Make PyProma truly yours.</p>
+<h4>Philosophy</h4>
+<p>PyProma is not a universal solution.<br />
+It is a personal command center.</p>
+<p>Instead of adapting to tools,<br />
+let tools adapt to your workflow.</p>
+      </div>
+    </article>
+    <section>
+      <h2 data-i18n="related_articles">Related Articles</h2>
+      <ul class="related-articles">
+        
+        <li class="related-article">
+          <a href="https://zeta-sharp.github.io/blog/articles/20260213.html" data-i18n="related_articles.20260213.title">PyProma Git Tab 2.0.0 (Preview)</a>
+          <time datetime="2026-02-13">2026-02-13</time>
+        </li>
+        
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Ζ#. Images, Icon copyrights:
+      <a href="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/copyrights.md">Copyrights</a>
+    </p>
+  </footer>
+</body>
+
+</html>

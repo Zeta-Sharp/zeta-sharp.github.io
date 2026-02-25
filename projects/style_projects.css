@@ -1,0 +1,47 @@
+.status-open { color: #00cc66; }
+.status-paused { color: #ffaa00; }
+.status-archived { color: #ff4444; }
+
+main {
+    padding-top: 80px;
+}
+
+.tags {
+    display: flex;
+    height: auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    padding-left: 20px;
+    list-style: none;
+    margin: 0;
+
+    .tag {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        padding: 0px 28px;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        border-left: 2px solid var(--clr-border);
+        text-decoration: none;
+        transform: skewX(-20deg);
+        background-color: transparent;
+    }
+
+    .tag:last-child {
+        border-right: 2px solid var(--clr-border);
+    }
+
+    .tag span {
+        display: inline-block;
+        transform: skewX(20deg);
+    }
+}
+
+.tags::-webkit-scrollbar {
+    display: none;
+}

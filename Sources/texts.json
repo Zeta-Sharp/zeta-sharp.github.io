@@ -24,11 +24,12 @@
                 "I use Git and GitHub for version control and sharing my projects.",
                 "Without them, I can't do anything."
             ],
-            "projectsDescription_pyproma": " - a project aimed to better Python project management.",
-            "projectsDescription_multiplyplus": " - a Unity project of a simple board game.",
+            "projectsDescription_pyproma": "Python project management simplified.",
+            "projectsDescription_multiplyplus": "a Unity project of a simple board game. (Detail page is now preparing...)",
             "sns_x": " - I usually post daily inspirations, and photos of stationery.",
             "sns_github": " - I mainly share my projects, and sometimes star interesting repositories.",
-            "connect-google-form": " - Ζ# Contact Form. (Powered by Google Form.)"
+            "connect-google-form": " - Ζ# Contact Form. (Powered by Google Form.)",
+            "see_more": "See more"
         }
     },
     "ja": {
@@ -56,11 +57,12 @@
                 "バージョン管理とプロジェクト共有のためにGitとGitHubを使用しています。",
                 " "
             ],
-            "projectsDescription_pyproma": " - Python製のプロジェクト管理をより良くすることを目指したプロジェクトです。",
-            "projectsDescription_multiplyplus": " - シンプルなボードゲームのUnityプロジェクトです。",
+            "projectsDescription_pyproma": "Pythonプロジェクト管理を、よりシンプルに。",
+            "projectsDescription_multiplyplus": "シンプルなボードゲームのUnityプロジェクトです。(詳細ページは現在準備中です...)",
             "sns_x": " - 日々のインスピレーションや文房具の写真を投稿しています。",
             "sns_github": " - 主に自分のプロジェクトを共有し、たまに面白いリポジトリにスターを付けています。",
-            "connect-google-form": " - Ζ# お問い合わせフォーム (Powered by Google Form.)"
+            "connect-google-form": " - Ζ# お問い合わせフォーム (Powered by Google Form.)",
+            "see_more": "もっと見る"
         }
     }
 }

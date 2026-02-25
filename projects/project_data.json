@@ -1,0 +1,12 @@
+{
+    "PyProma": {
+        "name": "PyProma",
+        "license": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1",
+        "version": "0.2.6",
+        "status": "Open",
+        "tags": [
+            "Python"
+        ],
+        "url": "https://github.com/Zeta-Sharp/PyProma"
+    }
+}

@@ -25,13 +25,14 @@
 </head>
 
 <body>
-  <header x-data="{ open: false }"  @click.outside="open = false">
+  <header x-data="{ open: false }" @click.outside="open = false">
     <img src="./Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
     <h1 @click="open = false">Ζ#</h1>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">
         <button type="button" class="profile-button" @click="open = false" data-target="profile">Profile</button>
-        <button type="button" class="skill-tree-button" @click="open = false" data-target="skill-tree">Skill Tree</button>
+        <button type="button" class="skill-tree-button" @click="open = false" data-target="skill-tree">Skill
+          Tree</button>
         <button type="button" class="projects-button" @click="open = false" data-target="projects">Projects</button>
         <button type="button" class="connect-button" @click="open = false" data-target="connect">Connect</button>
         <button type="button" class="blog-button" @click="open = false">Blog</button>
@@ -110,12 +111,17 @@
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><a href="https://github.com/Zeta-Sharp/PyProma" target="_blank" rel="noopener noreferrer">PyProma</a><span
-            data-i18n="projectsDescription_pyproma"> - a project aimed to
-            better project management.</span></li>
-        <li><a href="https://github.com/Zeta-Sharp/MultiplyPlus_Unity" target="_blank"
-            rel="noopener noreferrer">×+</a><span data-i18n="projectsDescription_multiplyplus"> - a Unity project
-            of a simple board game.</span></li>
+        <li><a href="https://github.com/Zeta-Sharp/PyProma" target="_blank" rel="noopener noreferrer">PyProma</a>
+          <p data-i18n="projectsDescription_pyproma">Python project management simplified.</p>
+          <a class="see-more" href="https://zeta-sharp.github.io/projects/pyproma.html">
+            <span data-i18n="see_more">See more</span><span>&gt;</span></a>
+        </li>
+        <li><a href="https://github.com/Zeta-Sharp/MultiplyPlus_Unity" target="_blank" rel="noopener noreferrer">×+</a>
+          <p data-i18n="projectsDescription_multiplyplus">a Unity project
+            of a simple board game. (Detail page is now preparing...)</p>
+          <a class="see-more" href="https://github.com/Zeta-Sharp/MultiplyPlus_Unity" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="see_more">See more</span><span>&gt;</span></a>
+        </li>
       </ul>
     </section>
     <section id="connect">

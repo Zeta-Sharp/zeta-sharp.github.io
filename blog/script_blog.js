@@ -11,7 +11,7 @@ document.addEventListener('alpine:init', () => {
         articlesData: {},
 
         init() {
-            fetch('./article_data.json')
+            fetch('/blog/article_data.json')
                 .then(r => r.json())
                 .then(data => {
                     this.articlesData = data
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadArticles() {
     try {
-        const response = await fetch('./article_data.json');
+        const response = await fetch('/blog/article_data.json');
         articlesData = await response.json();
         updateLanguage();
     } catch (error) {

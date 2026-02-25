@@ -16,15 +16,6 @@ languageButtonIcon.addEventListener('click', () => {
 
 async function loadLanguageFile() {
     try {
-        const response = await fetch(`./project_data.json`);
-        projects = await response.json();
-    }
-    catch (error) {
-        console.error('Error loading project data file:', error);
-    }
-    try {
-        if (!slag) console.error('Project slug not found in URL');
-        if (!projects[slag]) console.error(`Project data not found for slug: ${slag}`);
         const response = await fetch(`./project.json`);
         texts = await response.json();
         updateLanguage();

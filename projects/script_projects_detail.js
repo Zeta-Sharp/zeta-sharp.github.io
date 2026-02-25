@@ -4,10 +4,6 @@ let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.lang
 let texts
 const languageButton = document.querySelector('.language-button');
 const languageButtonIcon = document.querySelector('.language-button-icon');
-const currentURL = window.location.href;
-const pathname = new URL(currentURL).pathname;
-const match = pathname.match(/projects\/(.+)\.html$/);
-const slag = match[1];
 
 languageButton.addEventListener('click', () => {
     isJapanese = !isJapanese;
@@ -29,7 +25,7 @@ async function loadLanguageFile() {
     try {
         if (!slag) console.error('Project slug not found in URL');
         if (!projects[slag]) console.error(`Project data not found for slug: ${slag}`);
-        const response = await fetch(`./${slag}.json`);
+        const response = await fetch(`./project.json`);
         texts = await response.json();
         updateLanguage();
     }

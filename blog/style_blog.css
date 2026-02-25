@@ -22,6 +22,7 @@ body {
 main {
     padding-top: 80px;
     flex-grow: 1;
+    padding-right: 10px;
 }
 
 @media (max-width: 768px) {

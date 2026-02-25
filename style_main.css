@@ -1,13 +1,13 @@
 :root {
-    --img-github-icon: url('./Sources/Icons/github-mark.svg');
-    --img-x-icon: url('./Sources/Icons/logo-black.png');
-    --img-google-form-icon: url('./Sources/Icons/logo_forms_2020q4_color_1x_web_64dp.png')
+    --img-github-icon: url('/Sources/Icons/github-mark.svg');
+    --img-x-icon: url('/Sources/Icons/logo-black.png');
+    --img-google-form-icon: url('/Sources/Icons/logo_forms_2020q4_color_1x_web_64dp.png')
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --img-x-icon: url('./Sources/Icons/logo-white.png');
-        --img-github-icon: url('./Sources/Icons/github-mark-white.svg');
+        --img-x-icon: url('/Sources/Icons/logo-white.png');
+        --img-github-icon: url('/Sources/Icons/github-mark-white.svg');
     }
 }
 

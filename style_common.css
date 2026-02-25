@@ -209,12 +209,14 @@ body > header .hamburger-button.is-open .hamburger-line:nth-child(3) {
         align-items: center;
         padding-top: 80px;
         transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, visibility 0.3s;
         z-index: var(--z-index-extra-overlay);
     }
 
     body > header .header-buttons.is-open {
         transform: translateX(0);
+        visibility: visible;
     }
 
     body > header .scroll-buttons {

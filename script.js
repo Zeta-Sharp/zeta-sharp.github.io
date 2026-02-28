@@ -2,12 +2,10 @@
 
 // Language Changing
 const htmlTag = document.querySelector('html');
-let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
 let texts
 const languageButton = document.querySelector('.language-buttons');
-const languageButtonText = document.querySelector('.language-button');
 
-async function setupi18n() {
+async function setup_i18n() {
     try {
         const response = await fetch("/Sources/texts.json");
         texts = await response.json();
@@ -83,8 +81,8 @@ const form_ja = 'https://docs.google.com/forms/d/e/1FAIpQLSejQgfiS2fRcmYcIlT24bx
 
 googleFormButton.addEventListener('click', () => {
     const url = i18next.language === 'en' ? form_en : form_ja;
-    window.open(url, '_blank', 'noreferrer');
+    window.open(url, '_blank', 'noopener noreferrer');
 })
 
-setupi18n();
+setup_i18n();
 htmlTag.removeAttribute('translate')

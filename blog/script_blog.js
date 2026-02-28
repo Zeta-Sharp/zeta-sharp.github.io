@@ -30,6 +30,7 @@ document.addEventListener('alpine:init', () => {
             id = String(id)
             if (!this.articlesData || this.activeTags.length === 0)
                 return true
+            /** @type {{tags: string[]}} */
             const article = this.articlesData[id]
             return this.activeTags.every(tag =>
                 article.tags.includes(tag)

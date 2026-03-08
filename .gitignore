@@ -11,3 +11,4 @@ templates/
 poetry.lock
 pyproject.toml
 generator.py
+extensions.json

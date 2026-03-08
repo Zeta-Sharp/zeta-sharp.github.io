@@ -24,6 +24,7 @@
         if (window.location.pathname.endsWith("404.html")) {
           const msg = document.querySelector(".error-message");
           msg.textContent = "Why are you looking for the error page directly? / エラーページを直接見に来るなんて...さてはアンタ、物好きだな？";
+          console.error('Failed to read your mind "Why are you looking for the error page directly?": the author responded with a status of 500 Internal Error "confusion".');
         }
       }
   </script>

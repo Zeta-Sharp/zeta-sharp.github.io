@@ -1,3 +1,6 @@
+/* blog styles */
+
+/* Accent color for tags and links */
 :root {
     --clr-accent: rgba(0, 122, 204, 0.5);
     --clr-link: rgba(0, 122, 204, 1);
@@ -8,6 +11,8 @@
         --clr-accent: rgba(0, 122, 204, 0.5);
     }
 }
+
+/* Common styles */
 
 html {
     height: 100%;
@@ -30,6 +35,8 @@ main {
         padding: 80px 10% 0 10%;
     }
 }
+
+/* article list styles */
 
 main>ul {
     list-style: none;
@@ -63,6 +70,8 @@ li[data-id]>article>h3 {
     }
 }
 
+/* article content styles */
+
 pre {
     background-color: var(--clr-overlay);
     white-space: pre;
@@ -83,6 +92,8 @@ main img {
     }
 }
 
+/* article meta styles */
+
 .meta {
     width: 100%;
     display: flex;
@@ -96,6 +107,8 @@ main img {
     white-space: nowrap;
     flex-shrink: 0;
 }
+
+/* tags container styles */
 
 .meta .tags {
     flex: 1;
@@ -144,6 +157,8 @@ main img {
 .tag.is-active {
     background-color: var(--clr-accent);
 }
+
+/* no articles styles */
 
 .no-articles {
     text-align: center;

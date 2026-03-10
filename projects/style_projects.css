@@ -1,7 +1,11 @@
+/* projects styles */
+
+/* Status colors */
 .status-open { color: #00cc66; }
 .status-paused { color: #ffaa00; }
 .status-archived { color: #ff4444; }
 
+/* Common styles */
 main {
     padding-top: 80px;
     flex-grow: 1;
@@ -13,6 +17,8 @@ main {
         padding: 80px 10% 0 10%;
     }
 }
+
+/* tag styles */
 
 .tags {
     display: flex;

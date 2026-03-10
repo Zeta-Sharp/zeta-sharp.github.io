@@ -1,3 +1,6 @@
+/* main content styles */
+
+/* icons */
 :root {
     --img-github-icon: url('/Sources/Icons/github-mark.svg');
     --img-x-icon: url('/Sources/Icons/logo-black.png');
@@ -10,6 +13,8 @@
         --img-github-icon: url('/Sources/Icons/github-mark-white.svg');
     }
 }
+
+/* main content */
 
 main {
     overflow-y: scroll;
@@ -29,6 +34,8 @@ section {
     box-sizing: border-box;
     font-size: 2rem;
 }
+
+/* skill tree section */
 
 section#skill-tree article picture {
     display: contents;
@@ -99,6 +106,8 @@ section#skill-tree {
     }
 }
 
+/* projects section */
+
 section#projects li {
     text-align: left;
 }
@@ -140,6 +149,8 @@ section#projects li .see-more:hover {
         width: 100%;
     }
 }
+
+/* connect section */
 
 section#connect .snss {
     display: flex;

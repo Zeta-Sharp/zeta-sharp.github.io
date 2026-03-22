@@ -137,6 +137,7 @@ main img {
         border-left: 2px solid var(--clr-border);
         text-decoration: none;
         transform: skewX(-20deg);
+        color: var(--clr-text);
         background-color: transparent;
     }
 

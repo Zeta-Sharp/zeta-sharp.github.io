@@ -45,6 +45,10 @@ document.addEventListener('alpine:init', () => {
                         '',
                         `/blog/articles/${this.articleId}.html`
                     );
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "instant"
+                    });
                 }
             } catch (error) {
                 console.error('Error loading language file:', error);

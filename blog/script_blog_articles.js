@@ -15,6 +15,7 @@ document.addEventListener('alpine:init', () => {
         articleId: null,
         newerArticleId: null,
         olderArticleId: null,
+        articles_cache: {},
 
         init() {
             const htmlTag = document.querySelector('html');
@@ -27,12 +28,32 @@ document.addEventListener('alpine:init', () => {
             });
         },
 
+        async prefetchArticle(targetArticleId) {
+            if (!targetArticleId || this.articles_cache[targetArticleId] || targetArticleId === this.articleId) return;
+
+            try {
+                const response = await fetch(`/blog/articles/${targetArticleId}.json`);
+                if (response.ok) {
+                    const data = await response.json();
+                    this.articles_cache[targetArticleId] = data;
+                    console.log(`Prefetched: ${targetArticleId}`);
+                }
+            } catch (error) {
+                console.error('Prefetch error:', error);
+            }
+        },
+
         async loadLanguageFile(pushHistory = false) {
             if (!this.articleId) return;
 
             try {
-                const response = await fetch(`/blog/articles/${this.articleId}.json`);
-                this.texts = await response.json();
+                if (this.articles_cache[this.articleId]) {
+                    this.texts = this.articles_cache[this.articleId];
+                } else {
+                    const response = await fetch(`/blog/articles/${this.articleId}.json`);
+                    this.texts = await response.json();
+                    this.articles_cache[this.articleId] = this.texts;
+                }
 
                 this.newerArticleId = this.texts.newer_article_id ?? null;
                 this.olderArticleId = this.texts.older_article_id ?? null;
@@ -40,15 +61,8 @@ document.addEventListener('alpine:init', () => {
                 this.updateLanguage();
 
                 if (pushHistory) {
-                    history.pushState(
-                        { articleId: this.articleId },
-                        '',
-                        `/blog/articles/${this.articleId}.html`
-                    );
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "instant"
-                    });
+                    history.pushState({ articleId: this.articleId }, '', `/blog/articles/${this.articleId}.html`);
+                    window.scrollTo({ top: 0, behavior: "instant" });
                 }
             } catch (error) {
                 console.error('Error loading language file:', error);

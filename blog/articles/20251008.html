@@ -110,13 +110,15 @@ Is this exactly new one?</p>
   </main>
 
   <nav class="article-navigation">
-    <p class="newer-article" @click="showArticle(newerArticleId)" x-show="newerArticleId !== null">
+    <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
+      x-show="newerArticleId !== null">
       ←
       <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
         Newer Article
       </span>
     </p>
-    <p class="older-article" @click="showArticle(olderArticleId)" x-show="olderArticleId !== null">
+    <p class="older-article" @click="showArticle(olderArticleId)" @pointerenter="prefetchArticle(olderArticleId)"
+      x-show="olderArticleId !== null">
       <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
         Older Article
       </span>

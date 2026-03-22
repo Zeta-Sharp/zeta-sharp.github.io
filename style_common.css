@@ -207,6 +207,7 @@ body>header .hamburger-button.is-open .hamburger-line:nth-child(3) {
         right: 0;
         width: 250px;
         height: 100vh;
+        height: 100dvh;
         box-sizing: border-box;
         background-color: var(--clr-overlay);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);

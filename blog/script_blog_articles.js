@@ -1,86 +1,113 @@
 // Blog Article Page Script
 
-// Language Changing
-const htmlTag = document.querySelector('html');
-let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
-let texts
-const languageButton = document.querySelector('.language-button');
-const languageButtonIcon = document.querySelector('.language-button-icon');
-const currentURL = window.location.href;
-const match = currentURL.match(/articles\/(\d{8})\.html$/);
-const articleId = match[1];
+document.addEventListener('alpine:init', () => {
+    Alpine.data('blogArticlePage', () => ({
+        // Menu state
+        open: false,
 
-languageButton.addEventListener('click', () => {
-    isJapanese = !isJapanese;
-    updateLanguage();
-});
-languageButtonIcon.addEventListener('click', () => {
-    isJapanese = !isJapanese;
-    updateLanguage();
-});
+        // Language state
+        lang: localStorage.getItem('selectedLang') || (navigator.language.startsWith('ja') ? 'ja' : 'en'),
 
-async function loadLanguageFile() {
-    try {
-        const response = await fetch(`/blog/articles/${articleId}.json`);
-        texts = await response.json();
-        updateLanguage();
-    }
-    catch (error) {
-        console.error('Error loading language file:', error);
-    }
-}
+        // Article state
+        texts: null,
+        currentURL: window.location.href,
+        match: null,
+        articleId: null,
+        newerArticleId: null,
+        olderArticleId: null,
 
-function updateLanguage() {
-    if (!texts) return;
-    const lang = isJapanese ? 'ja' : 'en';
-    localStorage.setItem('selectedLang', lang);
-    htmlTag.setAttribute('lang', lang);
-    document.title = texts['title'][lang] + ' - Ζ# Blog';
-    languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
-    document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
-        const key = translatableElement.getAttribute('data-i18n');
-        const type = translatableElement.getAttribute('data-i18n-type')
-        const keys = key.split('.');
+        init() {
+            const htmlTag = document.querySelector('html');
+            htmlTag.removeAttribute('translate');
 
-        let translation = texts;
+            this.syncFromUrl();
 
-        const found = keys.every(k => {
-            if (translation && translation[k] !== undefined) {
-                translation = translation[k];
-                return true;
+            window.addEventListener('popstate', () => {
+                this.syncFromUrl();
+            });
+        },
+
+        async loadLanguageFile(pushHistory = false) {
+            if (!this.articleId) return;
+
+            try {
+                const response = await fetch(`/blog/articles/${this.articleId}.json`);
+                this.texts = await response.json();
+
+                this.newerArticleId = this.texts.newer_article_id ?? null;
+                this.olderArticleId = this.texts.older_article_id ?? null;
+
+                this.updateLanguage();
+
+                if (pushHistory) {
+                    history.pushState(
+                        { articleId: this.articleId },
+                        '',
+                        `/blog/articles/${this.articleId}.html`
+                    );
+                }
+            } catch (error) {
+                console.error('Error loading language file:', error);
             }
-            return false;
-        });
+        },
 
-        if (found && translation[lang] !== undefined) {
-            if (type === 'html') {
-                translatableElement.innerHTML = translation[lang];
+        updateLanguage() {
+            if (!this.texts) return;
+
+            const htmlTag = document.querySelector('html');
+            const title = this.texts.title?.[this.lang] ?? '';
+            const summary = this.texts.summary?.[this.lang] ?? '';
+
+            localStorage.setItem('selectedLang', this.lang);
+            htmlTag.setAttribute('lang', this.lang);
+            document.title = `${title} - Ζ# Blog`;
+
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            const ogDescription = document.querySelector('meta[property="og:description"]');
+
+            if (ogTitle) {
+                ogTitle.setAttribute('content', `${title} - Ζ# Blog`);
+            }
+            if (ogDescription) {
+                ogDescription.setAttribute('content', `This is a blog page of Ζ#. ${summary}`);
+            }
+        },
+
+        async showArticle(targetArticleId) {
+            if (!targetArticleId || targetArticleId === this.articleId) return;
+
+            this.articleId = targetArticleId;
+            await this.loadLanguageFile(true);
+        },
+
+        syncFromUrl() {
+            const articleId = location.pathname
+                .split('/')
+                .filter(Boolean)
+                .pop()
+                .replace('.html', '');
+
+            if (articleId) {
+                if (this.articleId !== articleId) {
+                    this.articleId = articleId;
+                    this.loadLanguageFile(false);
+                }
             } else {
-                translatableElement.textContent = translation[lang];
+                console.warn('No article ID found in URL.');
             }
+        },
+
+        toggleLanguage() {
+            this.lang = this.lang === 'ja' ? 'en' : 'ja';
+            this.updateLanguage();
+        },
+
+        goToProfile() {
+            location.href = 'https://zeta-sharp.github.io/';
+        },
+
+        goToBlog() {
+            location.href = 'https://zeta-sharp.github.io/blog/';
         }
-    });
-}
-
-// Header Buttons
-
-const iconElement = document.querySelector('body > header img');
-const titleElement = document.querySelector('body > header h1');
-const profileButton = document.querySelector('.profile-button');
-const blogButton = document.querySelector('.blog-button');
-
-iconElement.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/blog/';
+    }));
 });
-titleElement.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/blog/';
-});
-profileButton.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/';
-});
-blogButton.addEventListener('click', () => {
-    location.href = 'https://zeta-sharp.github.io/blog/';
-});
-
-loadLanguageFile();
-htmlTag.removeAttribute('translate')

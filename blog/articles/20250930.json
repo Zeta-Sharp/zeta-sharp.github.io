@@ -1,1 +1,29 @@
-{"id": "20250930", "title": {"ja": "Hello, World!", "en": "Hello, World!"}, "date": "2025-09-30", "tags": ["blog"], "summary": {"ja": "これはこのブログの記念すべき第一記事です", "en": "This is my first article in my blog!"}, "content": {"ja": "<p>Hello, World!<br />\n皆さん、初めまして。<br />\nこれは私Ζ#史に残る重要な一幕、ブログの第一記事です。<br />\nこのブログでは、  </p>\n<ul>\n<li>プロジェクトのリリースノート</li>\n<li>開発中の閃き、障壁とブレイクスルー</li>\n<li>文房具</li>\n</ul>\n<p>についてや、その他色々について投稿していきたいと考えています。<br />\n字数制限諸々でX(Twitter)には投稿できないようなものも投稿していきたいと思っているので、今後の記事をお楽しみに!</p>", "en": "<p>Hello, World!<br />\nNice to meet you everyone!<br />\nThis is a A historic moment of me, the first article in my blog.<br />\nIn this place, I'm going to write...  </p>\n<ul>\n<li>Release Notes of my projects</li>\n<li>Inspirations, troubles and breakthroughs in my develop</li>\n<li>Stationeries</li>\n</ul>\n<p>and so on!<br />\nMainly, I'll write detailed and deep content that can't post in X (Twitter).<br />\nPlease look forward to following articles!</p>"}}
+{
+    "id": "20250930",
+    "title": {
+        "ja": "Hello, World!",
+        "en": "Hello, World!"
+    },
+    "date": "2025-09-30",
+    "tags": [
+        "blog"
+    ],
+    "summary": {
+        "ja": "これはこのブログの記念すべき第一記事です",
+        "en": "This is my first article in my blog!"
+    },
+    "content": {
+        "ja": "<p>Hello, World!<br />\n皆さん、初めまして。<br />\nこれは私Ζ#史に残る重要な一幕、ブログの第一記事です。<br />\nこのブログでは、  </p>\n<ul>\n<li>プロジェクトのリリースノート</li>\n<li>開発中の閃き、障壁とブレイクスルー</li>\n<li>文房具</li>\n</ul>\n<p>についてや、その他色々について投稿していきたいと考えています。<br />\n字数制限諸々でX(Twitter)には投稿できないようなものも投稿していきたいと思っているので、今後の記事をお楽しみに!</p>",
+        "en": "<p>Hello, World!<br />\nNice to meet you everyone!<br />\nThis is a A historic moment of me, the first article in my blog.<br />\nIn this place, I'm going to write...  </p>\n<ul>\n<li>Release Notes of my projects</li>\n<li>Inspirations, troubles and breakthroughs in my develop</li>\n<li>Stationeries</li>\n</ul>\n<p>and so on!<br />\nMainly, I'll write detailed and deep content that can't post in X (Twitter).<br />\nPlease look forward to following articles!</p>"
+    },
+    "older_article_id": null,
+    "older_article_title": {
+        "en": null,
+        "ja": null
+    },
+    "newer_article_id": "20251008",
+    "newer_article_title": {
+        "en": "New sort algorithm?",
+        "ja": "新しいソートアルゴリズム...？"
+    }
+}

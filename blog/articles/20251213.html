@@ -23,18 +23,22 @@
   
 </head>
 
-<body>
-  <header x-data="{ open: false }" @click.outside="open = false">
-    <img src="/Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
-    <h1 @click="open = false">Blog</h1>
+<body x-data="blogArticlePage()" x-init="init()" @popstate.window="syncFromUrl()">
+  <header @click.outside="open = false">
+    <img src="/Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false; goToBlog()">
+    <h1 @click="open = false; goToBlog()">Blog</h1>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">
-        <button type="button" class="profile-button" @click="open = false">Profile</button>
-        <button type="button" class="blog-button" @click="open = false">Blog</button>
+        <button type="button" class="profile-button" @click="open = false; goToProfile()">Profile</button>
+        <button type="button" class="blog-button" @click="open = false; goToBlog()">Blog</button>
       </nav>
       <div class="language-buttons">
-        <button type="button" class="language-button-icon" aria-label="Change language"></button>
-        <button type="button" class="language-button">En→日 日本語に切り替え</button>
+        <button type="button" class="language-button-icon" aria-label="Change language"
+          @click="toggleLanguage()"></button>
+        <button type="button" class="language-button" @click="toggleLanguage()"
+          x-text="lang === 'ja' ? '日→En Switch to English' : 'En→日 日本語に切り替え'">
+          En→日 日本語に切り替え
+        </button>
       </div>
     </div>
     <button type="button" class="hamburger-button" aria-label="Menu" @click="open = !open" :class="{ 'is-open': open }">
@@ -43,10 +47,13 @@
       <span class="hamburger-line"></span>
     </button>
   </header>
+
   <main>
     <article>
       <header>
-        <h1 data-i18n="title">Pencase introduction -main</h1>
+        <h1 x-text="texts?.title?.[lang]">
+          Pencase introduction -main
+        </h1>
         <div class="meta">
           <time datetime="2025-12-13">2025-12-13</time>
           <ul class="tags">
@@ -56,12 +63,29 @@
           </ul>
         </div>
       </header>
-      <div class="article-body" data-i18n="content" data-i18n-type="html">
+
+      <div class="article-body" x-html="texts?.content?.[lang]">
         <p>Sorry, English version is unavailable in this article. Please switch language to Japanese from top right button!<br />
 ...or maybe, I'll translate later. Please wait.</p>
       </div>
     </article>
   </main>
+
+  <nav class="article-navigation">
+    <p class="newer-article" @click="showArticle(newerArticleId)" x-show="newerArticleId !== null">
+      ←
+      <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
+        Newer Article
+      </span>
+    </p>
+    <p class="older-article" @click="showArticle(olderArticleId)" x-show="olderArticleId !== null">
+      <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
+        Older Article
+      </span>
+      →
+    </p>
+  </nav>
+
   <footer>
     <p>© 2025 Ζ#. Images, Icon copyrights:
       <a href="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/copyrights.md">Copyrights</a>

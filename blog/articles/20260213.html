@@ -151,24 +151,24 @@ Your feedback and contributions help shape the future of this tool.</p>
 <p>Stay tuned for further updates!</p>
       </div>
     </article>
-  </main>
 
-  <nav class="article-navigation">
-    <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
-      x-show="newerArticleId !== null">
-      ←
-      <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
-        Newer Article
-      </span>
-    </p>
-    <p class="older-article" @click="showArticle(olderArticleId)" @pointerenter="prefetchArticle(olderArticleId)"
-      x-show="olderArticleId !== null">
-      <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
-        Older Article
-      </span>
-      →
-    </p>
-  </nav>
+    <nav class="article-navigation">
+      <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
+        x-show="newerArticleId !== null">
+        ←
+        <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
+          Newer Article
+        </span>
+      </p>
+      <p class="older-article" @click="showArticle(olderArticleId)" @pointerenter="prefetchArticle(olderArticleId)"
+        x-show="olderArticleId !== null">
+        <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
+          Older Article
+        </span>
+        →
+      </p>
+    </nav>
+  </main>
 
   <footer>
     <p>© 2025 Ζ#. Images, Icon copyrights:

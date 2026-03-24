@@ -27,7 +27,7 @@
 <body x-data="blogArticlePage()" x-init="init()" @popstate.window="syncFromUrl()">
   <header @click.outside="open = false">
     <img src="/Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false; goToBlog()">
-    <h1 @click="open = false; goToBlog()">Blog</h1>
+    <span class="header-text" @click="open = false; goToBlog()">Blog</span>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">
         <button type="button" class="profile-button" @click="open = false; goToProfile()">Profile</button>
@@ -72,8 +72,8 @@
 <p>This release represents a major step forward for Git integration in PyProma.
 Git Tab is no longer just a remote operation tool — it now provides direct visibility into your GitHub repository activity.</p>
 <hr />
-<h3>What’s New</h3>
-<h4>GitHub Issues &amp; Pull Requests Support (Preview)</h4>
+<h2>What’s New</h2>
+<h3>GitHub Issues &amp; Pull Requests Support (Preview)</h3>
 <p>Git Tab now integrates with the GitHub API and displays:</p>
 <ul>
 <li>All Issues (open &amp; closed)</li>
@@ -94,7 +94,7 @@ GitHub Pull Requests
 <p>You can double-click any item to instantly open it in your web browser.<br />
 This allows you to review repository activity directly inside PyProma without leaving the application.</p>
 <hr />
-<h4>Improved UI Layout</h4>
+<h3>Improved UI Layout</h3>
 <p>The Git Tab interface has been redesigned into a two-panel layout:</p>
 <ul>
 <li>Left panel: Remote operations (pull / push / fetch)</li>
@@ -102,7 +102,7 @@ This allows you to review repository activity directly inside PyProma without le
 </ul>
 <p>This separation improves clarity and prepares the interface for future feature expansion.</p>
 <hr />
-<h4>Better Error Handling for Git Operations</h4>
+<h3>Better Error Handling for Git Operations</h3>
 <p>Remote operations (pull, push, fetch) now include:</p>
 <ul>
 <li><code>GitCommandError</code> handling</li>
@@ -111,7 +111,7 @@ This allows you to review repository activity directly inside PyProma without le
 </ul>
 <p>This prevents silent failures and improves overall stability.</p>
 <hr />
-<h3>Internal Improvements</h3>
+<h2>Internal Improvements</h2>
 <ul>
 <li>Remote detection refactored into <code>get_git_remotes()</code></li>
 <li>GitHub integration isolated into <code>get_github_issues()</code></li>
@@ -121,7 +121,7 @@ This allows you to review repository activity directly inside PyProma without le
 </ul>
 <p>This refactoring makes the Git Tab easier to maintain and extend.</p>
 <hr />
-<h3>Preview Status</h3>
+<h2>Preview Status</h2>
 <p>GitHub integration is currently in preview.</p>
 <p>Known limitations:</p>
 <ul>
@@ -136,7 +136,7 @@ This allows you to review repository activity directly inside PyProma without le
 <li>Pull Requests</li>
 </ul>
 <hr />
-<h3>What’s Next</h3>
+<h2>What’s Next</h2>
 <p>Planned improvements may include:</p>
 <ul>
 <li>Filtering (open / closed / assigned)</li>
@@ -146,7 +146,7 @@ This allows you to review repository activity directly inside PyProma without le
 </ul>
 <p>Contributions are welcome!</p>
 <hr />
-<h3>Thank You</h3>
+<h2>Thank You</h2>
 <p>Thank you for using PyProma and helping improve the Git Tab.<br />
 Your feedback and contributions help shape the future of this tool.</p>
 <p>Stay tuned for further updates!</p>

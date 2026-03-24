@@ -25,7 +25,7 @@
 <body>
   <header x-data="{ open: false }" @click.outside="open = false">
     <img src="/Sources/Icons/zeta-sharp-icon.png" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
-    <h1 @click="open = false">Projects</h1>
+    <span class="header-text" @click="open = false">Projects</span>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">
         <button type="button" class="profile-button" @click="open = false">Profile</button>
@@ -61,35 +61,35 @@
         </div>
       </header>
       <div class="description" data-i18n="description" data-i18n-type="html">
-        <h3>Python Project Management Simplified</h3>
+        <h2>Python Project Management Simplified</h2>
 <p>PyProma is a Python project manager designed to improve cross-project workflow.<br />
 IDEs are powerful, but they are not optimized for managing multiple projects at once.<br />
 PyProma does not replace your IDE — it acts as a customized assistant that fills the gaps between projects.</p>
-<h4>Main Points</h4>
+<h3>Main Points</h3>
 <ul>
 <li>Does not replace your IDE  </li>
 <li>Fills the blanks between projects  </li>
 <li>Brings multiple tools into one window  </li>
 </ul>
-<h4>Not an IDE</h4>
+<h3>Not an IDE</h3>
 <p>PyProma was not created to compete with IDEs.<br />
 It exists to support Python development alongside your IDE.  </p>
 <p>While IDEs focus on writing and debugging code,<br />
 PyProma focuses on project-level management and tool consolidation.</p>
-<h4>All in One Window</h4>
+<h3>All in One Window</h3>
 <p>PyProma provides two views: <strong>Project View</strong> and <strong>Dir View</strong>.  </p>
 <p>In Project View, you can see all your projects in one place.<br />
 With plugins, you can solve cross-project tasks and start projects directly from the GUI.  </p>
 <p>In Dir View, you can inspect project details.<br />
 With plugins, you can execute CLI tools such as Poetry, git, or Flake8 through the GUI, with seamless connection to VSCode.</p>
-<h4>Customization</h4>
+<h3>Customization</h3>
 <p>Customization is the core of PyProma.<br />
 It is not meant to be a finished product — it is meant to grow with you.  </p>
 <p>To add new functionality, simply create a <code>*_plugin.py</code> file and place it in the <code>plugins</code> directory.  </p>
 <p>For more information, see the Extensibility section in <a href="https://github.com/Zeta-Sharp/PyProma/blob/main/CONTRIBUTING.md#Extensibility">CONTRIBUTING.md</a>.  </p>
 <p>Write plugins. Add features.<br />
 Make PyProma truly yours.</p>
-<h4>Philosophy</h4>
+<h3>Philosophy</h3>
 <p>PyProma is not a universal solution.<br />
 It is a personal command center.</p>
 <p>Instead of adapting to tools,<br />

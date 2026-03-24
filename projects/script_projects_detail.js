@@ -59,7 +59,7 @@ function updateLanguage() {
 // Header Buttons
 
 const iconElement = document.querySelector('body > header img');
-const titleElement = document.querySelector('body > header h1');
+const titleElement = document.querySelector('body > header .header-text');
 const profileButton = document.querySelector('.profile-button');
 const blogButton = document.querySelector('.blog-button');
 

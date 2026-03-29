@@ -1,6 +1,7 @@
 User-agent: *
 
 Disallow: /blog/articles/index.html
+Disallow: /google33615bf2c726395d.html
 
 Disallow: /404.html
 

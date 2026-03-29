@@ -16,6 +16,7 @@ document.addEventListener('alpine:init', () => {
         newerArticleId: null,
         olderArticleId: null,
         articles_cache: {},
+        cacheSize: 5,
 
         init() {
             const htmlTag = document.querySelector('html');
@@ -38,6 +39,10 @@ document.addEventListener('alpine:init', () => {
                     this.articles_cache[targetArticleId] = data;
                     console.log(`Prefetched: ${targetArticleId}`);
                 }
+                if (Object.keys(this.articles_cache).length > this.cacheSize) {
+                    const oldestKey = Object.keys(this.articles_cache)[0];
+                    delete this.articles_cache[oldestKey];
+                }
             } catch (error) {
                 console.error('Prefetch error:', error);
             }
@@ -49,10 +54,16 @@ document.addEventListener('alpine:init', () => {
             try {
                 if (this.articles_cache[this.articleId]) {
                     this.texts = this.articles_cache[this.articleId];
+                    delete this.articles_cache[this.articleId];
+                    this.articles_cache[this.articleId] = this.texts;
                 } else {
                     const response = await fetch(`/blog/articles/${this.articleId}.json`);
                     this.texts = await response.json();
                     this.articles_cache[this.articleId] = this.texts;
+                }
+                if (Object.keys(this.articles_cache).length > this.cacheSize) {
+                    const oldestKey = Object.keys(this.articles_cache)[0];
+                    delete this.articles_cache[oldestKey];
                 }
 
                 this.newerArticleId = this.texts.newer_article_id ?? null;

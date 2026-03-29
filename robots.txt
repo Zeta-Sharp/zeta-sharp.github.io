@@ -1,0 +1,12 @@
+User-agent: *
+
+Disallow: /blog/articles/index.html
+
+Disallow: /404.html
+
+Disallow: /*.json
+
+Disallow: /Sources/
+Disallow: /blog/articles/images/
+Disallow: /README.md
+Disallow: /.gitignore

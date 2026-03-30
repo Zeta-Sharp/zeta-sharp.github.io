@@ -1,4 +1,5 @@
 User-agent: *
+Sitemap: https://zeta-sharp.github.io/sitemap.xml
 
 Disallow: /blog/articles/index.html
 Disallow: /google33615bf2c726395d.html

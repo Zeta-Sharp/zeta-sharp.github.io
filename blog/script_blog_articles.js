@@ -53,12 +53,16 @@ document.addEventListener('alpine:init', () => {
 
             try {
                 if (this.articles_cache[this.articleId]) {
+                    this.articles_cache[this.articleId]["content"] =
+                        this.escapeHtml(this.articles_cache[this.articleId]["content"]);
                     this.texts = this.articles_cache[this.articleId];
                     delete this.articles_cache[this.articleId];
                     this.articles_cache[this.articleId] = this.texts;
                 } else {
                     const response = await fetch(`/blog/articles/${this.articleId}.json`);
-                    this.texts = await response.json();
+                    var data = await response.json();
+                    data["content"] = this.escapeHtml(data["content"]);
+                    this.texts = data;
                     this.articles_cache[this.articleId] = this.texts;
                 }
                 if (Object.keys(this.articles_cache).length > this.cacheSize) {
@@ -78,6 +82,21 @@ document.addEventListener('alpine:init', () => {
             } catch (error) {
                 console.error('Error loading language file:', error);
             }
+        },
+
+        escapeHtml(text) {
+            const articleContentEn = text["en"];
+            const articleContentJa = text["ja"];
+            const domContentEn = new DOMParser().parseFromString(articleContentEn, 'text/html');
+            const domContentJa = new DOMParser().parseFromString(articleContentJa, 'text/html');
+            domContentEn.querySelectorAll('script').forEach(element => element.remove());
+            domContentJa.querySelectorAll('script').forEach(element => element.remove());
+            domContentEn.querySelectorAll('img').forEach(img => img.removeAttribute('onerror'));
+            domContentJa.querySelectorAll('img').forEach(img => img.removeAttribute('onerror'));
+            return {
+                "en": domContentEn.body.innerHTML,
+                "ja": domContentJa.body.innerHTML
+            };
         },
 
         updateLanguage() {

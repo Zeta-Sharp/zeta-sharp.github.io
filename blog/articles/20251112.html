@@ -52,7 +52,7 @@
   <main>
     <article>
       <header>
-        <h1 x-text="texts?.title?.[lang]">
+        <h1 x-text="texts?.title?.[lang] ?? $el.innerText">
           Ζ# Blog Update!
         </h1>
         <div class="meta">
@@ -67,7 +67,7 @@
         </div>
       </header>
 
-      <div class="article-body" x-html="texts?.content?.[lang]">
+      <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
         <p>There is three changes in this update.  </p>
 <ol>
 <li>Fix translation icon disappears in top page bug.<br />

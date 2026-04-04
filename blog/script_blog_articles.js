@@ -159,3 +159,12 @@ document.addEventListener('alpine:init', () => {
         }
     }));
 });
+
+// Remove no-js class from article navigation for better styling when JavaScript is enabled
+
+document.addEventListener('DOMContentLoaded', () => {
+    const articleNavigation = document.querySelector('.article-navigation');
+    if (articleNavigation) {
+        articleNavigation.classList.remove('no-js');
+    }
+});

@@ -108,6 +108,17 @@ main img {
     flex-shrink: 0;
 }
 
+/* article navigation styles */
+
+.article-navigation {
+    display: block;
+    margin-top: 40px;
+}
+
+.article-navigation.no-js {
+    display: none;
+}
+
 /* tags container styles */
 
 .meta .tags {

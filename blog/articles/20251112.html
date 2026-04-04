@@ -82,7 +82,7 @@ I'll continue to make efforts to ensure that all (not only engineers, but also r
       </div>
     </article>
 
-    <nav class="article-navigation">
+    <nav class="article-navigation no-js">
       <h2 x-text="lang === 'ja' ? '前後記事' : 'Post Navigation'">Post Navigation</h2>
       <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
         x-show="newerArticleId !== null">

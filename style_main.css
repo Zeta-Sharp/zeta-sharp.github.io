@@ -211,3 +211,8 @@ section#connect .snss {
 footer {
     scroll-snap-align: end;
 }
+
+.footer-navigation {
+    margin-left: 0;
+
+}

@@ -55,6 +55,11 @@ section#skill-tree {
         gap: 20px;
         justify-content: flex-start;
 
+        img {
+            pointer-events: none;
+            user-select: none;
+        }
+
         article {
             border: 2px solid var(--clr-text);
             border-radius: 10px;

@@ -323,6 +323,7 @@ main {
     .footer-navigation {
         margin-left: 0;
         padding: 20px;
+        background-color: var(--clr-overlay);
 
         ol {
             flex-direction: column;

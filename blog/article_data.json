@@ -1,4 +1,20 @@
 {
+    "20260414": {
+        "id": "20260414",
+        "title": {
+            "ja": "新しいソートアルゴリズム、高速化してみた",
+            "en": "New sort algorithm, upgraded"
+        },
+        "date": "2026-04-14",
+        "tags": [
+            "python"
+        ],
+        "summary": {
+            "ja": "少し前に書いてた新しいソートアルゴリズムを高速化してみた",
+            "en": "I upgraded a new sort algorithm that I wrote a while ago."
+        },
+        "translation_file": "articles/20260414.json"
+    },
     "20260213": {
         "id": "20260213",
         "title": {

@@ -8,6 +8,8 @@ docker-compose.yml
 markdown/
 templates/
 
+418.html
+
 poetry.lock
 pyproject.toml
 generator.py

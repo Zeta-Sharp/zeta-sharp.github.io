@@ -20,6 +20,7 @@
   <link rel="apple-touch-icon" href="/Sources/zeta-sharp-icon.svg">
   <link rel="stylesheet" href="/style_common.css">
   <link rel="stylesheet" href="/style_main.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
   <script defer src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
   <script defer src="/script.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -28,7 +29,7 @@
 <body>
   <header x-data="{ open: false }" @click.outside="open = false">
     <img src="/Sources/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
-    <h1 class="header-text" @click="open = false">Ζ#</h1>
+    <h1 class="header-text" @click="open = false" aria-label="Zeta-Sharp">Ζ#</h1>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">
         <button type="button" class="profile-button" @click="open = false" data-target="profile">Profile</button>
@@ -52,7 +53,7 @@
   <main>
     <section id="profile">
       <h2 data-i18n="catchphrase">From something troublesome, boring, or difficult to ideas</h2>
-      <h3 data-i18n="greeting">Hi, I'm Ζ#.</h3>
+      <h3 data-i18n="greeting" data-i18n-html="true">Hi, I'm <span aria-label="Zeta-Sharp">Ζ#</span>.</h3>
       <p data-i18n="profileParagraphs.0">I'm a hobbyist engineer, and stationery lover.</p>
       <p data-i18n="profileParagraphs.1">I mainly write Python, and sometimes make games with Unity.</p>
     </section>
@@ -139,7 +140,7 @@
         </div>
         <div class="google-form">
           <button type="button" class="google-form-button" aria-label="Google Form"></button>
-          <p data-i18n="connect-google-form"> - Ζ# Contact Form. Powered by Google Form.</p>
+          <p data-i18n="connect-google-form" data-i18n-html="true"> - <span aria-label="Zeta-Sharp">Ζ#</span> Contact Form. Powered by Google Form.</p>
         </div>
       </div>
     </section>
@@ -155,7 +156,7 @@
           </li>
         </ol>
       </nav>
-      <p>© 2025 Ζ#. Images, Icon copyrights:<a
+      <p>© 2025 <span aria-label="Zeta-Sharp">Ζ#</span>. Images, Icon copyrights:<a
           href="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/copyrights.md">Copyrights</a></p>
     </footer>
   </main>

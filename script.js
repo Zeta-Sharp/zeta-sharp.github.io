@@ -30,7 +30,15 @@ function updateLanguage() {
         const key = translatableElement.getAttribute('data-i18n');
         const translation = i18next.t(key);
         if (translation) {
-            translatableElement.textContent = translation;
+            if (translatableElement.hasAttribute('data-i18n-html')) {
+                const config = {
+                ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'br', 'span'],
+                ALLOWED_ATTR: ['aria-label']
+            };
+                translatableElement.innerHTML = DOMPurify.sanitize(translation, config);
+            } else {
+                translatableElement.textContent = translation;
+            }
         }
     });
 }

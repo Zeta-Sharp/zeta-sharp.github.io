@@ -36,6 +36,7 @@ function updateLanguage() {
         const type = translatableElement.getAttribute('data-i18n-type')
         const keys = key.split('.');
 
+        texts["description"] = escapeHtml(texts["description"]);
         let translation = texts;
 
         const found = keys.every(k => {
@@ -54,6 +55,19 @@ function updateLanguage() {
             }
         }
     });
+}
+
+function escapeHtml(text) {
+    const articleContentEn = text["en"];
+    const articleContentJa = text["ja"];
+    const allowedTags = ['h2', 'h3', 'h4', 'h5', 'h6', 'b', 'i', 'u', 'del', 'a', 'p', 'br', 'hr', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'strong', 'em', 'span', 'div', 'blockquote', 'code', 'pre', 'img', 'sup', 'sub', 'figure', 'figcaption', 'cite', 'kbd', 'section', 'article', 'details', 'summary'];
+    const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title'];
+    const purifiedContentEn = DOMPurify.sanitize(articleContentEn, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
+    const purifiedContentJa = DOMPurify.sanitize(articleContentJa, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
+    return {
+        "en": purifiedContentEn,
+        "ja": purifiedContentJa
+    };
 }
 
 // Header Buttons

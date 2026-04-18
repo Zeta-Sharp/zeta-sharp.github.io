@@ -68,27 +68,36 @@
       </header>
 
       <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
-        <p>(Edited on 2026-04-14)
-New version is available <a href="https://zeta-sharp.github.io/blog/articles/20260414.html">here</a>!
-(End of edit)</p>
-<p>Today, I'd like to talk about a my inspiration.<br />
-I (maybe) found new sort algorithm.
-The source is below.  </p>
+        <p>
+ (Edited on 2026-04-14)
+New version is available
+ <a href="https://zeta-sharp.github.io/blog/articles/20260414.html">
+  here
+ </a>
+ !
+(End of edit)
+</p>
+<p>
+ Today, I'd like to talk about a my inspiration.
+ <br/>
+ I (maybe) found new sort algorithm.
+The source is below.
+</p>
 <pre class="codehilite"><code class="language-Python">def sort(iterable):
     iterables_list = [iterable,]
     print(iterables_list)
     while len(iterables_list[-1]) &gt; 1:
         iterables_list.append([])
-        print(&quot;a&quot;, iterables_list)
+        print("a", iterables_list)
         i = 0
         while i &lt; len(iterables_list[-2])-1:
             if iterables_list[-2][i] &gt; iterables_list[-2][i+1]:
                 iterables_list[-1].append(iterables_list[-2][i+1])
                 iterables_list[-2].pop(i+1)
-                print(&quot;b&quot;, iterables_list)
+                print("b", iterables_list)
             else:
                 i += 1
-        print(&quot;c&quot;, iterables_list)
+        print("c", iterables_list)
 
     if len(iterables_list[-1]) == 0:
         iterables_list.pop()
@@ -99,18 +108,23 @@ The source is below.  </p>
             if iterables_list[-1][0] &lt; iterables_list[-2][i]:
                 iterables_list[-2].insert(i, iterables_list[-1][0])
                 iterables_list[-1].pop(0)
-                print(&quot;d&quot;, iterables_list)
+                print("d", iterables_list)
             else:
                 i += 1
         iterables_list.pop()
-        print(&quot;e&quot;, iterables_list)
+        print("e", iterables_list)
     return iterables_list[0]
 </code></pre>
+<p>
+ This algorithm has two steps, purging and marging.
+ <br/>
+ The first step, purging, this puts elements that aren't in order into the next layer.  After the all of layers are sorted, marge them from the last layer.
+ <br/>
+ The best case is all of the elements are in ordered, and the worst case is all of elements are inversed.
+ <br/>
+ Is this exactly new one?
+</p>
 
-<p>This algorithm has two steps, purging and marging.<br />
-The first step, purging, this puts elements that aren't in order into the next layer.  After the all of layers are sorted, marge them from the last layer.<br />
-The best case is all of the elements are in ordered, and the worst case is all of elements are inversed.<br />
-Is this exactly new one?</p>
       </div>
     </article>
 

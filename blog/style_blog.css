@@ -76,6 +76,7 @@ pre {
     background-color: var(--clr-overlay);
     white-space: pre;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 main img {
@@ -89,6 +90,23 @@ main img {
     main img {
         max-width: 100%;
         height: auto;
+    }
+}
+
+.table-wrapper {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    background-color: var(--clr-overlay);
+    border-collapse: collapse;
+    -webkit-overflow-scrolling: touch;
+
+    th,
+    td {
+        white-space: nowrap;
     }
 }
 

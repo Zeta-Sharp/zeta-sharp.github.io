@@ -70,88 +70,199 @@
       </header>
 
       <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
-        <p>We are excited to announce that Git Tab 2.0.0 is now available on the preview branch!</p>
-<p>This release represents a major step forward for Git integration in PyProma.
-Git Tab is no longer just a remote operation tool — it now provides direct visibility into your GitHub repository activity.</p>
-<hr />
-<h2>What’s New</h2>
-<h3>GitHub Issues &amp; Pull Requests Support (Preview)</h3>
-<p>Git Tab now integrates with the GitHub API and displays:</p>
+        <p>
+ We are excited to announce that Git Tab 2.0.0 is now available on the preview branch!
+</p>
+<p>
+ This release represents a major step forward for Git integration in PyProma.
+Git Tab is no longer just a remote operation tool &mdash; it now provides direct visibility into your GitHub repository activity.
+</p>
+<hr/>
+<h2>
+ What&rsquo;s New
+</h2>
+<h3>
+ GitHub Issues &amp; Pull Requests Support (Preview)
+</h3>
+<p>
+ Git Tab now integrates with the GitHub API and displays:
+</p>
 <ul>
-<li>All Issues (open &amp; closed)</li>
-<li>All Pull Requests</li>
-<li>Issue/PR number</li>
-<li>Title</li>
-<li>State (open / closed)</li>
+ <li>
+  All Issues (open &amp; closed)
+ </li>
+ <li>
+  All Pull Requests
+ </li>
+ <li>
+  Issue/PR number
+ </li>
+ <li>
+  Title
+ </li>
+ <li>
+  State (open / closed)
+ </li>
 </ul>
-<p>Issues and Pull Requests are displayed in a structured tree view:</p>
+<p>
+ Issues and Pull Requests are displayed in a structured tree view:
+</p>
 <pre class="codehilite"><code>GitHub Issues
-  ├─ #12 Fix crash on startup
-  ├─ #18 Improve UI responsiveness
+  &boxvr;&boxh; #12 Fix crash on startup
+  &boxvr;&boxh; #18 Improve UI responsiveness
 GitHub Pull Requests
-  ├─ #21 Add feature X
-  ├─ #24 Refactor remote handling
+  &boxvr;&boxh; #21 Add feature X
+  &boxvr;&boxh; #24 Refactor remote handling
 </code></pre>
+<p>
+ You can double-click any item to instantly open it in your web browser.
+ <br/>
+ This allows you to review repository activity directly inside PyProma without leaving the application.
+</p>
+<hr/>
+<h3>
+ Improved UI Layout
+</h3>
+<p>
+ The Git Tab interface has been redesigned into a two-panel layout:
+</p>
+<ul>
+ <li>
+  Left panel: Remote operations (pull / push / fetch)
+ </li>
+ <li>
+  Right panel: GitHub Issues &amp; Pull Requests viewer
+ </li>
+</ul>
+<p>
+ This separation improves clarity and prepares the interface for future feature expansion.
+</p>
+<hr/>
+<h3>
+ Better Error Handling for Git Operations
+</h3>
+<p>
+ Remote operations (pull, push, fetch) now include:
+</p>
+<ul>
+ <li>
+  <code>
+   GitCommandError
+  </code>
+  handling
+ </li>
+ <li>
+  Graceful handling of unexpected exceptions
+ </li>
+ <li>
+  User-friendly error dialogs
+ </li>
+</ul>
+<p>
+ This prevents silent failures and improves overall stability.
+</p>
+<hr/>
+<h2>
+ Internal Improvements
+</h2>
+<ul>
+ <li>
+  Remote detection refactored into
+  <code>
+   get_git_remotes()
+  </code>
+ </li>
+ <li>
+  GitHub integration isolated into
+  <code>
+   get_github_issues()
+  </code>
+ </li>
+ <li>
+  Structured node metadata storage for Issue/PR handling
+ </li>
+ <li>
+  Cleaner separation between UI and logic
+ </li>
+ <li>
+  Foundation laid for future GitHub feature expansion
+ </li>
+</ul>
+<p>
+ This refactoring makes the Git Tab easier to maintain and extend.
+</p>
+<hr/>
+<h2>
+ Preview Status
+</h2>
+<p>
+ GitHub integration is currently in preview.
+</p>
+<p>
+ Known limitations:
+</p>
+<ul>
+ <li>
+  Only GitHub remotes are supported
+ </li>
+ <li>
+  Access tokens must be manually generated
+ </li>
+ <li>
+  Large repositories may take time to load
+ </li>
+ <li>
+  Pagination is not yet implemented
+ </li>
+</ul>
+<p>
+ If you encounter issues or unexpected behavior, please report them via:
+</p>
+<ul>
+ <li>
+  GitHub Issues
+ </li>
+ <li>
+  Pull Requests
+ </li>
+</ul>
+<hr/>
+<h2>
+ What&rsquo;s Next
+</h2>
+<p>
+ Planned improvements may include:
+</p>
+<ul>
+ <li>
+  Filtering (open / closed / assigned)
+ </li>
+ <li>
+  Access token expiration handling (including integration with Calendar Tab)
+ </li>
+ <li>
+  Expanded Git remote support (e.g., Azure DevOps)
+ </li>
+ <li>
+  GitHub Pull Request creation and merging support
+ </li>
+</ul>
+<p>
+ Contributions are welcome!
+</p>
+<hr/>
+<h2>
+ Thank You
+</h2>
+<p>
+ Thank you for using PyProma and helping improve the Git Tab.
+ <br/>
+ Your feedback and contributions help shape the future of this tool.
+</p>
+<p>
+ Stay tuned for further updates!
+</p>
 
-<p>You can double-click any item to instantly open it in your web browser.<br />
-This allows you to review repository activity directly inside PyProma without leaving the application.</p>
-<hr />
-<h3>Improved UI Layout</h3>
-<p>The Git Tab interface has been redesigned into a two-panel layout:</p>
-<ul>
-<li>Left panel: Remote operations (pull / push / fetch)</li>
-<li>Right panel: GitHub Issues &amp; Pull Requests viewer</li>
-</ul>
-<p>This separation improves clarity and prepares the interface for future feature expansion.</p>
-<hr />
-<h3>Better Error Handling for Git Operations</h3>
-<p>Remote operations (pull, push, fetch) now include:</p>
-<ul>
-<li><code>GitCommandError</code> handling</li>
-<li>Graceful handling of unexpected exceptions</li>
-<li>User-friendly error dialogs</li>
-</ul>
-<p>This prevents silent failures and improves overall stability.</p>
-<hr />
-<h2>Internal Improvements</h2>
-<ul>
-<li>Remote detection refactored into <code>get_git_remotes()</code></li>
-<li>GitHub integration isolated into <code>get_github_issues()</code></li>
-<li>Structured node metadata storage for Issue/PR handling</li>
-<li>Cleaner separation between UI and logic</li>
-<li>Foundation laid for future GitHub feature expansion</li>
-</ul>
-<p>This refactoring makes the Git Tab easier to maintain and extend.</p>
-<hr />
-<h2>Preview Status</h2>
-<p>GitHub integration is currently in preview.</p>
-<p>Known limitations:</p>
-<ul>
-<li>Only GitHub remotes are supported</li>
-<li>Access tokens must be manually generated</li>
-<li>Large repositories may take time to load</li>
-<li>Pagination is not yet implemented</li>
-</ul>
-<p>If you encounter issues or unexpected behavior, please report them via:</p>
-<ul>
-<li>GitHub Issues</li>
-<li>Pull Requests</li>
-</ul>
-<hr />
-<h2>What’s Next</h2>
-<p>Planned improvements may include:</p>
-<ul>
-<li>Filtering (open / closed / assigned)</li>
-<li>Access token expiration handling (including integration with Calendar Tab)</li>
-<li>Expanded Git remote support (e.g., Azure DevOps)</li>
-<li>GitHub Pull Request creation and merging support</li>
-</ul>
-<p>Contributions are welcome!</p>
-<hr />
-<h2>Thank You</h2>
-<p>Thank you for using PyProma and helping improve the Git Tab.<br />
-Your feedback and contributions help shape the future of this tool.</p>
-<p>Stay tuned for further updates!</p>
       </div>
     </article>
 

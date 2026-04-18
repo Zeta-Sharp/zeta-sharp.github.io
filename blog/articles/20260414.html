@@ -68,30 +68,51 @@
       </header>
 
       <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
-        <p>A while ago, I wrote a new sort algorithm.<br />
-If you haven't read it, please check it out before reading. <a href="https://zeta-sharp.github.io/blog/articles/20251008.html">New sort algorithm?</a><br />
-Read it? OK. Let's go.  </p>
-<h2>Review of the original algorithm</h2>
-<p>Today, I upgraded it.<br />
-The original algorithm is a bit slow, a lot of <code>pop</code>, <code>insert</code> operations, so I tried to speed it up.<br />
-The original algorithm is like this (I added copy of the input list to avoid modifying it, and debug flag to activate printing, but it's not important for the algorithm itself.):  </p>
+        <p>
+ A while ago, I wrote a new sort algorithm.
+ <br/>
+ If you haven't read it, please check it out before reading.
+ <a href="https://zeta-sharp.github.io/blog/articles/20251008.html">
+  New sort algorithm?
+ </a>
+ <br/>
+ Read it? OK. Let's go.
+</p>
+<h2>
+ Review of the original algorithm
+</h2>
+<p>
+ Today, I upgraded it.
+ <br/>
+ The original algorithm is a bit slow, a lot of
+ <code>
+  pop
+ </code>
+ ,
+ <code>
+  insert
+ </code>
+ operations, so I tried to speed it up.
+ <br/>
+ The original algorithm is like this (I added copy of the input list to avoid modifying it, and debug flag to activate printing, but it's not important for the algorithm itself.):
+</p>
 <pre class="codehilite"><code class="language-python">def sort(arr: list, debug=False):
     iterables_list = [copy.copy(arr),]
     while len(iterables_list[-1]) &gt; 1:
         iterables_list.append([])
         if debug:
-            print(&quot;a&quot;, iterables_list)
+            print("a", iterables_list)
         i = 0
         while i &lt; len(iterables_list[-2])-1:
             if iterables_list[-2][i] &gt; iterables_list[-2][i+1]:
                 iterables_list[-1].append(iterables_list[-2][i+1])
                 iterables_list[-2].pop(i+1)
                 if debug:
-                    print(&quot;b&quot;, iterables_list)
+                    print("b", iterables_list)
             else:
                 i += 1
         if debug:
-            print(&quot;c&quot;, iterables_list)
+            print("c", iterables_list)
 
     if len(iterables_list[-1]) == 0:
         iterables_list.pop()
@@ -103,18 +124,31 @@ The original algorithm is like this (I added copy of the input list to avoid mod
                 iterables_list[-2].insert(i, iterables_list[-1][0])
                 iterables_list[-1].pop(0)
                 if debug:
-                    print(&quot;d&quot;, iterables_list)
+                    print("d", iterables_list)
             else:
                 i += 1
         iterables_list.pop()
         if debug:
-            print(&quot;e&quot;, iterables_list)
+            print("e", iterables_list)
     return iterables_list[0]
 </code></pre>
-
-<p>While this algorithm uses <code>pop</code> and <code>insert</code> a lot, I tried to avoid them in the upgraded version.  </p>
-<h2>Upgraded version</h2>
-<p>The upgraded version is this:  </p>
+<p>
+ While this algorithm uses
+ <code>
+  pop
+ </code>
+ and
+ <code>
+  insert
+ </code>
+ a lot, I tried to avoid them in the upgraded version.
+</p>
+<h2>
+ Upgraded version
+</h2>
+<p>
+ The upgraded version is this:
+</p>
 <pre class="codehilite"><code class="language-python">def new_sort(arr: list, debug=False):
     iterable = copy.copy(arr)
     layer = [0 for _ in range(len(iterable))]
@@ -124,7 +158,7 @@ The original algorithm is like this (I added copy of the input list to avoid mod
         current_layer_index = len(layer_count) - 1
         layer_count.append(0)
         if debug:
-            print(&quot;a&quot;, layer, layer_count)
+            print("a", layer, layer_count)
         i = 0
         while i &lt; len(iterable) and layer[i] != current_layer_index:
             i += 1
@@ -136,12 +170,12 @@ The original algorithm is like this (I added copy of the input list to avoid mod
                     layer_count[current_layer_index + 1] += 1
                     layer_count[current_layer_index] -= 1
                     if debug:
-                        print(&quot;b&quot;, layer, layer_count)
+                        print("b", layer, layer_count)
                 else:
                     i = j
             j += 1
             if debug:
-                print(&quot;c&quot;, layer, layer_count)
+                print("c", layer, layer_count)
 
     if layer_count[-1] == 0:
         layer_count.pop()
@@ -166,13 +200,13 @@ The original algorithm is like this (I added copy of the input list to avoid mod
                     layer_count[-1] -= 1
                     layer_count[-2] += 1
                     if debug:
-                        print(&quot;d&quot;, new_layer, layer_count, result)
+                        print("d", new_layer, layer_count, result)
                     i += 1
                 else:
                     result.append(iterable[j])
                     new_layer.append(layer[j])
                     if debug:
-                        print(&quot;d&quot;, new_layer, layer_count, result)
+                        print("d", new_layer, layer_count, result)
                     j += 1
 
         while j &lt; len(iterable):
@@ -180,7 +214,7 @@ The original algorithm is like this (I added copy of the input list to avoid mod
                 result.append(iterable[j])
                 new_layer.append(layer[j])
                 if debug:
-                    print(&quot;d&quot;, new_layer, layer_count, result)
+                    print("d", new_layer, layer_count, result)
             j += 1
 
         for i in range(len(layer)):
@@ -188,18 +222,37 @@ The original algorithm is like this (I added copy of the input list to avoid mod
                 result.append(iterable[i])
                 new_layer.append(layer[i])
         if debug:
-            print(&quot;e&quot;, new_layer, layer_count, result)
+            print("e", new_layer, layer_count, result)
         iterable = result
         layer = new_layer
         layer_count.pop()
     return result
 </code></pre>
-
-<p>The main idea is to virtually split the list into layers with <code>layer</code> list, and increment/decrement layer indices instead of popping and inserting them.<br />
-This way, we can avoid the overhead of <code>pop</code> and <code>insert</code>, and the algorithm should be faster.<br />
-Instead of this, the code became more complex and longer, but I think it's worth it.  </p>
-<h2>Benchmark</h2>
-<p>I benchmarked the original and upgraded versions with random lists of different sizes.</p>
+<p>
+ The main idea is to virtually split the list into layers with
+ <code>
+  layer
+ </code>
+ list, and increment/decrement layer indices instead of popping and inserting them.
+ <br/>
+ This way, we can avoid the overhead of
+ <code>
+  pop
+ </code>
+ and
+ <code>
+  insert
+ </code>
+ , and the algorithm should be faster.
+ <br/>
+ Instead of this, the code became more complex and longer, but I think it's worth it.
+</p>
+<h2>
+ Benchmark
+</h2>
+<p>
+ I benchmarked the original and upgraded versions with random lists of different sizes.
+</p>
 <pre class="codehilite"><code class="language-python">def benchmark(sort_func, n=200, trials=10):
     times = []
     for _ in range(trials):
@@ -216,73 +269,137 @@ Instead of this, the code became more complex and longer, but I think it's worth
     return avg, stdev
 
 
-if __name__ == &quot;__main__&quot;:
+if __name__ == "__main__":
     N_SIZE = 30000
     TRIALS = 10
 
-    print(f&quot;--- Start Benchmark (Size:{N_SIZE}, Trials:{TRIALS}) ---&quot;)
+    print(f"--- Start Benchmark (Size:{N_SIZE}, Trials:{TRIALS}) ---")
 
     avg1, dev1 = benchmark(sort, N_SIZE, TRIALS)
-    print(f&quot;Old Version: Average {avg1:.5f}s (±{dev1:.5f})&quot;)
+    print(f"Old Version: Average {avg1:.5f}s (&plusmn;{dev1:.5f})")
 
     avg2, dev2 = benchmark(new_sort, N_SIZE, TRIALS)
-    print(f&quot;Upgraded Version: Average {avg2:.5f}s (±{dev2:.5f})&quot;)
+    print(f"Upgraded Version: Average {avg2:.5f}s (&plusmn;{dev2:.5f})")
 
     improvement = (avg1 / avg2) if avg2 &gt; 0 else 0
-    print(f&quot;\nResult: The upgraded version is approximately {improvement:.1f} times faster than the old version.&quot;)
+    print(f"\nResult: The upgraded version is approximately {improvement:.1f} times faster than the old version.")
+</code></pre>
+<p>
+ The results are below.
+</p>
+<div class="table-wrapper">
+ <table>
+  <thead>
+   <tr>
+    <th>
+     Size
+    </th>
+    <th>
+     Times
+    </th>
+    <th>
+     Old Version
+    </th>
+    <th>
+     Upgraded Version
+    </th>
+    <th>
+     Improvement
+    </th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>
+     1000
+    </td>
+    <td>
+     10
+    </td>
+    <td>
+     0.01483s (&plusmn;0.00237)
+    </td>
+    <td>
+     0.01812s (&plusmn;0.00160)
+    </td>
+    <td>
+     0.8 times
+    </td>
+   </tr>
+   <tr>
+    <td>
+     5000
+    </td>
+    <td>
+     10
+    </td>
+    <td>
+     0.25094s (&plusmn;0.03296)
+    </td>
+    <td>
+     0.20472s (&plusmn;0.01751)
+    </td>
+    <td>
+     1.2 times
+    </td>
+   </tr>
+   <tr>
+    <td>
+     10000
+    </td>
+    <td>
+     10
+    </td>
+    <td>
+     0.95736s (&plusmn;0.08883)
+    </td>
+    <td>
+     0.59673s (&plusmn;0.03286)
+    </td>
+    <td>
+     1.6 times
+    </td>
+   </tr>
+   <tr>
+    <td>
+     30000
+    </td>
+    <td>
+     10
+    </td>
+    <td>
+     10.53698s (&plusmn;0.67754)
+    </td>
+    <td>
+     2.99876s (&plusmn;0.22899)
+    </td>
+    <td>
+     3.5 times
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<p>
+ As you can see, the upgraded version is faster and more consistent than the old version, especially as the size of the list increases.
+ <br/>
+ The improvement is significant, especially for larger lists, where the upgraded version is approximately 3.5 times faster than the old version.
+</p>
+<h2>
+ Conclusion
+</h2>
+<p>
+ In this article, I upgraded a new sort algorithm that I wrote a while ago.
+ <br/>
+ The upgraded version is faster and more consistent than the old version, especially as the size of the list increases.
+ <br/>
+ The main idea is still the same, compare and drop layers because this idea is what makes this algorithm (maybe) unique.
+ <br/>
+ I hope you enjoyed this article, and if you have any questions or suggestions, please let me know through form or twitter.
+</p>
+<pre class="codehilite"><code class="language-python">print("see you next time!")
 </code></pre>
 
-<p>The results are below.  </p>
-<table>
-<thead>
-<tr>
-<th>Size</th>
-<th>Times</th>
-<th>Old Version</th>
-<th>Upgraded Version</th>
-<th>Improvement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1000</td>
-<td>10</td>
-<td>0.01483s (±0.00237)</td>
-<td>0.01812s (±0.00160)</td>
-<td>0.8 times</td>
-</tr>
-<tr>
-<td>5000</td>
-<td>10</td>
-<td>0.25094s (±0.03296)</td>
-<td>0.20472s (±0.01751)</td>
-<td>1.2 times</td>
-</tr>
-<tr>
-<td>10000</td>
-<td>10</td>
-<td>0.95736s (±0.08883)</td>
-<td>0.59673s (±0.03286)</td>
-<td>1.6 times</td>
-</tr>
-<tr>
-<td>30000</td>
-<td>10</td>
-<td>10.53698s (±0.67754)</td>
-<td>2.99876s (±0.22899)</td>
-<td>3.5 times</td>
-</tr>
-</tbody>
-</table>
-<p>As you can see, the upgraded version is faster and more consistent than the old version, especially as the size of the list increases.<br />
-The improvement is significant, especially for larger lists, where the upgraded version is approximately 3.5 times faster than the old version.  </p>
-<h2>Conclusion</h2>
-<p>In this article, I upgraded a new sort algorithm that I wrote a while ago.<br />
-The upgraded version is faster and more consistent than the old version, especially as the size of the list increases.<br />
-The main idea is still the same, compare and drop layers because this idea is what makes this algorithm (maybe) unique.<br />
-I hope you enjoyed this article, and if you have any questions or suggestions, please let me know through form or twitter.  </p>
-<pre class="codehilite"><code class="language-python">print(&quot;see you next time!&quot;)
-</code></pre>
       </div>
     </article>
 

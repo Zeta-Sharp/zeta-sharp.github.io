@@ -1,0 +1,22 @@
+/* TEAM (Solo) */
+    Author: Ζ#(Zeta_Sharp)
+    Contact:
+        e-mail: rikeidanshi [at] duck.com
+        form_en: https://docs.google.com/forms/d/e/1FAIpQLSei9ZOPtcSp3VrSHO-CdiGX3dva3JSVH_CvFU5GDh1tujbgsg/viewform
+        form_ja: https://docs.google.com/forms/d/e/1FAIpQLSejQgfiS2fRcmYcIlT24bxkrLN8n_-Fx2kcdESqnN8OhqskTA/viewform
+    Twitter: @Zeta_Sharp
+    From: A corner of the internet. ...Mostly, It's known as he's from Japan.
+
+/* THANKS */
+    This site stands thanks to a lot of people.
+    Many senior engineers made roadmaps and leave footprints to follow,
+    GitHub gave me a place to publish this site,
+    Google and other search engines guides somebody to this site,
+    and Alpine.js, whitch made by Mr. Caleb, allowed me to make this site's UI richer.
+    I can't forget thanks to maintain this world of internet forever.
+
+/* SITE */
+    Last Update: 2026/04/28
+    Language: Japanese / English
+    Doctype: HTML5
+    IDE: VScode

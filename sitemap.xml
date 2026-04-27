@@ -8,7 +8,7 @@
 </url>
 <url>
   <loc>https://zeta-sharp.github.io/blog/</loc>
-  <lastmod>2026-04-28T00:25:07+09:00</lastmod>
+  <lastmod>2026-04-28T02:52:50+09:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
@@ -51,6 +51,13 @@
 <url>
   <loc>https://zeta-sharp.github.io/blog/articles/20260414.html</loc>
   <lastmod>2026-04-28T00:25:07+09:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://zeta-sharp.github.io/blog/articles/20260428.html</loc>
+  <lastmod>2026-04-28T02:52:50+09:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>

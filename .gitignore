@@ -5,12 +5,4 @@ dockerfile
 docker-compose.yml
 .dockerignore
 
-markdown/
-templates/
-
 418.html
-
-poetry.lock
-pyproject.toml
-generator.py
-extensions.json

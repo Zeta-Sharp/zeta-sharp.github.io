@@ -27,7 +27,7 @@
     I can't forget thanks to maintain this world of internet forever.
 
 /* SITE */
-    Last Update: 2026/04/28
+    Last Update: 2026/04/29
     Language: Japanese / English
     Doctype: HTML5
     IDE: VScode

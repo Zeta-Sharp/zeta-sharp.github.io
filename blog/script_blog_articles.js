@@ -75,6 +75,36 @@ document.addEventListener('alpine:init', () => {
 
                 this.updateLanguage();
 
+                if (this.texts.extensions) {
+                    this.texts.extensions.forEach(ext => {
+                        if (ext === "math") {
+                            if (!window.MathJax) {
+                                const script = document.createElement('script');
+                                script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+                                script.async = true;
+                                document.head.appendChild(script);
+                            }
+                        }
+                        else if (ext === "Twitter") {
+                            if (!window.twttr) {
+                                const script = document.createElement('script');
+                                script.src = 'https://platform.twitter.com/widgets.js';
+                                script.async = true;
+                                script.onload = () => {
+                                    if (window.twttr && window.twttr.widgets) {
+                                        window.twttr.widgets.load();
+                                    }
+                                };
+                                document.head.appendChild(script);
+                            } else {
+                                if (window.twttr.widgets) {
+                                    window.twttr.widgets.load();
+                                }
+                            }
+                        }
+                    });
+                }
+
                 if (pushHistory) {
                     history.pushState({ articleId: this.articleId }, '', `/blog/articles/${this.articleId}.html`);
                     window.scrollTo({ top: 0, behavior: "instant" });
@@ -87,8 +117,8 @@ document.addEventListener('alpine:init', () => {
         escapeHtml(text) {
             const articleContentEn = text["en"];
             const articleContentJa = text["ja"];
-            const allowedTags = ['h2', 'h3', 'h4', 'h5', 'h6', 'b', 'i', 'u', 'del', 'a', 'p', 'br', 'hr', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'strong', 'em', 'span', 'div', 'blockquote', 'code', 'pre', 'img', 'sup', 'sub', 'figure', 'figcaption', 'cite', 'kbd', 'section', 'article', 'details', 'summary'];
-            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title'];
+            const allowedTags = ['h2', 'h3', 'h4', 'h5', 'h6', 'b', 'i', 'u', 'del', 'a', 'p', 'br', 'hr', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'strong', 'em', 'span', 'div', 'blockquote', 'code', 'pre', 'img', 'sup', 'sub', 'figure', 'figcaption', 'cite', 'kbd', 'section', 'article', 'details', 'summary', 'nav'];
+            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title', 'x-data', 'x-text', 'x-collapse', 'x-show', '@click'];
             const purifiedContentEn = DOMPurify.sanitize(articleContentEn, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             const purifiedContentJa = DOMPurify.sanitize(articleContentJa, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             return {

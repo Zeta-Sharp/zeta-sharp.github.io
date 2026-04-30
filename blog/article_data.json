@@ -1,16 +1,32 @@
 {
+    "20260430": {
+        "id": "20260430",
+        "title": {
+            "ja": "コミュニティ企画 - あなたが思う一番かっこいいペンを教えてください 2",
+            "en": "Community Showcase - Tell me the coolest pen you think 2"
+        },
+        "date": "2026-04-30",
+        "tags": [
+            "stationery"
+        ],
+        "summary": {
+            "ja": "11～20人目。「#あなたが思う一番かっこいいペンを教えてください」タグで集まった投稿のショーケースです。",
+            "en": "11th~20th post. The Showcase of posts about coolest pen. This article is Japanese only."
+        },
+        "translation_file": "articles/20260430.json"
+    },
     "20260428": {
         "id": "20260428",
         "title": {
-            "ja": "コミュニティ企画 - あなたが思う一番かっこいいペンを教えてください。",
-            "en": "Community Showcase - Tell me the coolest pen you think."
+            "ja": "コミュニティ企画 - あなたが思う一番かっこいいペンを教えてください 1",
+            "en": "Community Showcase - Tell me the coolest pen you think 1"
         },
         "date": "2026-04-28",
         "tags": [
             "stationery"
         ],
         "summary": {
-            "ja": "1～10人目。「\\#あなたが思う一番かっこいいペンを教えてください」タグで集まった投稿のショーケースです。",
+            "ja": "1～10人目。「#あなたが思う一番かっこいいペンを教えてください」タグで集まった投稿のショーケースです。",
             "en": "1st~10th post. The Showcase of posts about coolest pen. This article is Japanese only."
         },
         "translation_file": "articles/20260428.json"

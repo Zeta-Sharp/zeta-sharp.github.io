@@ -74,36 +74,7 @@ document.addEventListener('alpine:init', () => {
                 this.olderArticleId = this.texts.older_article_id ?? null;
 
                 this.updateLanguage();
-
-                if (this.texts.extensions) {
-                    this.texts.extensions.forEach(ext => {
-                        if (ext === "math") {
-                            if (!window.MathJax) {
-                                const script = document.createElement('script');
-                                script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-                                script.async = true;
-                                document.head.appendChild(script);
-                            }
-                        }
-                        else if (ext === "Twitter") {
-                            if (!window.twttr) {
-                                const script = document.createElement('script');
-                                script.src = 'https://platform.twitter.com/widgets.js';
-                                script.async = true;
-                                script.onload = () => {
-                                    if (window.twttr && window.twttr.widgets) {
-                                        window.twttr.widgets.load();
-                                    }
-                                };
-                                document.head.appendChild(script);
-                            } else {
-                                if (window.twttr.widgets) {
-                                    window.twttr.widgets.load();
-                                }
-                            }
-                        }
-                    });
-                }
+                this.solveExtensions(this.texts.extensions);
 
                 if (pushHistory) {
                     history.pushState({ articleId: this.articleId }, '', `/blog/articles/${this.articleId}.html`);
@@ -146,6 +117,42 @@ document.addEventListener('alpine:init', () => {
             }
             if (ogDescription) {
                 ogDescription.setAttribute('content', `This is a blog page of Ζ#. ${summary}`);
+            }
+        },
+
+        solveExtensions(extensions) {
+            if (extensions) {
+                extensions.forEach(ext => {
+                    if (ext === "math") {
+                        if (!window.MathJax) {
+                            const script = document.createElement('script');
+                            script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+                            script.async = true;
+                            document.head.appendChild(script);
+                        }
+                    }
+                    else if (ext === "Twitter") {
+                        if (!window.twttr) {
+                            const script = document.createElement('script');
+                            script.src = 'https://platform.twitter.com/widgets.js';
+                            script.async = true;
+                            script.onload = () => {
+                                if (window.twttr && window.twttr.widgets) {
+                                    window.twttr.widgets.load();
+                                }
+                            };
+                            document.head.appendChild(script);
+                        } else {
+                            if (window.twttr.widgets) {
+                                window.twttr.widgets.load();
+                            }
+                        }
+                    }
+                });
+            }
+            tocElement = document.querySelector('.toc-container');
+            if (tocElement) {
+                Alpine.initTree(tocElement);
             }
         },
 

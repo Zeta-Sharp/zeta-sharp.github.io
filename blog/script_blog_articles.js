@@ -74,7 +74,6 @@ document.addEventListener('alpine:init', () => {
                 this.olderArticleId = this.texts.older_article_id ?? null;
 
                 this.updateLanguage();
-                this.solveExtensions(this.texts.extensions);
 
                 if (pushHistory) {
                     history.pushState({ articleId: this.articleId }, '', `/blog/articles/${this.articleId}.html`);
@@ -118,6 +117,7 @@ document.addEventListener('alpine:init', () => {
             if (ogDescription) {
                 ogDescription.setAttribute('content', `This is a blog page of Ζ#. ${summary}`);
             }
+            this.solveExtensions(this.texts.extensions);
         },
 
         solveExtensions(extensions) {

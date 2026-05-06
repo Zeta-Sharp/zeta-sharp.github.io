@@ -13,8 +13,8 @@
         "en": "This is my first article in my blog!"
     },
     "content": {
-        "ja": "<p>\n Hello, World!\n <br/>\n 皆さん、初めまして。\n <br/>\n これは私&Zeta;#史に残る重要な一幕、ブログの第一記事です。\n <br/>\n このブログでは、\n</p>\n<ul>\n <li>\n  プロジェクトのリリースノート\n </li>\n <li>\n  開発中の閃き、障壁とブレイクスルー\n </li>\n <li>\n  文房具\n </li>\n</ul>\n<p>\n についてや、その他色々について投稿していきたいと考えています。\n <br/>\n 字数制限諸々でX(Twitter)には投稿できないようなものも投稿していきたいと思っているので、今後の記事をお楽しみに!\n</p>\n",
-        "en": "<p>\n Hello, World!\n <br/>\n Nice to meet you everyone!\n <br/>\n This is a A historic moment of me, the first article in my blog.\n <br/>\n In this place, I'm going to write...\n</p>\n<ul>\n <li>\n  Release Notes of my projects\n </li>\n <li>\n  Inspirations, troubles and breakthroughs in my develop\n </li>\n <li>\n  Stationeries\n </li>\n</ul>\n<p>\n and so on!\n <br/>\n Mainly, I'll write detailed and deep content that can't post in X (Twitter).\n <br/>\n Please look forward to following articles!\n</p>\n"
+        "ja": "<p>\n Hello, World!\n</p>\n<p>\n 皆さん、初めまして。\n</p>\n<p>\n これは私&Zeta;#史に残る重要な一幕、ブログの第一記事です。\n</p>\n<p>\n このブログでは、\n</p>\n<ul>\n <li>\n  プロジェクトのリリースノート\n </li>\n <li>\n  開発中の閃き、障壁とブレイクスルー\n </li>\n <li>\n  文房具\n </li>\n</ul>\n<p>\n についてや、その他色々について投稿していきたいと考えています。\n</p>\n<p>\n 字数制限諸々でX(Twitter)には投稿できないようなものも投稿していきたいと思っているので、今後の記事をお楽しみに!\n</p>\n",
+        "en": "<p>\n Hello, World!\n</p>\n<p>\n Nice to meet you everyone!\n</p>\n<p>\n This is a A historic moment of me, the first article in my blog.\n</p>\n<p>\n In this place, I'm going to write...\n</p>\n<ul>\n <li>\n  Release Notes of my projects\n </li>\n <li>\n  Inspirations, troubles and breakthroughs in my develop\n </li>\n <li>\n  Stationeries\n </li>\n</ul>\n<p>\n and so on!\n</p>\n<p>\n Mainly, I'll write detailed and deep content that can't post in X (Twitter).\n</p>\n<p>\n Please look forward to following articles!\n</p>\n"
     },
     "older_article_id": null,
     "older_article_title": {

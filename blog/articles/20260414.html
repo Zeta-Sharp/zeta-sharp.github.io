@@ -72,12 +72,14 @@
       <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
         <p>
  A while ago, I wrote a new sort algorithm.
- <br/>
+</p>
+<p>
  If you haven't read it, please check it out before reading.
  <a href="https://zeta-sharp.github.io/blog/articles/20251008.html">
   New sort algorithm?
  </a>
- <br/>
+</p>
+<p>
  Read it? OK. Let's go.
 </p>
 <h2>
@@ -85,7 +87,8 @@
 </h2>
 <p>
  Today, I upgraded it.
- <br/>
+</p>
+<p>
  The original algorithm is a bit slow, a lot of
  <code>
   pop
@@ -95,7 +98,8 @@
   insert
  </code>
  operations, so I tried to speed it up.
- <br/>
+</p>
+<p>
  The original algorithm is like this (I added copy of the input list to avoid modifying it, and debug flag to activate printing, but it's not important for the algorithm itself.):
 </p>
 <pre class="codehilite"><code class="language-python">def sort(arr: list, debug=False):
@@ -236,7 +240,8 @@
   layer
  </code>
  list, and increment/decrement layer indices instead of popping and inserting them.
- <br/>
+</p>
+<p>
  This way, we can avoid the overhead of
  <code>
   pop
@@ -246,7 +251,8 @@
   insert
  </code>
  , and the algorithm should be faster.
- <br/>
+</p>
+<p>
  Instead of this, the code became more complex and longer, but I think it's worth it.
 </p>
 <h2>
@@ -384,7 +390,8 @@ if __name__ == "__main__":
 </div>
 <p>
  As you can see, the upgraded version is faster and more consistent than the old version, especially as the size of the list increases.
- <br/>
+</p>
+<p>
  The improvement is significant, especially for larger lists, where the upgraded version is approximately 3.5 times faster than the old version.
 </p>
 <h2>
@@ -392,11 +399,14 @@ if __name__ == "__main__":
 </h2>
 <p>
  In this article, I upgraded a new sort algorithm that I wrote a while ago.
- <br/>
+</p>
+<p>
  The upgraded version is faster and more consistent than the old version, especially as the size of the list increases.
- <br/>
+</p>
+<p>
  The main idea is still the same, compare and drop layers because this idea is what makes this algorithm (maybe) unique.
- <br/>
+</p>
+<p>
  I hope you enjoyed this article, and if you have any questions or suggestions, please let me know through form or twitter.
 </p>
 <pre class="codehilite"><code class="language-python">print("see you next time!")

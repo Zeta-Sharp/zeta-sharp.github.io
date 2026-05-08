@@ -119,6 +119,7 @@ document.addEventListener('alpine:init', () => {
             }
             this.$nextTick(() => {
                 this.solveExtensions(this.texts.extensions);
+                this.enableBlogFunctions();
             });
         },
 
@@ -180,6 +181,9 @@ document.addEventListener('alpine:init', () => {
                         }
                     });
             }
+        },
+
+        enableBlogFunctions() {
             const tocElement = document.querySelector('.toc-container');
             if (tocElement) {
                 const tocButton = document.querySelector('.toc-button');

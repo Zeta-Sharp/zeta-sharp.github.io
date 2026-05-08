@@ -8,7 +8,7 @@ Disallow: /404.html
 
 Disallow: /*.json
 
-Disallow: /Sources/
+Disallow: /assets/
 Disallow: /blog/articles/images/
 Disallow: /README.md
 Disallow: /.gitignore

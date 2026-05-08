@@ -7,7 +7,7 @@ const languageButton = document.querySelector('.language-buttons');
 
 async function setup_i18n() {
     try {
-        const response = await fetch("/Sources/texts.json");
+        const response = await fetch("/assets/texts.json");
         texts = await response.json();
         await i18next.init({
             lng: localStorage.getItem('selectedLang') || (navigator.language.startsWith('ja') ? 'ja' : 'en'),

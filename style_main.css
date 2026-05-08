@@ -2,15 +2,15 @@
 
 /* icons */
 :root {
-    --img-github-icon: url('/assets/Icons/github-mark.svg');
-    --img-x-icon: url('/assets/Icons/logo-black.png');
-    --img-google-form-icon: url('/assets/Icons/logo_forms_2020q4_color_1x_web_64dp.png')
+    --img-github-icon: url('/assets/icons/github-mark.svg');
+    --img-x-icon: url('/assets/icons/logo-black.png');
+    --img-google-form-icon: url('/assets/icons/logo_forms_2020q4_color_1x_web_64dp.png')
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --img-x-icon: url('/assets/Icons/logo-white.png');
-        --img-github-icon: url('/assets/Icons/github-mark-white.svg');
+        --img-x-icon: url('/assets/icons/logo-white.png');
+        --img-github-icon: url('/assets/icons/github-mark-white.svg');
     }
 }
 

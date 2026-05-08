@@ -7,7 +7,7 @@
     --clr-text: #000;
     --clr-overlay: rgba(255, 255, 255, 0.5);
     --clr-border: rgba(0, 0, 0, 0.5);
-    --img-bg: url('/assets/background.svg');
+    --img-bg: url('/assets/zeta_sharp/background.svg');
     --z-index-extra-overlay: 20;
     --z-index-overlay: 10;
     --z-index-neutral: 1;
@@ -20,7 +20,7 @@
         --clr-text: #fff;
         --clr-overlay: rgba(0, 0, 0, 0.5);
         --clr-border: rgba(255, 255, 255, 0.5);
-        --img-bg: url('/assets/background_black.svg');
+        --img-bg: url('/assets/zeta_sharp/background_black.svg');
     }
 }
 
@@ -150,7 +150,7 @@ body>header .header-buttons {
             width: 50px;
             border: none;
             background-color: transparent;
-            background-image: url('/assets/Icons/AdobeStock_558900896.svg');
+            background-image: url('/assets/icons/AdobeStock_558900896.svg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;

@@ -25,7 +25,10 @@
   <script defer src="/blog/script_blog_articles.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+  <link rel="stylesheet" href="\assets\prism\prism_light.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="\assets\prism\prism_dark.css" media="(prefers-color-scheme: dark)">
+<script defer src="\assets\prism\prism.js"></script>
+
 </head>
 
 <body x-data="blogArticlePage()" x-init="init()" @popstate.window="syncFromUrl()">

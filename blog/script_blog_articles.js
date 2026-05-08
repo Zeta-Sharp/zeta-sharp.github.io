@@ -125,32 +125,60 @@ document.addEventListener('alpine:init', () => {
         solveExtensions(extensions) {
             if (extensions) {
                 extensions.forEach(ext => {
-                    if (ext === "math") {
-                        if (!window.MathJax) {
-                            const script = document.createElement('script');
-                            script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-                            script.async = true;
-                            document.head.appendChild(script);
-                        }
-                    }
-                    else if (ext === "Twitter") {
-                        if (!window.twttr) {
-                            const script = document.createElement('script');
-                            script.src = 'https://platform.twitter.com/widgets.js';
-                            script.async = true;
-                            script.onload = () => {
-                                if (window.twttr && window.twttr.widgets) {
+                    switch (ext) {
+                        case "math":
+                            if (!window.MathJax) {
+                                const script = document.createElement('script');
+                                script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+                                script.async = true;
+                                document.head.appendChild(script);
+                            }
+                            break;
+                        case "Twitter":
+                            if (!window.twttr) {
+                                const script = document.createElement('script');
+                                script.src = 'https://platform.twitter.com/widgets.js';
+                                script.async = true;
+                                script.onload = () => {
+                                    if (window.twttr && window.twttr.widgets) {
+                                        window.twttr.widgets.load();
+                                    }
+                                };
+                                document.head.appendChild(script);
+                            } else {
+                                if (window.twttr.widgets) {
                                     window.twttr.widgets.load();
                                 }
-                            };
-                            document.head.appendChild(script);
-                        } else {
-                            if (window.twttr.widgets) {
-                                window.twttr.widgets.load();
                             }
+                            break;
+                        case "codeblock":
+                            if (!document.querySelector('link[href="\\assets\\prism\\prism_light.css"]')) {
+                                const linkLight = document.createElement('link');
+                                linkLight.rel = 'stylesheet';
+                                linkLight.href = '\\assets\\prism\\prism_light.css';
+                                linkLight.media = '(prefers-color-scheme: light)';
+                                document.head.appendChild(linkLight);
+                                const linkDark = document.createElement('link');
+                                linkDark.rel = 'stylesheet';
+                                linkDark.href = '\\assets\\prism\\prism_dark.css';
+                                linkDark.media = '(prefers-color-scheme: dark)';
+                                document.head.appendChild(linkDark);
+                                const script = document.createElement('script');
+                                script.src = '\\assets\\prism\\prism.js';
+                                script.defer = true;
+                                document.head.appendChild(script);
+                                script.onload = () => {
+                                    Prism.highlightAll();
+                                };
+                            } else {
+                                Prism.highlightAll();
+                            }
+                            break;
+                        case "default":
+                            console.warn(`Unknown extension: ${ext}`);
+                            break;
                         }
-                    }
-                });
+                    });
             }
             const tocElement = document.querySelector('.toc-container');
             if (tocElement) {

@@ -88,7 +88,7 @@ document.addEventListener('alpine:init', () => {
             const articleContentEn = text["en"];
             const articleContentJa = text["ja"];
             const allowedTags = ['h2', 'h3', 'h4', 'h5', 'h6', 'b', 'i', 'u', 'del', 'a', 'p', 'br', 'hr', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'strong', 'em', 'span', 'div', 'blockquote', 'code', 'pre', 'img', 'sup', 'sub', 'figure', 'figcaption', 'cite', 'kbd', 'section', 'article', 'details', 'summary', 'nav'];
-            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title', 'x-data', 'x-text', 'x-collapse', 'x-show', '@click'];
+            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title', 'x-data', 'x-text', 'x-collapse', 'x-show'];
             const purifiedContentEn = DOMPurify.sanitize(articleContentEn, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             const purifiedContentJa = DOMPurify.sanitize(articleContentJa, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             return {
@@ -117,7 +117,9 @@ document.addEventListener('alpine:init', () => {
             if (ogDescription) {
                 ogDescription.setAttribute('content', `This is a blog page of Ζ#. ${summary}`);
             }
-            this.solveExtensions(this.texts.extensions);
+            this.$nextTick(() => {
+                this.solveExtensions(this.texts.extensions);
+            });
         },
 
         solveExtensions(extensions) {
@@ -150,10 +152,25 @@ document.addEventListener('alpine:init', () => {
                     }
                 });
             }
-            tocElement = document.querySelector('.toc-container');
+            const tocElement = document.querySelector('.toc-container');
             if (tocElement) {
+                const tocButton = document.querySelector('.toc-button');
+                if (tocButton) {
+                    tocButton.setAttribute('@click', 'open = !open');
+                }
                 Alpine.initTree(tocElement);
             }
+            const links = document.querySelectorAll('.article-body a');
+            if (!links) return;
+            links.forEach(link => {
+                const match = link.getAttribute('href').match(/\/blog\/articles\/([0-9]{8})\.html$/);
+                if (match) {
+                    const targetArticleId = match[1];
+                    link.setAttribute('@pointerenter', `prefetchArticle('${targetArticleId}')`);
+                    link.setAttribute('@click.prevent', `showArticle('${targetArticleId}')`);
+                }
+            });
+            Alpine.initTree(document.querySelector('.article-body'));
         },
 
         async showArticle(targetArticleId) {
@@ -164,19 +181,17 @@ document.addEventListener('alpine:init', () => {
         },
 
         syncFromUrl() {
-            const articleId = location.pathname
-                .split('/')
-                .filter(Boolean)
-                .pop()
-                .replace('.html', '');
-
-            if (articleId) {
-                if (this.articleId !== articleId) {
-                    this.articleId = articleId;
-                    this.loadLanguageFile(false);
+            const match = location.pathname.match(/\/blog\/articles\/([0-9]{8})\.html$/);
+            if (match) {
+                const articleId = match[1];
+                if (articleId) {
+                    if (this.articleId !== articleId) {
+                        this.articleId = articleId;
+                        this.loadLanguageFile(false);
+                    }
                 }
             } else {
-                console.warn('No article ID found in URL.');
+                console.warn('Invalid or missing article format.');
             }
         },
 

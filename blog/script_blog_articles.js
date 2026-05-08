@@ -152,19 +152,19 @@ document.addEventListener('alpine:init', () => {
                             }
                             break;
                         case "codeblock":
-                            if (!document.querySelector('link[href="\\assets\\prism\\prism_light.css"]')) {
+                            if (!document.querySelector('link[href="/assets/prism/prism_light.css"]')) {
                                 const linkLight = document.createElement('link');
                                 linkLight.rel = 'stylesheet';
-                                linkLight.href = '\\assets\\prism\\prism_light.css';
+                                linkLight.href = '/assets/prism/prism_light.css';
                                 linkLight.media = '(prefers-color-scheme: light)';
                                 document.head.appendChild(linkLight);
                                 const linkDark = document.createElement('link');
                                 linkDark.rel = 'stylesheet';
-                                linkDark.href = '\\assets\\prism\\prism_dark.css';
+                                linkDark.href = '/assets/prism/prism_dark.css';
                                 linkDark.media = '(prefers-color-scheme: dark)';
                                 document.head.appendChild(linkDark);
                                 const script = document.createElement('script');
-                                script.src = '\\assets\\prism\\prism.js';
+                                script.src = '/assets/prism/prism.js';
                                 script.defer = true;
                                 document.head.appendChild(script);
                                 script.onload = () => {

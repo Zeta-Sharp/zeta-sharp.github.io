@@ -1,4 +1,20 @@
 {
+    "20260509": {
+        "id": "20260509",
+        "title": {
+            "ja": "コミュニティ企画 - あなたが思う一番かっこいいペンを教えてください 3",
+            "en": "Community Showcase - Tell me the coolest pen you think 3"
+        },
+        "date": "2026-05-09",
+        "tags": [
+            "stationery"
+        ],
+        "summary": {
+            "ja": "21～30人目。「#あなたが思う一番かっこいいペンを教えてください」タグで集まった投稿のショーケースです。",
+            "en": "21th~30th post. The Showcase of posts about coolest pen. This article is Japanese only."
+        },
+        "translation_file": "articles/20260509.json"
+    },
     "20260430": {
         "id": "20260430",
         "title": {

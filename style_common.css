@@ -1,5 +1,7 @@
 /* common styles */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
 /* color scheme, background and z-index */
 :root {
     color-scheme: light dark;
@@ -24,12 +26,21 @@
     }
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     color: var(--clr-text);
     min-height: 100vh;
     width: 100vw;
     margin: 0;
     overflow-x: clip;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-feature-settings: 'palt';
+    -webkit-font-smoothing: antialiased;
 }
 
 /* background underlay */

@@ -1,5 +1,7 @@
 /* blog styles */
 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
 /* Accent color for tags and links */
 :root {
     --clr-accent: rgba(0, 122, 204, 0.5);
@@ -72,11 +74,21 @@ li[data-id]>article>h3 {
 
 /* article content styles */
 
+
+code {
+    font-family: 'Fira Code', monospace;
+    background-color: var(--clr-overlay);
+}
+
 pre {
     background-color: var(--clr-overlay);
     white-space: pre;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+}
+
+pre>code {
+    background-color: transparent;
 }
 
 main img {

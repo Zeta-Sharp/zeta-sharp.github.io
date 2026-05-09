@@ -195,7 +195,7 @@ document.addEventListener('alpine:init', () => {
             const links = document.querySelectorAll('.article-body a');
             if (!links) return;
             links.forEach(link => {
-                const match = link.getAttribute('href').match(/\/blog\/articles\/([0-9]{8})\.html$/);
+                const match = link.getAttribute('href').match(/https\:\/\/zeta-sharp\.github\.io\/blog\/articles\/([0-9]{8})\.html$/);
                 if (match) {
                     const targetArticleId = match[1];
                     link.setAttribute('@pointerenter', `prefetchArticle('${targetArticleId}')`);

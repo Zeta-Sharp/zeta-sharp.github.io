@@ -43,7 +43,7 @@ section#skill-tree article picture {
 
 section#skill-tree {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
 
     .tools-box {
         width: 100%;
@@ -101,7 +101,7 @@ section#skill-tree {
             }
 
             @media (max-width: 768px) {
-                max-width: 80vw;
+                max-width: 80%;
             }
         }
     }

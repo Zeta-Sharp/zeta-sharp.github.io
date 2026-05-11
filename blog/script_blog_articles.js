@@ -205,15 +205,15 @@ document.addEventListener('alpine:init', () => {
             const tocElement = document.querySelector('.toc-container');
             if (tocElement) {
                 tocElement.setAttribute('x-data', '{ open: true }');
-                const tocButton = document.querySelector('.toc-button');
+                const tocButton = tocElement.querySelector('.toc-button');
                 if (tocButton) {
                     tocButton.setAttribute('@click', 'open = !open');
                 }
-                const tocButtonIcon = document.querySelector('.toc-button span');
+                const tocButtonIcon = tocElement.querySelector('.toc-button span');
                 if (tocButtonIcon) {
                     tocButtonIcon.setAttribute('x-text', "open ? '▲' : '▼'");
                 }
-                const tocNav = document.querySelector('.toc-nav');
+                const tocNav = tocElement.querySelector('.toc-nav');
                 if (tocNav) {
                     tocNav.setAttribute('x-show', 'open');
                     tocNav.setAttribute('x-collapse', '');

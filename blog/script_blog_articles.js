@@ -87,8 +87,11 @@ document.addEventListener('alpine:init', () => {
         escapeHtml(text) {
             const articleContentEn = text["en"];
             const articleContentJa = text["ja"];
-            const allowedTags = ['h2', 'h3', 'h4', 'h5', 'h6', 'b', 'i', 'u', 'del', 'a', 'p', 'br', 'hr', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'strong', 'em', 'span', 'div', 'blockquote', 'code', 'pre', 'img', 'sup', 'sub', 'figure', 'figcaption', 'cite', 'kbd', 'section', 'article', 'details', 'summary', 'nav'];
-            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title', 'x-data', 'x-text', 'x-collapse', 'x-show'];
+            const allowedTags = ['h2', 'h3', 'h4', 'h5', 'h6', 'b', 'i', 'u', 'del', 'a', 'p', 'br',
+                 'hr', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'strong', 'em',
+                  'span', 'div', 'blockquote', 'code', 'pre', 'img', 'sup', 'sub', 'figure', 'figcaption',
+                   'cite', 'kbd', 'section', 'article', 'details', 'summary', 'nav'];
+            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title', 'x-text', 'x-collapse', 'x-show'];
             const purifiedContentEn = DOMPurify.sanitize(articleContentEn, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             const purifiedContentJa = DOMPurify.sanitize(articleContentJa, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             return {
@@ -186,6 +189,7 @@ document.addEventListener('alpine:init', () => {
         enableBlogFunctions() {
             const tocElement = document.querySelector('.toc-container');
             if (tocElement) {
+                tocElement.setAttribute('x-data', '{ open: true }');
                 const tocButton = document.querySelector('.toc-button');
                 if (tocButton) {
                     tocButton.setAttribute('@click', 'open = !open');

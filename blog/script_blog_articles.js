@@ -17,11 +17,13 @@ document.addEventListener('alpine:init', () => {
         olderArticleId: null,
         articles_cache: {},
         cacheSize: 5,
+        extensionsManagerInstance: null,
 
         init() {
             const htmlTag = document.querySelector('html');
             htmlTag.removeAttribute('translate');
 
+            this.extensionsManagerInstance = new ExtensionsManager();
             this.syncFromUrl();
 
             window.addEventListener('popstate', () => {
@@ -128,6 +130,8 @@ document.addEventListener('alpine:init', () => {
 
         solveExtensions(extensions) {
             if (extensions) {
+                this.extensionsManagerInstance.reload(extensions);
+/*
                 extensions.forEach(ext => {
                     switch (ext) {
                         case "math":
@@ -138,51 +142,12 @@ document.addEventListener('alpine:init', () => {
                                 document.head.appendChild(script);
                             }
                             break;
-                        case "Twitter":
-                            if (!window.twttr) {
-                                const script = document.createElement('script');
-                                script.src = 'https://platform.twitter.com/widgets.js';
-                                script.async = true;
-                                script.onload = () => {
-                                    if (window.twttr && window.twttr.widgets) {
-                                        window.twttr.widgets.load();
-                                    }
-                                };
-                                document.head.appendChild(script);
-                            } else {
-                                if (window.twttr.widgets) {
-                                    window.twttr.widgets.load();
-                                }
-                            }
-                            break;
-                        case "codeblock":
-                            if (!document.querySelector('link[href="/assets/prism/prism_light.css"]')) {
-                                const linkLight = document.createElement('link');
-                                linkLight.rel = 'stylesheet';
-                                linkLight.href = '/assets/prism/prism_light.css';
-                                linkLight.media = '(prefers-color-scheme: light)';
-                                document.head.appendChild(linkLight);
-                                const linkDark = document.createElement('link');
-                                linkDark.rel = 'stylesheet';
-                                linkDark.href = '/assets/prism/prism_dark.css';
-                                linkDark.media = '(prefers-color-scheme: dark)';
-                                document.head.appendChild(linkDark);
-                                const script = document.createElement('script');
-                                script.src = '/assets/prism/prism.js';
-                                script.defer = true;
-                                document.head.appendChild(script);
-                                script.onload = () => {
-                                    Prism.highlightAll();
-                                };
-                            } else {
-                                Prism.highlightAll();
-                            }
-                            break;
                         case "default":
                             console.warn(`Unknown extension: ${ext}`);
                             break;
                     }
                 });
+*/
             }
         },
 

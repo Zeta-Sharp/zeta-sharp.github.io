@@ -15,8 +15,8 @@ class ExtensionsManager {
                 console.warn(`Extension ${ext} is already loaded.`);
                 continue;
             }
-            const module = await import(`/assets/extensions/${ext}.js`);
             try {
+                const module = await import(`/assets/extensions/${ext}.js`);
                 if (typeof module.default == "function") {
                     this.loadedExtensions[ext] = new module.default();
                     this.loadedExtensions[ext].initialize?.();

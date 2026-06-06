@@ -67,6 +67,12 @@
   <priority>0.6</priority>
 </url>
 <url>
+  <loc>https://zeta-sharp.github.io/blog/articles/20260607.html</loc>
+  <lastmod>2026-06-07T01:43:04+09:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
   <loc>https://zeta-sharp.github.io/projects/PyProma/</loc>
   <lastmod>2026-05-08T15:38:29+09:00</lastmod>
   <changefreq>monthly</changefreq>

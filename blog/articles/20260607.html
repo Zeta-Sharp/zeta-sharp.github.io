@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="This is a blog page of Ζ#. Wondering what to do with all those bottled inks that seem to have multiplied on your shelf...?">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#cfe2f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#073763" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="The Great Ink-Using Mission - Ζ# Blog">
+  <meta property="og:description" content="This is a blog page of Ζ#. Wondering what to do with all those bottled inks that seem to have multiplied on your shelf...?">
+  <meta property="og:image"
+    content="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/assets/zeta_sharp/OG_blog.png?raw=true">
+  <meta property="og:url" content="https://zeta-sharp.github.io/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Great Ink-Using Mission - Ζ# Blog">
+  <meta name="twitter:site" content="@Zeta_Sharp">
+  <meta name="twitter:creator" content="@Zeta_Sharp">
+  <title>The Great Ink-Using Mission - Ζ# Blog</title>
+  <link rel="icon" href="/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="apple-touch-icon" href="/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="author" href="/humans.txt">
+  <link rel="stylesheet" href="/style_common.css">
+  <link rel="stylesheet" href="/blog/style_blog.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+  <script defer src="/assets/extensions/extensions_manager.js"></script>
+  <script defer src="/blog/script_blog_articles.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+</head>
+
+<body x-data="blogArticlePage()" x-init="init()" @popstate.window="syncFromUrl()">
+  <header @click.outside="open = false">
+    <img src="/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false; goToBlog()">
+    <span class="header-text" @click="open = false; goToBlog()">Blog</span>
+    <div class="header-buttons" :class="{ 'is-open': open }">
+      <nav class="scroll-buttons">
+        <button type="button" class="profile-button" @click="open = false; goToProfile()">Profile</button>
+        <button type="button" class="blog-button" @click="open = false; goToBlog()">Blog</button>
+      </nav>
+      <div class="language-buttons">
+        <button type="button" class="language-button-icon" aria-label="Change language"
+          @click="toggleLanguage()"></button>
+        <button type="button" class="language-button" @click="toggleLanguage()"
+          x-text="lang === 'ja' ? '日→En Switch to English' : 'En→日 日本語に切り替え'">
+          En→日 日本語に切り替え
+        </button>
+      </div>
+    </div>
+    <button type="button" class="hamburger-button" aria-label="Menu" @click="open = !open" :class="{ 'is-open': open }">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </header>
+
+  <main>
+    <article>
+      <header>
+        <h1 x-text="texts?.title?.[lang] ?? $el.innerText">
+          The Great Ink-Using Mission
+        </h1>
+        <div class="meta">
+          <time datetime="2026-06-07">2026-06-07</time>
+          <ul class="tags">
+            
+            <li class="tag"><span>stationery</span></li>
+            
+          </ul>
+        </div>
+      </header>
+
+      <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
+        <p>
+ One day, you'll notice that there is many ink bottles in your shelf with dust...
+</p>
+<p>
+ Today, I'll give you some hints to use them.
+</p>
+<div class="toc-container">
+ <div class="toc-button">
+  <h2>
+   Table of Contents
+  </h2>
+  <span>
+   ▲
+  </span>
+ </div>
+ <nav class="toc-nav">
+  <ul>
+   <li>
+    <a href="#fountain_pen">
+     Use with Fountain pen
+    </a>
+   </li>
+   <li>
+    <a href="#dip_pen">
+     Use with Dip pen
+    </a>
+   </li>
+   <li>
+    <a href="#empty_pen">
+     Use with Empty pen
+    </a>
+   </li>
+   <li>
+    <a href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </nav>
+</div>
+<section id="fountain_pen">
+ <h2>
+  Use with Fountain pen
+ </h2>
+ <p>
+  <img alt="A picture of two Pilot Lightive fountain pen." src="/blog/articles/images/20260607/IMG_20260607_002741672.webp"/>
+ </p>
+ <p>
+  (Maybe) The most common way to use ink. Fill the converter and write a lot.
+ </p>
+ <p>
+  However, I do not recommend doing this with your most cherished pens. Generally, fountain pens are designed to be used with ink from the same manufacturer.
+ </p>
+ <p>
+  For example, Montblanc does not provide a manufacturer's warranty for a pen used with another company's ink. While this is a more extreme example, since manufacturers design their pens to perform best with their own ink, there are still risks of corrosion, clogging, or poor ink flow.
+ </p>
+ <p>
+  Affordable ones are sufficient. I sometimes use the Pilot Explorer (known as Lightive in Japan). If you like, the Kakuno or Preppy are also great for playing around with.
+ </p>
+ <p>
+  After filling ink, don't forget to use and wash before dried up.
+ </p>
+</section>
+<section id="dip_pen">
+ <h2>
+  Use with Dip pen
+ </h2>
+ <p>
+  <img alt="A picture of Pilot iro-utsushi nib pen." src="/blog/articles/images/20260607/IMG_20260607_002610637.webp"/>
+ </p>
+ <p>
+  When you're in your room, a dip pen brings you tranquil time.
+ </p>
+ <p>
+  Quill pens, nib pens, glass pens, calligraphy pens&mdash;anything is fine. Once you dip your pen into the bottle, you might find yourself diving deep into thought as well.
+ </p>
+ <p>
+  I often use Pilot iro-utsushi. It's good because we don't have to worry about drying up.
+ </p>
+ <p>
+  In addition, we can use shimmer ink that can't be used for fountain pens.
+ </p>
+</section>
+<section id="empty_pen">
+ <h2>
+  Use with Empty pen
+ </h2>
+ <p>
+  <img alt="A picture of Kuretake Karappo (in English, empty) pen." src="/blog/articles/images/20260607/IMG_20260605_175900107.webp"/>
+ </p>
+ <p>
+  There are kits available to create pens using your own ink. This is one of them.
+ </p>
+ <p>
+  The process is easy. Open the package,
+ </p>
+ <p>
+  <img alt="A picture of Kuretake Karappo (in English, empty) pen and bottled ink." src="/blog/articles/images/20260607/IMG_20260605_175949501.webp"/>
+ </p>
+ <p>
+  Put cotton wick into bottle,
+ </p>
+ <p>
+  <img alt="A picture of cotton wick in bottled ink." src="/blog/articles/images/20260607/IMG_20260605_180028938.webp"/>
+ </p>
+ <p>
+  assemble it, and wait a few minutes for the ink to saturate the pen tip.
+ </p>
+ <p>
+  <img alt="A picture of memo written with finished pen." src="/blog/articles/images/20260607/IMG_20260605_181234683.webp"/>
+ </p>
+ <p>
+  One downside is that the writing from this pen tends to look lighter in color.
+ </p>
+ <p>
+  <img alt="A picture of comparing Empty pen and Iro-utsushi handwriting." src="/blog/articles/images/20260607/IMG_20260606_204743902.webp"/>
+ </p>
+ <p>
+  Therefore, it's better to use a darker base ink.
+ </p>
+</section>
+<section id="conclusion">
+ <h2>
+  Conclusion
+ </h2>
+ <p>
+  Actually, there's another option called a "Rollerball pen", but since I don't own one, I can't comment on it yet.
+ </p>
+ <p>
+  I'm considering picking up the Kakimori Frost, so when I buy it, I'll write an article about it.
+ </p>
+ <p>
+  Colorful inks make your life more vibrant.
+ </p>
+ <p>
+  Have a good life with pens!
+ </p>
+</section>
+
+      </div>
+    </article>
+
+    <nav class="article-navigation no-js">
+      <h2 x-text="lang === 'ja' ? '前後記事' : 'Post Navigation'">Post Navigation</h2>
+      <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
+        x-show="newerArticleId !== null">
+        ←
+        <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
+          Newer Article
+        </span>
+      </p>
+      <p class="older-article" @click="showArticle(olderArticleId)" @pointerenter="prefetchArticle(olderArticleId)"
+        x-show="olderArticleId !== null">
+        <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
+          Older Article
+        </span>
+        →
+      </p>
+    </nav>
+  </main>
+
+  <footer class="footer-navigation">
+    <nav>
+      <h2>Sitemap</h2>
+      <ol>
+        <li>Top: <a href="/">/root</a></li>
+        <li>Blog: <a href="/blog">/root/blog</a></li>
+        <li>Projects/ <ul>
+            <li>PyProma: <a href="/projects/PyProma">/root/projects/PyProma</a></li>
+          </ul>
+        </li>
+      </ol>
+    </nav>
+    <p>© 2025 Ζ#. Images, Icon copyrights:
+      <a href="https://github.com/Zeta-Sharp/zeta-sharp.github.io/blob/main/copyrights.md">Copyrights</a>
+    </p>
+  </footer>
+</body>
+
+</html>

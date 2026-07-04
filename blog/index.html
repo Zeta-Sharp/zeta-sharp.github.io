@@ -18,19 +18,19 @@
   <meta name="twitter:site" content="@Zeta_Sharp">
   <meta name="twitter:creator" content="@Zeta_Sharp">
   <title>Blog - Ζ#</title>
-  <link rel="icon" href="/assets/zeta_sharp/zeta-sharp-icon.svg">
-  <link rel="apple-touch-icon" href="/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="apple-touch-icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
   <link rel="author" href="/humans.txt">
-  <link rel="stylesheet" href="/style_common.css">
-  <link rel="stylesheet" href="/blog/style_blog.css">
-  <script defer src="/blog/script_blog_index.js"></script>
+  <link rel="stylesheet" href="/src/styles/style_common.css">
+  <link rel="stylesheet" href="/src/styles/blog/style_blog.css">
+  <script defer src="/src/scripts/blog/script_blog_index.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
   <header x-data="{ open: false }" @click.outside="open = false">
-    <img src="/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
+    <img src="/src/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
     <h1 class="header-text" @click="open = false">Blog</h1>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">

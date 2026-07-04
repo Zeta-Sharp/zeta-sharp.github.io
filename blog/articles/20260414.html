@@ -18,25 +18,25 @@
   <meta name="twitter:site" content="@Zeta_Sharp">
   <meta name="twitter:creator" content="@Zeta_Sharp">
   <title>New sort algorithm, upgraded - Ζ# Blog</title>
-  <link rel="icon" href="/assets/zeta_sharp/zeta-sharp-icon.svg">
-  <link rel="apple-touch-icon" href="/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="apple-touch-icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
   <link rel="author" href="/humans.txt">
-  <link rel="stylesheet" href="/style_common.css">
-  <link rel="stylesheet" href="/blog/style_blog.css">
+  <link rel="stylesheet" href="/src/styles/style_common.css">
+  <link rel="stylesheet" href="/src/styles/blog/style_blog.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
-  <script defer src="/assets/extensions/extensions_manager.js"></script>
-  <script defer src="/blog/script_blog_articles.js"></script>
+  <script defer src="/src/scripts/extensions/extensions_manager.js"></script>
+  <script defer src="/src/scripts/blog/script_blog_articles.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link rel="stylesheet" href="/assets/prism/prism_light.css" media="(prefers-color-scheme: light)">
-<link rel="stylesheet" href="/assets/prism/prism_dark.css" media="(prefers-color-scheme: dark)">
-<script defer src="/assets/prism/prism.js"></script>
+  <link rel="stylesheet" href="/src/scripts/extensions/prism/prism_light.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/src/scripts/extensions/prism/prism_dark.css" media="(prefers-color-scheme: dark)">
+<script defer src="/src/scripts/extensions/prism/prism.js"></script>
 
 </head>
 
 <body x-data="blogArticlePage()" x-init="init()" @popstate.window="syncFromUrl()">
   <header @click.outside="open = false">
-    <img src="/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false; goToBlog()">
+    <img src="/src/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false; goToBlog()">
     <span class="header-text" @click="open = false; goToBlog()">Blog</span>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">

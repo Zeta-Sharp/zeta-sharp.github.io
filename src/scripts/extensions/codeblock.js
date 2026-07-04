@@ -10,16 +10,16 @@ export default class CodeBlockExtension {
         if (!window.Prism) {
             const linkLight = document.createElement('link');
             linkLight.rel = 'stylesheet';
-            linkLight.href = '/assets/prism/prism_light.css';
+            linkLight.href = '/src/scripts/extensions/prism/prism_light.css';
             linkLight.media = '(prefers-color-scheme: light)';
             document.head.appendChild(linkLight);
             const linkDark = document.createElement('link');
             linkDark.rel = 'stylesheet';
-            linkDark.href = '/assets/prism/prism_dark.css';
+            linkDark.href = '/src/scripts/extensions/prism/prism_dark.css';
             linkDark.media = '(prefers-color-scheme: dark)';
             document.head.appendChild(linkDark);
             const script = document.createElement('script');
-            script.src = '/assets/prism/prism.js';
+            script.src = '/src/scripts/extensions/prism/prism.js';
             script.async = true;
             document.head.appendChild(script);
             script.onload = () => {

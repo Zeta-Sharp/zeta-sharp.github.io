@@ -16,7 +16,7 @@ class ExtensionsManager {
                 continue;
             }
             try {
-                const module = await import(`/assets/extensions/${ext}.js`);
+                const module = await import(`/src/scripts/extensions/${ext}.js`);
                 if (typeof module.default == "function") {
                     this.loadedExtensions[ext] = new module.default();
                     this.loadedExtensions[ext].initialize?.();

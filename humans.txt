@@ -27,7 +27,10 @@
     I can't forget thanks to maintain this world of internet forever.
 
 /* SITE */
-    Last Update: 2026/05/29
+    Last Update: 2026/07/04
     Language: Japanese / English
     Doctype: HTML5
-    IDE: VSCode
+    IDE: VSCode, occasionally WebStorm
+
+/* NOTE */
+    Since I'm still learning English (not native English speaker), my English may have issues.

@@ -5,19 +5,6 @@
 .status-paused { color: #ffaa00; }
 .status-archived { color: #ff4444; }
 
-/* Common styles */
-main {
-    padding-top: 80px;
-    flex-grow: 1;
-    padding-right: 10px;
-}
-
-@media (max-width: 768px) {
-    main {
-        padding: 80px 10% 0 10%;
-    }
-}
-
 /* tag styles */
 
 .tags {

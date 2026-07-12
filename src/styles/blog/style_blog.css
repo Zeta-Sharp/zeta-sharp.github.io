@@ -14,30 +14,6 @@
     }
 }
 
-/* Common styles */
-
-html {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-main {
-    padding-top: 80px;
-    flex-grow: 1;
-    padding-right: 10px;
-}
-
-@media (max-width: 768px) {
-    main {
-        padding: 80px 10% 0 10%;
-    }
-}
-
 /* article list styles */
 
 main>ul {

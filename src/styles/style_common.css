@@ -27,6 +27,7 @@
 }
 
 html {
+    height: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -41,7 +42,11 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     font-feature-settings: 'palt';
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
+
 
 /* background underlay */
 
@@ -288,13 +293,16 @@ body>header .hamburger-button.is-open .hamburger-line:nth-child(3) {
 main {
     min-height: 100vh;
     padding-left: 25%;
+    padding-top: 80px;
     z-index: var(--z-index-neutral);
     position: relative;
+    flex-grow: 1;
+    padding-right: 10px;
 }
 
 @media (max-width: 768px) {
     main {
-        padding-left: 0;
+        padding: 80px 10% 0 10%;
     }
 }
 
@@ -341,4 +349,8 @@ main {
             gap: 10px;
         }
     }
+}
+
+.footer-navigation {
+    margin-left: 0;
 }

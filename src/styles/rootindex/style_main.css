@@ -16,10 +16,13 @@
 
 /* main content */
 
-main {
-    overflow-y: scroll;
+html {
     scroll-snap-type: y mandatory;
-    height: 100vh;
+    overflow-y: scroll;
+}
+
+main {
+    width: 75%;
 }
 
 section {
@@ -30,7 +33,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
     box-sizing: border-box;
     font-size: 2rem;
 }
@@ -210,9 +213,4 @@ section#connect .snss {
 
 footer {
     scroll-snap-align: end;
-}
-
-.footer-navigation {
-    margin-left: 0;
-    background-color: transparent;
 }

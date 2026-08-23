@@ -1,14 +1,11 @@
 // Blog Page Script
 
-let articlesData = null;
-let isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
-
-// Tag-Based Article Filtering
 
 document.addEventListener('alpine:init', () => {
-    Alpine.data('tagSearch', () => ({
+    Alpine.data('blogIndex', () => ({
         activeTags: [],
         articlesData: {},
+        lang: localStorage.getItem('selectedLang') || (navigator.language.startsWith('ja') ? 'ja' : 'en'),
 
         init() {
             fetch('/blog/article_data.json')
@@ -45,74 +42,17 @@ document.addEventListener('alpine:init', () => {
                     article.tags.includes(tag)
                 )
             )
-        }
+        },
+
+        toggleLanguage() {
+            this.lang = this.lang === 'en' ? 'ja' : 'en';
+            const htmlTag = document.querySelector('html');
+            localStorage.setItem('selectedLang', this.lang);
+            htmlTag.setAttribute('lang', this.lang);
+        },
+
     }))
 })
-
-
-// Language Changing
-
-document.addEventListener("DOMContentLoaded", () => {
-    const htmlTag = document.querySelector('html');
-    const languageButton = document.querySelector('.language-button');
-    const languageButtonIcon = document.querySelector('.language-button-icon');
-
-    isJapanese = localStorage.getItem('selectedLang') === 'ja' || navigator.language.startsWith('ja');
-    loadArticles()
-    languageButton.addEventListener('click', () => {
-        isJapanese = !isJapanese;
-        updateLanguage();
-    });
-    languageButtonIcon.addEventListener('click', () => {
-        isJapanese = !isJapanese;
-        updateLanguage();
-    });
-    htmlTag.removeAttribute('translate')
-
-});
-
-async function loadArticles() {
-    try {
-        const response = await fetch('/blog/article_data.json');
-        articlesData = await response.json();
-        updateLanguage();
-    } catch (error) {
-        console.error('Error loading articles:', error);
-    }
-}
-
-function updateLanguage() {
-    if (!articlesData) return;
-    const htmlTag = document.querySelector('html');
-    const languageButton = document.querySelector('.language-button');
-    const noArticlesMsg = document.querySelector('.no-articles')
-
-    const lang = isJapanese ? 'ja' : 'en';
-    localStorage.setItem('selectedLang', lang);
-    htmlTag.setAttribute('lang', lang);
-
-    languageButton.textContent = isJapanese ? '日→En Switch to English' : 'En→日 日本語に切り替え';
-    noArticlesMsg.textContent = isJapanese ? '指定されたタグの記事が見つかりません。' : 'No articles found for the specified tags.';
-
-    document.querySelectorAll('[data-i18n]').forEach(translatableElement => {
-        const key = translatableElement.getAttribute('data-i18n');
-        const keys = key.split('.');
-
-        let translation = articlesData;
-
-        const found = keys.every(k => {
-            if (translation && translation[k] !== undefined) {
-                translation = translation[k];
-                return true;
-            }
-            return false;
-        });
-
-        if (found && translation[lang] !== undefined) {
-            translatableElement.textContent = translation[lang];
-        }
-    });
-}
 
 
 // Header Buttons

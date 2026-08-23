@@ -28,7 +28,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body x-data="blogIndex" x-init="init()">
   <header x-data="{ open: false }" @click.outside="open = false">
     <img src="/src/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false">
     <h1 class="header-text" @click="open = false">Blog</h1>
@@ -37,8 +37,10 @@
         <button type="button" class="profile-button" @click="open = false">Profile</button>
       </nav>
       <div class="language-buttons">
-        <button type="button" class="language-button-icon" aria-label="Change language"></button>
-        <button type="button" class="language-button">En→日 日本語に切り替え</button>
+        <button type="button" class="language-button-icon" aria-label="Change language"
+          @click="toggleLanguage()"></button>
+        <button type="button" class="language-button" @click="toggleLanguage()"
+          x-text="lang === 'ja' ? '日→En Switch to English' : 'En→日 日本語に切り替え'">En→日 日本語に切り替え</button>
       </div>
     </div>
     <button type="button" class="hamburger-button" aria-label="Menu" @click="open = !open" :class="{ 'is-open': open }">
@@ -47,7 +49,7 @@
       <span class="hamburger-line"></span>
     </button>
   </header>
-  <main x-data="tagSearch">
+  <main>
     <search>
       <h2>Tag search:</h2>
       <div class="tags">
@@ -74,7 +76,8 @@
       
       <li data-id="20260607" x-show="isArticleVisible(20260607)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260607.html" data-i18n="20260607.title">The Great Ink-Using Mission</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260607.html"
+              x-text="(lang && articlesData['20260607']?.title[lang]) ?? $el.innerHTML">The Great Ink-Using Mission</a></h3>
           <div class="meta">
             <time datetime="2026-06-07">2026-06-07</time>
             <ul class="tags">
@@ -83,13 +86,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20260607.summary">Wondering what to do with all those bottled inks that seem to have multiplied on your shelf...?</p>
+          <p class="summary" x-text="(lang && articlesData['20260607']?.summary[lang]) ?? $el.innerHTML">Wondering what to do with all those bottled inks that seem to have multiplied on your shelf...?</p>
         </article>
       </li>
       
       <li data-id="20260509" x-show="isArticleVisible(20260509)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260509.html" data-i18n="20260509.title">Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 3</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260509.html"
+              x-text="(lang && articlesData['20260509']?.title[lang]) ?? $el.innerHTML">Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 3</a></h3>
           <div class="meta">
             <time datetime="2026-05-09">2026-05-09</time>
             <ul class="tags">
@@ -98,13 +102,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20260509.summary">Featuring the 21st to 30th participants. The Showcase of posts about coolest pen. This article is Japanese only.</p>
+          <p class="summary" x-text="(lang && articlesData['20260509']?.summary[lang]) ?? $el.innerHTML">Featuring the 21st to 30th participants. The Showcase of posts about coolest pen. This article is Japanese only.</p>
         </article>
       </li>
       
       <li data-id="20260430" x-show="isArticleVisible(20260430)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260430.html" data-i18n="20260430.title">Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 2</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260430.html"
+              x-text="(lang && articlesData['20260430']?.title[lang]) ?? $el.innerHTML">Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 2</a></h3>
           <div class="meta">
             <time datetime="2026-04-30">2026-04-30</time>
             <ul class="tags">
@@ -113,13 +118,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20260430.summary">Featuring the 11th to 20th participants. The Showcase of posts about coolest pen.</p>
+          <p class="summary" x-text="(lang && articlesData['20260430']?.summary[lang]) ?? $el.innerHTML">Featuring the 11th to 20th participants. The Showcase of posts about coolest pen.</p>
         </article>
       </li>
       
       <li data-id="20260428" x-show="isArticleVisible(20260428)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260428.html" data-i18n="20260428.title">Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 1</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260428.html"
+              x-text="(lang && articlesData['20260428']?.title[lang]) ?? $el.innerHTML">Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 1</a></h3>
           <div class="meta">
             <time datetime="2026-04-28">2026-04-28</time>
             <ul class="tags">
@@ -128,13 +134,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20260428.summary">Featuring the 1st to 10th participants. The Showcase of posts about coolest pen.</p>
+          <p class="summary" x-text="(lang && articlesData['20260428']?.summary[lang]) ?? $el.innerHTML">Featuring the 1st to 10th participants. The Showcase of posts about coolest pen.</p>
         </article>
       </li>
       
       <li data-id="20260414" x-show="isArticleVisible(20260414)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260414.html" data-i18n="20260414.title">New sort algorithm, upgraded</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260414.html"
+              x-text="(lang && articlesData['20260414']?.title[lang]) ?? $el.innerHTML">New sort algorithm, upgraded</a></h3>
           <div class="meta">
             <time datetime="2026-04-14">2026-04-14</time>
             <ul class="tags">
@@ -143,13 +150,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20260414.summary">I upgraded a new sort algorithm that I wrote a while ago.</p>
+          <p class="summary" x-text="(lang && articlesData['20260414']?.summary[lang]) ?? $el.innerHTML">I upgraded a new sort algorithm that I wrote a while ago.</p>
         </article>
       </li>
       
       <li data-id="20260213" x-show="isArticleVisible(20260213)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260213.html" data-i18n="20260213.title">PyProma Git Tab 2.0.0 (Preview)</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260213.html"
+              x-text="(lang && articlesData['20260213']?.title[lang]) ?? $el.innerHTML">PyProma Git Tab 2.0.0 (Preview)</a></h3>
           <div class="meta">
             <time datetime="2026-02-13">2026-02-13</time>
             <ul class="tags">
@@ -160,13 +168,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20260213.summary">Release note of Git Tab 2.0.0 preview</p>
+          <p class="summary" x-text="(lang && articlesData['20260213']?.summary[lang]) ?? $el.innerHTML">Release note of Git Tab 2.0.0 preview</p>
         </article>
       </li>
       
       <li data-id="20251213" x-show="isArticleVisible(20251213)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20251213.html" data-i18n="20251213.title">Pencase introduction -main</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20251213.html"
+              x-text="(lang && articlesData['20251213']?.title[lang]) ?? $el.innerHTML">Pencase introduction -main</a></h3>
           <div class="meta">
             <time datetime="2025-12-13">2025-12-13</time>
             <ul class="tags">
@@ -175,13 +184,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20251213.summary">Introduction of my main pencase. This article is Japanese only.</p>
+          <p class="summary" x-text="(lang && articlesData['20251213']?.summary[lang]) ?? $el.innerHTML">Introduction of my main pencase. This article is Japanese only.</p>
         </article>
       </li>
       
       <li data-id="20251112" x-show="isArticleVisible(20251112)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20251112.html" data-i18n="20251112.title">Ζ# Blog Update!</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20251112.html"
+              x-text="(lang && articlesData['20251112']?.title[lang]) ?? $el.innerHTML">Ζ# Blog Update!</a></h3>
           <div class="meta">
             <time datetime="2025-11-12">2025-11-12</time>
             <ul class="tags">
@@ -192,13 +202,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20251112.summary">Release Note of Ζ# Blog Update.</p>
+          <p class="summary" x-text="(lang && articlesData['20251112']?.summary[lang]) ?? $el.innerHTML">Release Note of Ζ# Blog Update.</p>
         </article>
       </li>
       
       <li data-id="20251008" x-show="isArticleVisible(20251008)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20251008.html" data-i18n="20251008.title">New sort algorithm?</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20251008.html"
+              x-text="(lang && articlesData['20251008']?.title[lang]) ?? $el.innerHTML">New sort algorithm?</a></h3>
           <div class="meta">
             <time datetime="2025-10-08">2025-10-08</time>
             <ul class="tags">
@@ -207,13 +218,14 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20251008.summary">I (maybe) found new sort algorithm...?</p>
+          <p class="summary" x-text="(lang && articlesData['20251008']?.summary[lang]) ?? $el.innerHTML">I (maybe) found new sort algorithm...?</p>
         </article>
       </li>
       
       <li data-id="20250930" x-show="isArticleVisible(20250930)" x-collapse>
         <article>
-          <h3><a href="https://zeta-sharp.github.io/blog/articles/20250930.html" data-i18n="20250930.title">Hello, World!</a></h3>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20250930.html"
+              x-text="(lang && articlesData['20250930']?.title[lang]) ?? $el.innerHTML">Hello, World!</a></h3>
           <div class="meta">
             <time datetime="2025-09-30">2025-09-30</time>
             <ul class="tags">
@@ -222,13 +234,15 @@
               
             </ul>
           </div>
-          <p class="summary" data-i18n="20250930.summary">This is my first article in my blog!</p>
+          <p class="summary" x-text="(lang && articlesData['20250930']?.summary[lang]) ?? $el.innerHTML">This is my first article in my blog!</p>
         </article>
       </li>
       
     </ul>
-    <p class="no-articles" aria-hidden="true" aria-live="polite" x-show="hasNoResults" x-transition>No articles found
-      for the specified tags.</p>
+    <p class="no-articles" aria-hidden="true" aria-live="polite" x-show="hasNoResults" x-transition
+      x-text="lang === 'ja' ? '指定されたタグに一致する記事が見つかりません。' : 'No articles found for the specified tags.'">
+      No articles found for the specified tags.
+    </p>
   </main>
   <footer class="footer-navigation">
     <nav>

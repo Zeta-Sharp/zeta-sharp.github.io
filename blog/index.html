@@ -68,10 +68,29 @@
         <button type="button" class="tag" :class="{ 'is-active': activeTags.includes('stationery') }"
           @click="toggleTag('stationery')"> <span>stationery</span></button>
         
+        <button type="button" class="tag" :class="{ 'is-active': activeTags.includes('tech') }"
+          @click="toggleTag('tech')"> <span>tech</span></button>
+        
       </div>
     </search>
     <h2>Articles:</h2>
     <ul class="articles-list">
+      
+      <li data-id="20260825" x-show="isArticleVisible(20260825)" x-collapse>
+        <article>
+          <h3><a href="https://zeta-sharp.github.io/blog/articles/20260825.html"
+              x-text="(lang && articlesData['20260825']?.title[lang]) ?? $el.innerHTML">About fonts in multilingual site</a></h3>
+          <div class="meta">
+            <time datetime="2026-08-25">2026-08-25</time>
+            <ul class="tags">
+              
+              <li class="tag" :class="{ 'is-active': activeTags.includes('tech') }"><span>tech</span></li>
+              
+            </ul>
+          </div>
+          <p class="summary" x-text="(lang && articlesData['20260825']?.summary[lang]) ?? $el.innerHTML">Record of my struggle about difference of appearance between language fonts in multi-lingual site.</p>
+        </article>
+      </li>
       
       <li data-id="20260607" x-show="isArticleVisible(20260607)" x-collapse>
         <article>

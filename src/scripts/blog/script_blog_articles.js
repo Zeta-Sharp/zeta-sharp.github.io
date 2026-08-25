@@ -93,7 +93,7 @@ document.addEventListener('alpine:init', () => {
                 'hr', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'strong', 'em',
                 'span', 'div', 'blockquote', 'code', 'pre', 'img', 'sup', 'sub', 'figure', 'figcaption',
                 'cite', 'kbd', 'section', 'article', 'details', 'summary', 'nav'];
-            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title'];
+            const allowedAttributes = ['class', 'id', 'href', 'target', 'rel', 'src', 'alt', 'title', 'style'];
             const purifiedContentEn = DOMPurify.sanitize(articleContentEn, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             const purifiedContentJa = DOMPurify.sanitize(articleContentJa, { ALLOWED_TAGS: allowedTags, ALLOWED_ATTR: allowedAttributes });
             return {

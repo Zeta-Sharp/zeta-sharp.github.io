@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="This is a blog page of Ζ#. Record of my struggle about difference of appearance between language fonts in multi-lingual site.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#cfe2f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#073763" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="About fonts in multilingual site - Ζ# Blog">
+  <meta property="og:description" content="This is a blog page of Ζ#. Record of my struggle about difference of appearance between language fonts in multi-lingual site.">
+  
+  <meta property="og:image" content="https://zeta-sharp.github.io/src/assets/zeta_sharp/OG_blog.png">
+  <meta property="og:url" content="https://zeta-sharp.github.io/">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About fonts in multilingual site - Ζ# Blog">
+  <meta name="twitter:site" content="@Zeta_Sharp">
+  <meta name="twitter:creator" content="@Zeta_Sharp">
+  <title>About fonts in multilingual site - Ζ# Blog</title>
+  <link rel="icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="apple-touch-icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
+  <link rel="author" href="/humans.txt">
+  <link rel="stylesheet" href="/src/styles/style_common.css">
+  <link rel="stylesheet" href="/src/styles/blog/style_blog.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+  <script defer src="/src/scripts/extensions/extensions_manager.js"></script>
+  <script defer src="/src/scripts/blog/script_blog_articles.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+</head>
+
+<body x-data="blogArticlePage()" x-init="init()" @popstate.window="syncFromUrl()">
+  <header @click.outside="open = false">
+    <img src="/src/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon"
+      @click="open = false; goToBlog()">
+    <span class="header-text" @click="open = false; goToBlog()">Blog</span>
+    <div class="header-buttons" :class="{ 'is-open': open }">
+      <nav class="scroll-buttons">
+        <button type="button" class="profile-button" @click="open = false; goToProfile()">Profile</button>
+        <button type="button" class="blog-button" @click="open = false; goToBlog()">Blog</button>
+      </nav>
+      <div class="language-buttons">
+        <button type="button" class="language-button-icon" aria-label="Change language"
+          @click="toggleLanguage()"></button>
+        <button type="button" class="language-button" @click="toggleLanguage()"
+          x-text="lang === 'ja' ? '日→En Switch to English' : 'En→日 日本語に切り替え'">
+          En→日 日本語に切り替え
+        </button>
+      </div>
+    </div>
+    <button type="button" class="hamburger-button" aria-label="Menu" @click="open = !open" :class="{ 'is-open': open }">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </header>
+
+  <main>
+    <article>
+      <header>
+        <h1 x-text="texts?.title?.[lang] ?? $el.innerText">
+          About fonts in multilingual site
+        </h1>
+        <div class="meta">
+          <time datetime="2026-08-25">2026-08-25</time>
+          <ul class="tags">
+            
+            <li class="tag"><span>tech</span></li>
+            
+          </ul>
+        </div>
+      </header>
+
+      <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
+        <p>
+ Sorry, translation unfinished. If you'd like to read full text, please switch to Japanese version by upper-right button and translate by yourself.
+</p>
+<p>
+ Have you ever paid attention to the shape of texts?
+</p>
+<p>
+ Maybe, you've hear about
+ <span style="font-family: serif;">
+  Serif
+ </span>
+ or
+ <span style="font-family: sans-serif;">
+  Sans-Serif
+ </span>
+ . like there is small line or stroke attached to end of stroke or not. There is a various fonts in alphabet.
+</p>
+<p>
+ In addition, this can be applied to other languages. Alphabet, Hiragana/Katakana/Kanji, Hangul, Chinese, Arabic...
+</p>
+<p>
+ Today, I'll talk about how fonts have been struggled me on multi-lingual site.
+</p>
+<p>
+ Simply put, there are three points.
+</p>
+<ul>
+ <li>
+  font metrics
+ </li>
+ <li>
+  supported character types
+ </li>
+ <li>
+  file transfer size
+ </li>
+</ul>
+<h3>
+ font metrics
+</h3>
+<p>
+ About this, seeing is better than reading.
+</p>
+<hr/>
+<p>
+ <span style="font-family: initial;">
+  This is sample text.
+ </span>
+ <span style="font-family: initial;">
+  これは、サンプルテキストです。
+ </span>
+</p>
+<hr/>
+<p>
+ This is a sample of text where the site's default "Noto Sans JP" font has been removed, leaving the display to the browser's default.
+Depending on your viewing environment, it will likely look quite different.
+</p>
+<p>
+ As an example, in my environment, it looks like this.
+</p>
+<!--あとでスクショ入れる-->
+<p>
+ The difference of atmosphere is different of fonts design, and the misalignment of characters is due to differences in font metrics.
+</p>
+<p>
+ Difference of design comes from the difference of "cool", "easy to read" shapes among languages, and this causes the difference of impression.
+</p>
+<p>
+ Differences of font metrics came from character constructure. For example, alphabet has character which protrude from the bottom (like g, j, p, q, y), so baseline setted a bit higher than other languages.
+</p>
+<p>
+ Therefore, using same font families as possible is better. I think.
+</p>
+<p>
+ Sorry, no energy to translate left for me. Please wait few days to translate. If you'd like to read full text, please switch to Japanese version by upper-right button and translate by yourself.
+</p>
+
+      </div>
+    </article>
+
+    <nav class="article-navigation no-js">
+      <h2 x-text="lang === 'ja' ? '前後記事' : 'Post Navigation'">Post Navigation</h2>
+      <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
+        x-show="newerArticleId !== null">
+        ←
+        <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
+          Newer Article
+        </span>
+      </p>
+      <p class="older-article" @click="showArticle(olderArticleId)" @pointerenter="prefetchArticle(olderArticleId)"
+        x-show="olderArticleId !== null">
+        <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
+          Older Article
+        </span>
+        →
+      </p>
+    </nav>
+  </main>
+
+  <footer class="footer-navigation">
+    <nav>
+      <h2>Sitemap</h2>
+      <ol>
+        <li>Top: <a href="/">/root</a></li>
+        <li>Blog: <a href="/blog/">/root/blog</a></li>
+        <li>Projects/ <ul>
+            <li>PyProma: <a href="/projects/PyProma/">/root/projects/PyProma</a></li>
+          </ul>
+        </li>
+      </ol>
+    </nav>
+    <p>© 2026 Ζ#. Images, Icon copyrights:
+      <a href="/copyrights/">Copyrights</a>
+    </p>
+  </footer>
+</body>
+
+</html>

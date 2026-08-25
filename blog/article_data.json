@@ -1,4 +1,20 @@
 {
+    "20260825": {
+        "id": "20260825",
+        "title": {
+            "ja": "多言語サイトにおけるフォント選定について",
+            "en": "About fonts in multilingual site"
+        },
+        "date": "2026-08-25",
+        "tags": [
+            "tech"
+        ],
+        "summary": {
+            "ja": "多言語サイトにおいて、フォントの違いによる見た目の差をどうやって消そうかの奮闘記。若干高度な内容注意。",
+            "en": "Record of my struggle about difference of appearance between language fonts in multi-lingual site."
+        },
+        "translation_file": "articles/20260825.json"
+    },
     "20260607": {
         "id": "20260607",
         "title": {

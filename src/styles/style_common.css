@@ -1,7 +1,5 @@
 /* common styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
 /* color scheme, background and z-index */
 :root {
     color-scheme: light dark;
@@ -42,6 +40,7 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     font-feature-settings: 'palt';
     -webkit-font-smoothing: antialiased;
+    font-style: normal;
     display: flex;
     flex-direction: column;
     margin: 0;

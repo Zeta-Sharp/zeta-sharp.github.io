@@ -9,8 +9,8 @@
   <meta name="theme-color" content="#073763" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 1 - Ζ# Blog">
   <meta property="og:description" content="This is a blog page of Ζ#. Featuring the 1st to 10th participants. The Showcase of posts about coolest pen.">
-  <meta property="og:image"
-    content="https://raw.githubusercontent.com/Zeta-Sharp/zeta-sharp.github.io/refs/heads/main/src/assets/zeta_sharp/OG_blog.png">
+  
+  <meta property="og:image" content="https://zeta-sharp.github.io/src/assets/zeta_sharp/OG_blog.png">
   <meta property="og:url" content="https://zeta-sharp.github.io/">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,6 +21,9 @@
   <link rel="icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
   <link rel="apple-touch-icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
   <link rel="author" href="/humans.txt">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/styles/style_common.css">
   <link rel="stylesheet" href="/src/styles/blog/style_blog.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
@@ -34,7 +37,8 @@
 
 <body x-data="blogArticlePage()" x-init="init()" @popstate.window="syncFromUrl()">
   <header @click.outside="open = false">
-    <img src="/src/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon" @click="open = false; goToBlog()">
+    <img src="/src/assets/zeta_sharp/zeta-sharp-icon.svg" alt="Zeta-Sharp Icon" class="icon"
+      @click="open = false; goToBlog()">
     <span class="header-text" @click="open = false; goToBlog()">Blog</span>
     <div class="header-buttons" :class="{ 'is-open': open }">
       <nav class="scroll-buttons">

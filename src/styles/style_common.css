@@ -37,7 +37,8 @@ body {
     width: 100%;
     margin: 0;
     overflow-x: clip;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: "Noto Sans JP", "Noto Sans CJK", "Yu Gothic Medium", "Yu Gothic", "Meiryo", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-weight: 400;
     font-feature-settings: 'palt';
     -webkit-font-smoothing: antialiased;
     font-style: normal;

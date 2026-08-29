@@ -27,7 +27,7 @@
     I can't forget thanks to maintain this world of internet forever.
 
 /* SITE */
-    Last Update: 2026/08/23
+    Last Update: 2026/08 (Also look for HEAD commit. https://github.com/Zeta-Sharp/zeta-sharp.github.io/commit/HEAD )
     Language: Japanese / English
     Doctype: HTML5
     IDE: VSCode, occasionally WebStorm

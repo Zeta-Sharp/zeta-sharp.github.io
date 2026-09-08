@@ -23,6 +23,7 @@ html {
 
 main {
     width: 75%;
+    padding-top: 0;
 }
 
 section {
@@ -33,7 +34,6 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px 0;
     box-sizing: border-box;
     font-size: 2rem;
 }

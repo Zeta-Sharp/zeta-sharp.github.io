@@ -26,6 +26,12 @@ main {
     padding-top: 0;
 }
 
+@media (max-width: 768px) {
+    main {
+        width: 80%;
+    }
+}
+
 section {
     height: 100vh;
     scroll-snap-align: start;

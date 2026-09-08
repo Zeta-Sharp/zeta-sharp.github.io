@@ -4,20 +4,20 @@
 <head>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <meta charset="UTF-8">
-  <meta name="description" content="This is a blog page of Ζ#. Record of my struggle about difference of appearance between language fonts in multi-lingual site.">
+  <meta name="description" content="This is a blog page of Ζ#. A record of my struggles with font appearance differences on a multilingual site. Note "Niche content".">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#cfe2f3" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#073763" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="About fonts in multilingual site - Ζ# Blog">
-  <meta property="og:description" content="This is a blog page of Ζ#. Record of my struggle about difference of appearance between language fonts in multi-lingual site.">
+  <meta property="og:title" content="About Fonts on Multilingual Sites - Ζ# Blog">
+  <meta property="og:description" content="This is a blog page of Ζ#. A record of my struggles with font appearance differences on a multilingual site. Note "Niche content".">
   <meta property="og:image" content="https://zeta-sharp.github.io/src/assets/zeta_sharp/OG_blog.png">
   <meta property="og:url" content="https://zeta-sharp.github.io/">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About fonts in multilingual site - Ζ# Blog">
+  <meta name="twitter:title" content="About Fonts on Multilingual Sites - Ζ# Blog">
   <meta name="twitter:site" content="@Zeta_Sharp">
   <meta name="twitter:creator" content="@Zeta_Sharp">
-  <title>About fonts in multilingual site - Ζ# Blog</title>
+  <title>About Fonts on Multilingual Sites - Ζ# Blog</title>
   <link rel="icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
   <link rel="apple-touch-icon" href="/src/assets/zeta_sharp/zeta-sharp-icon.svg">
   <link rel="author" href="/humans.txt">
@@ -61,7 +61,7 @@
     <article>
       <header>
         <h1 x-text="texts?.title?.[lang] ?? $el.innerText">
-          About fonts in multilingual site
+          About Fonts on Multilingual Sites
         </h1>
         <div class="meta">
           <time datetime="2026-08-25">2026-08-25</time>
@@ -75,13 +75,13 @@
 
       <div class="article-body" x-html="texts?.content?.[lang] ?? $el.innerHTML">
         <p>
- Sorry, translation unfinished. If you'd like to read full text, please switch to Japanese version by upper-right button and translate by yourself.
+ Edited: 9/8, Add English version
 </p>
 <p>
  Have you ever paid attention to the shape of texts?
 </p>
 <p>
- Maybe, you've hear about
+ Maybe, you've heard about
  <span style="font-family: serif;">
   Serif
  </span>
@@ -89,13 +89,13 @@
  <span style="font-family: sans-serif;">
   Sans-Serif
  </span>
- . like there is small line or stroke attached to end of stroke or not. There is a various fonts in alphabet.
+ . whether there are small lines or strokes attached to the ends of strokes. There are various fonts in alphabet.
 </p>
 <p>
  In addition, this can be applied to other languages. Alphabet, Hiragana/Katakana/Kanji, Hangul, Chinese, Arabic...
 </p>
 <p>
- Today, I'll talk about how fonts have been struggled me on multi-lingual site.
+ Today, I'll talk about how I've struggled with fonts on a multilingual site
 </p>
 <p>
  Simply put, there are three points.
@@ -138,19 +138,89 @@ Depending on your viewing environment, it will likely look quite different.
  <img alt="screenshot" src="/blog/articles/images/20260825/screenshot_2026-08-25_234814.webp"/>
 </p>
 <p>
- The difference of atmosphere is different of fonts design, and the misalignment of characters is due to differences in font metrics.
+ Doesn't the line of Japanese text look a bit weak?
+</p>
+<p>
+ The difference in atmosphere comes from font design, while the misalignment of characters is due to differences in font metrics.
 </p>
 <p>
  Difference of design comes from the difference of "cool", "easy to read" shapes among languages, and this causes the difference of impression.
 </p>
 <p>
- Differences of font metrics came from character constructure. For example, alphabet has character which protrude from the bottom (like g, j, p, q, y), so baseline setted a bit higher than other languages.
+ Differences in font metrics come from character structure. For example, alphabet has character which protrude from the bottom (like g, j, p, q, y), so baseline setted a bit higher than other languages.
 </p>
 <p>
- Therefore, using same font families as possible is better. I think.
+ Therefore, using same font families as possible is better. I think. However then, the next problem surfaces.
+</p>
+<h3>
+ supported character types
+</h3>
+<p>
+ Each fonts has supported character ranges. We can't display Japanese Kana or Kanji in English-only fonts and display arabic in English and Japanese-only fonts.
 </p>
 <p>
- Sorry, no energy to translate left for me. Please wait few days to translate. If you'd like to read full text, please switch to Japanese version by upper-right button and translate by yourself.
+ To fill unsupported characters, special characters like  "&square;" or "☒" displayed. These called as "tofu", used to describe that the computer knows what this character is, but doesn't know how to display it. A long time has passed since they disappeared
+</p>
+<p>
+ To summarize, if we want to use same font family among different languages, we have to use fonts that supports all of languages used.
+</p>
+<p>
+ Honestly, such fonts are rare. most fonts are only alphabets, or alphabet + another language. We can't consider to use.
+</p>
+<p>
+ To solve this problem, Noto Sans JP used in this blog. That includes Japanese Hiragana, Katakana, Kanji, and Alphabets, numbers, symbols.
+</p>
+<p>
+ This font were created for "No more tofu", there is variations like Noto Sans CJK(Chinese、Japanese、Korean), or Noto Sans Arabic.
+</p>
+<p>
+ As fonts in the same family, they share the same metrics and on display,
+</p>
+<hr/>
+<p>
+ <span>
+  This is sample text.
+ </span>
+ <span>
+  これは、サンプルテキストです。
+ </span>
+</p>
+<hr/>
+<p>
+ it doesn't cause misalignment and difference of atmosphere. Allowing this blog to switch language very smoothly.
+</p>
+<p>
+ However, it is too early to be relieved. These multi-language fonts have another problem.
+</p>
+<h3>
+ file transfer size
+</h3>
+<p>
+ Font files are too large.
+</p>
+<p>
+ It makes sense when you think about it, Japanese has a large amount of Kanji. To display all of them, a large amount of data required. For example, Noto Sans JP includes about 44.8k characters! File I downloaded from Google Fonts was 8.9MB. If we loading from CDN, it also requires an extra connection/handshake. First Contentful Paint gets worse, and Score of PageSpeed Insights plummeted (speaking from painful experience).
+</p>
+<p>
+ To solve this, make file lighter by removing unused characters (subsetting) or woff2 compressing, but they're too troublesome. Thinking about large sites, it seems to be difficult to control character ranges, so I wonder how to support multi-language.
+</p>
+<p>
+ Actually, the opportunity to write this article is that I finished moving fonts from Google Fonts API to Self hosting and subsetting previously. I'll write another article about specific trial and error if I feel like it. Shortly, Performance(Mobile) Score rises from 85 to 86, FCP improved from 2.8s to 2.3s. Ummm, improvement too small. It sounds nice if I said 18% improvement, isn't it?
+</p>
+<p>
+ No? I'll put in more effort...
+</p>
+<h2>
+ conclusion
+</h2>
+<p>
+ In conclusion, I have broken down and analyzed the traps found in running multi-lingual site.
+</p>
+<p>
+ For those who simply browse websites, this might offer just a fleeting thought&mdash;"I had no idea there was so much involved." and for those currently managing multilingual sites&mdash;or planning to do so&mdash;I hope this serves as a guidepost, helping you move forward by learning from the struggles I&rsquo;ve endured.
+</p>
+<p>
+ Today's article is now over. Thank you for reading!
 </p>
 
       </div>

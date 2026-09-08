@@ -12,6 +12,7 @@
     --z-index-header: 10;
     --z-index-neutral: 1;
     --z-index-underlay: -1;
+    --header-height: 87px; /* This value should match the .header-text height */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -132,9 +133,11 @@ body>header {
     top: 0;
     width: 100%;
     max-width: 100%;
+    height: var(--header-height);
     z-index: var(--z-index-header);
 
     .header-text {
+        max-height: var(--header-height);
         all: unset;
         display: block;
         font-size: 2.4em;
@@ -273,8 +276,8 @@ body>header .hamburger-button.is-open .hamburger-line:nth-child(3) {
         top: 0;
         right: 0;
         width: 240px;
-        height: calc(100vh - 86.7px);
-        height: calc(100dvh - 86.7px);
+        height: calc(100vh - var(--header-height));
+        height: calc(100dvh - var(--header-height));
         box-sizing: border-box;
         background-color: var(--clr-overlay);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
@@ -282,7 +285,7 @@ body>header .hamburger-button.is-open .hamburger-line:nth-child(3) {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        margin-top: 86.7px;
+        margin-top: var(--header-height);
         transform: translateX(100%);
         visibility: hidden;
         transition: transform 0.3s ease-in-out, visibility 0.3s;
@@ -334,7 +337,7 @@ body>header .hamburger-button.is-open .hamburger-line:nth-child(3) {
 main {
     min-height: 100vh;
     padding-left: 25%;
-    padding-top: 80px;
+    padding-top: var(--header-height);
     z-index: var(--z-index-neutral);
     position: relative;
     flex-grow: 1;
@@ -343,7 +346,7 @@ main {
 
 @media (max-width: 768px) {
     main {
-        padding: 80px 10% 0 10%;
+        padding: calc(var(--header-height) + 20px) 10% 0 10%;
     }
 }
 

@@ -299,15 +299,11 @@ body>header .hamburger-button.is-open .hamburger-line:nth-child(3) {
         margin-left: 0 !important;
         width: 100%;
         gap: 0;
-
-        button {
-            width: 100% !important;
-            font-size: 1em;
-        }
     }
 
     body>header .scroll-buttons button {
-        width: 80%;
+        width: 100% !important;
+        font-size: 1em;
         border-left: none !important;
         border-top: 2px solid var(--clr-border) !important;
     }

@@ -25,6 +25,26 @@
 }
 
 @font-face {
+    font-family: 'Noto Sans JP Local';
+    src: local('Noto Sans JP'),
+        local('Noto Sans CJK JP Regular'),
+        local('NotoSansCJKjp-Regular'),
+        local('Noto Sans JP Regular'),
+        local('NotoSansJP-Regular');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Noto Sans JP Local';
+    src: local('Noto Sans JP'),
+        local('Noto Sans CJK JP Bold'),
+        local('NotoSansCJKjp-Bold'),
+        local('Noto Sans JP Bold'),
+        local('NotoSansJP-Bold');
+    font-weight: 700;
+}
+
+@font-face {
     font-family: 'Noto Sans JP Subset';
     src: url('/src/fonts/NotoSansJP-VariableFont_subset.woff2') format('woff2');
     font-weight: 400 700;
@@ -44,13 +64,14 @@ body {
     width: 100%;
     margin: 0;
     overflow-x: clip;
-    font-family: 'Noto Sans JP Subset', sans-serif;
-    font-feature-settings: 'palt';
+    font-family: 'Noto Sans JP Local', 'Noto Sans JP Subset', sans-serif;
+    font-weight: 400;
+    font-feature-settings: "palt" 0, "chws" 0, "pwid" 0;
+    font-kerning: normal;
     -webkit-font-smoothing: antialiased;
     font-style: normal;
     display: flex;
     flex-direction: column;
-    margin: 0;
 }
 
 

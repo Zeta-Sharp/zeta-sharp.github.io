@@ -79,8 +79,8 @@ section#skill-tree {
 
             .python-icon,
             .unity-icon {
-                width: 152px;
-                height: auto;
+                width: auto;
+                height: 48px;
             }
 
             .html-icon,
@@ -88,8 +88,8 @@ section#skill-tree {
             .javascript-icon,
             .git-icon,
             .github-icon {
-                width: 48px;
-                height: auto;
+                width: auto;
+                height: 48px;
                 margin: 0 4px;
             }
 

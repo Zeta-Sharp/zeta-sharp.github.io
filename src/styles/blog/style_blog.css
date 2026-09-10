@@ -128,7 +128,7 @@ table {
     flex-direction: row;
     align-items: center;
     align-content: center;
-    padding: 5px 0 5px 10px;
+    padding: 4px 0 4px 16px;
     cursor: pointer;
     user-select: none;
     font-weight: bold;

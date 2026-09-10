@@ -59,7 +59,7 @@ section#skill-tree {
         display: flex;
         overflow-x: auto;
         overscroll-behavior-x: contain;
-        padding: 10px 20px;
+        padding: 8px 20px;
         scroll-padding: 0 20px;
         gap: 20px;
         justify-content: flex-start;
@@ -71,15 +71,15 @@ section#skill-tree {
 
         article {
             border: 2px solid var(--clr-text);
-            border-radius: 10px;
-            padding: 10px;
+            border-radius: 8px;
+            padding: 8px;
             width: auto;
             text-align: center;
             flex-shrink: 0;
 
             .python-icon,
             .unity-icon {
-                max-width: 150px;
+                width: 152px;
                 height: auto;
             }
 
@@ -88,19 +88,19 @@ section#skill-tree {
             .javascript-icon,
             .git-icon,
             .github-icon {
-                max-width: 50px;
+                width: 48px;
                 height: auto;
-                margin: 0 5px;
+                margin: 0 4px;
             }
 
             h3 {
-                margin-top: 10px;
-                margin-bottom: 10px;
+                margin-top: 8px;
+                margin-bottom: 8px;
             }
 
             p {
-                margin: 5px 0;
-                font-size: 14px;
+                margin: 4px 0;
+                font-size: 1rem;
             }
 
             .html-css-javascript-icon,
@@ -148,7 +148,7 @@ section#projects li .see-more {
         left: 0;
         bottom: -2px;
         width: 0;
-        height: 5px;
+        height: 4px;
         background-color: var(--clr-text);
         transition: width 0.3s ease-in-out;
     }
@@ -167,33 +167,37 @@ section#projects li .see-more:hover {
 /* connect section */
 
 section#connect .snss {
+    width: 100%;
+    margin: 12px 8px;
+    gap: 24px;
     display: flex;
-    justify-content: flex-end;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    justify-content: flex-start;
     flex-wrap: wrap;
     align-content: center;
 
     .sns-twitter,
     .sns-github,
     .google-form {
-        padding: 10px;
         width: auto;
         text-align: left;
-        margin: 10px 0;
+        padding: 0;
         display: flex;
         justify-content: center;
         gap: 20px;
         flex-wrap: nowrap;
 
         p {
-            margin: 5px 0;
+            width: 100%;
+            margin: 0;
             text-align: left;
+            word-break: keep-all;
         }
     }
 
     button {
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 48px;
+        max-height: 48px;
         width: 100%;
         height: auto;
         border: none;

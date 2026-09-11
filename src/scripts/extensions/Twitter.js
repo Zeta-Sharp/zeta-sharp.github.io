@@ -12,7 +12,7 @@ export default class TwitterExtension {
             script.src = 'https://platform.twitter.com/widgets.js';
             script.async = true;
             script.onload = () => {
-                window.twttr?.widgets?.load();
+                this.reload();
             };
             document.head.appendChild(script);
         } else {

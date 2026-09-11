@@ -32,9 +32,9 @@ function updateLanguage() {
         if (translation) {
             if (translatableElement.hasAttribute('data-i18n-html')) {
                 const config = {
-                ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'br', 'span'],
-                ALLOWED_ATTR: ['aria-label']
-            };
+                    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'br', 'span'],
+                    ALLOWED_ATTR: ['aria-label']
+                };
                 translatableElement.innerHTML = DOMPurify.sanitize(translation, config);
             } else {
                 translatableElement.textContent = translation;
@@ -94,3 +94,9 @@ googleFormButton.addEventListener('click', () => {
 
 setup_i18n();
 htmlTag.removeAttribute('translate')
+
+Object.defineProperty(window, 'tea', {
+    get: function () {
+        return "https://zeta-sharp.github.io/418.html";
+    }
+});

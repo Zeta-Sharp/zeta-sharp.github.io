@@ -144,6 +144,38 @@ table {
 .article-navigation {
     display: block;
     margin-top: 40px;
+
+    .navigation-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+        >* {
+            flex: 1;
+            text-align: center;
+            margin: 0;
+            border-top: 1px solid var(--clr-border);
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        >:first-child {
+            border-right: 1px solid var(--clr-border);
+        }
+
+        >:last-child {
+            border-left: 1px solid var(--clr-border);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .article-navigation {
+        .navigation-container {
+            flex-direction: column;
+        }
+    }
 }
 
 .article-navigation.no-js {

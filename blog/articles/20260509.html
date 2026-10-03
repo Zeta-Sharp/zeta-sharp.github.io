@@ -10,6 +10,7 @@
   <meta name="theme-color" content="#073763" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Community Showcase - What is the Coolest Pen in Your Opinion? Vol. 3 - Ζ# Blog">
   <meta property="og:description" content="This is a blog page of Ζ#. Featuring the 21st to 30th participants. The Showcase of posts about coolest pen. This article is Japanese only.">
+  
   <meta property="og:image" content="https://zeta-sharp.github.io/src/assets/zeta_sharp/OG_blog.png">
   <meta property="og:url" content="https://zeta-sharp.github.io/">
   <meta property="og:type" content="article">
@@ -87,20 +88,22 @@
 
     <nav class="article-navigation no-js">
       <h2 x-text="lang === 'ja' ? '前後記事' : 'Post Navigation'">Post Navigation</h2>
-      <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
-        x-show="newerArticleId !== null">
-        ←
-        <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
-          Newer Article
-        </span>
-      </p>
-      <p class="older-article" @click="showArticle(olderArticleId)" @pointerenter="prefetchArticle(olderArticleId)"
-        x-show="olderArticleId !== null">
-        <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
-          Older Article
-        </span>
-        →
-      </p>
+      <div class="navigation-container">
+        <p class="newer-article" @click="showArticle(newerArticleId)" @pointerenter="prefetchArticle(newerArticleId)"
+          x-show="newerArticleId !== null">
+          ←<br>
+          <span x-text="texts?.newer_article_title?.[lang] ?? 'Newer Article'">
+            Newer Article
+          </span>
+        </p>
+        <p class="older-article" @click="showArticle(olderArticleId)" @pointerenter="prefetchArticle(olderArticleId)"
+          x-show="olderArticleId !== null">
+          <span x-text="texts?.older_article_title?.[lang] ?? 'Older Article'">
+            Older Article
+          </span>
+          <br>→
+        </p>
+      </div>
     </nav>
   </main>
 

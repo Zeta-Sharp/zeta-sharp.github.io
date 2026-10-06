@@ -1,21 +1,5 @@
 /* main content styles */
 
-/* icons */
-:root {
-    --img-github-icon: url('/src/assets/icons/github-mark.svg');
-    --img-x-icon: url('/src/assets/icons/logo-black.png');
-    --img-google-form-icon: url('/src/assets/icons/logo_forms_2020q4_color_1x_web_64dp.png')
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --img-x-icon: url('/src/assets/icons/logo-white.png');
-        --img-github-icon: url('/src/assets/icons/github-mark-white.svg');
-    }
-}
-
-/* main content */
-
 html {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -194,29 +178,21 @@ section#connect .snss {
         }
     }
 
-    button {
-        max-width: 48px;
-        max-height: 48px;
-        width: 100%;
-        height: auto;
+    a, button {
+        display: block;
+        width: 48px;
+        height: 48px;
+        aspect-ratio: 1/1;
+        padding: 0;
         border: none;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
         cursor: pointer;
         background-color: transparent;
     }
 
-    .x-button {
-        background-image: var(--img-x-icon);
-    }
-
-    .github-button {
-        background-image: var(--img-github-icon);
-    }
-
-    .google-form-button {
-        background-image: var(--img-google-form-icon);
+    .connect-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 

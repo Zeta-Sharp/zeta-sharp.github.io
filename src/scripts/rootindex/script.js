@@ -72,23 +72,14 @@ blogButton.addEventListener('click', () => {
 
 // Other Buttons
 
-const xButton = document.querySelector('.x-button');
-const githubButton = document.querySelector('.github-button');
 const googleFormButton = document.querySelector('.google-form-button')
-
-xButton.addEventListener('click', () => {
-    location.href = 'https://x.com/Zeta_Sharp';
-});
-
-githubButton.addEventListener('click', () => {
-    location.href = 'https://github.com/Zeta-Sharp';
-});
 
 const form_en = 'https://docs.google.com/forms/d/e/1FAIpQLSei9ZOPtcSp3VrSHO-CdiGX3dva3JSVH_CvFU5GDh1tujbgsg/viewform'
 const form_ja = 'https://docs.google.com/forms/d/e/1FAIpQLSejQgfiS2fRcmYcIlT24bxkrLN8n_-Fx2kcdESqnN8OhqskTA/viewform'
 
-googleFormButton.addEventListener('click', () => {
+googleFormButton.addEventListener('click', (event) => {
     const url = i18next.language === 'en' ? form_en : form_ja;
+    event.preventDefault();
     window.open(url, '_blank', 'noopener noreferrer');
 })
 
